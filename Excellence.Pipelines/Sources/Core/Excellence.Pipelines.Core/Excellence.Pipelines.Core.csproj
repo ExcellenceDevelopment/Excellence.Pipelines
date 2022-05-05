@@ -1,0 +1,42 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFrameworks>net5.0;net6.0;netstandard2.0</TargetFrameworks>
+        <LangVersion>default</LangVersion>
+        <Nullable>enable</Nullable>
+
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <IsPackable>true</IsPackable>
+        <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+        <PackageId>Excellence.Pipelines.Core</PackageId>
+        <PackageVersion>1.0.0</PackageVersion>
+        <Title>Excellence.Pipelines.Core</Title>
+        <Authors>Excellence Development;Roman Doskoch</Authors>
+        <Description>Interfaces for Pipelines.</Description>
+        <PackageProjectUrl>https://github.com/ExcellenceDevelopment/Excellence.Pipelines</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/ExcellenceDevelopment/Excellence.Pipelines</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <PackageTags>Excellence.Pipelines.Core;Excellence.Pipelines.Core</PackageTags>
+        <PackageIcon>Icon.png</PackageIcon>
+        <PackageReadmeFile>Readme.md</PackageReadmeFile>
+        <Copyright>© Excellence Development, Roman Doskoch. All rights reserved.</Copyright>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <DocumentationFile>Excellence.Pipelines.Core.xml</DocumentationFile>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Content Include="Nuget\Readme.md">
+            <Pack>true</Pack>
+            <PackagePath>\</PackagePath>
+        </Content>
+
+        <Content Include="Nuget\Icon.png">
+            <Pack>true</Pack>
+            <PackagePath>\</PackagePath>
+        </Content>
+    </ItemGroup>
+
+</Project>

@@ -5,7 +5,7 @@
 
 <br/>
 
-[![Licence](https://flat.badgen.net/github/license/ExcellenceDevelopment/Excellence.Pipelines?color=4db2ff&cache=300)](https://github.com/ExcellenceDevelopment/Excellence.Pipelines/blob/main/LICENSE)
+[![Licence](https://flat.badgen.net/github/license/ExcellenceDevelopment/Excellence.Pipelines?label=Licence&color=4db2ff&cache=300)](https://github.com/ExcellenceDevelopment/Excellence.Pipelines/blob/main/LICENSE)
 
 <br/>
 

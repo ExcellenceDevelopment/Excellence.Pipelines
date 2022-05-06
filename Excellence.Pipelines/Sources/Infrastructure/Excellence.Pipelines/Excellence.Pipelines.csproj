@@ -5,10 +5,11 @@
         <LangVersion>default</LangVersion>
         <Nullable>enable</Nullable>
 
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
         <IsPackable>true</IsPackable>
         <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
         <PackageId>Excellence.Pipelines</PackageId>
-        <PackageVersion>1.0.0.0</PackageVersion>
+        <PackageVersion>1.0.0</PackageVersion>
         <Title>Excellence.Pipelines</Title>
         <Authors>Excellence Development;Roman Doskoch</Authors>
         <Description>Default implementation of Pipelines.</Description>

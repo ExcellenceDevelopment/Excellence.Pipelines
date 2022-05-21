@@ -1,22 +1,14 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{E80B8B11-1C7A-436F-976C-4DE6DA0DC86B}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{32CE3BD4-57EC-4C03-BF5F-D91A17BB5F43}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sources", "Sources", "{D335BAB0-1B4D-4E04-A9D2-EBF20A951117}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{C2808C10-1A3E-4EB2-9B83-607EEA976BE2}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{71887612-5D1B-4A4B-8CB0-8CC41DD35D68}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Excellence.Pipelines.Core", "Sources\Excellence.Pipelines.Core\Excellence.Pipelines.Core.csproj", "{E3EDFF1C-4EDD-4584-B175-2708235A5902}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{8DEE0AEB-274F-4ECB-9564-622B11F9C49F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Excellence.Pipelines", "Sources\Excellence.Pipelines\Excellence.Pipelines.csproj", "{F63E2253-2786-40C8-9602-6F8D59288307}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Excellence.Pipelines.Core", "Sources\Core\Excellence.Pipelines.Core\Excellence.Pipelines.Core.csproj", "{E3EDFF1C-4EDD-4584-B175-2708235A5902}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Excellence.Pipelines", "Sources\Infrastructure\Excellence.Pipelines\Excellence.Pipelines.csproj", "{F63E2253-2786-40C8-9602-6F8D59288307}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Excellence.Pipelines.Tests", "Tests\Infrastructure\Excellence.Pipelines.Tests\Excellence.Pipelines.Tests.csproj", "{B997E7B8-CC36-474F-A5C6-1B4B24C379BF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Excellence.Pipelines.Tests", "Tests\Excellence.Pipelines.Tests\Excellence.Pipelines.Tests.csproj", "{B997E7B8-CC36-474F-A5C6-1B4B24C379BF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{B335A35C-27CA-410A-A22F-094F740F1E36}"
 EndProject
@@ -46,72 +38,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{1EFC9A72-1
 		Scripts\Docs\Docs Config Template.json = Scripts\Docs\Docs Config Template.json
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.0.0", "1.0.0", "{09AA4F3C-C05C-45EE-943B-FF419E4DE898}"
-	ProjectSection(SolutionItems) = preProject
-		Docs\1.0.0\IAsyncPipeline.TParam.TResult..md = Docs\1.0.0\IAsyncPipeline.TParam.TResult..md
-		Docs\1.0.0\IAsyncPipelineBuilder.TParam.TResult..md = Docs\1.0.0\IAsyncPipelineBuilder.TParam.TResult..md
-		Docs\1.0.0\IAsyncPipelineBuilderBranchWhen.TParam.TResult.TPipelineBuilder.TPipeline..md = Docs\1.0.0\IAsyncPipelineBuilderBranchWhen.TParam.TResult.TPipelineBuilder.TPipeline..md
-		Docs\1.0.0\IAsyncPipelineBuilderBranchWhenConditionInterface.TParam.TResult.TPipelineBuilder.TPipeline..md = Docs\1.0.0\IAsyncPipelineBuilderBranchWhenConditionInterface.TParam.TResult.TPipelineBuilder.TPipeline..md
-		Docs\1.0.0\IAsyncPipelineBuilderBranchWhenConditionInterfaceFactory.TParam.TResult.TPipelineBuilder.TPipeline..md = Docs\1.0.0\IAsyncPipelineBuilderBranchWhenConditionInterfaceFactory.TParam.TResult.TPipelineBuilder.TPipeline..md
-		Docs\1.0.0\IAsyncPipelineBuilderBranchWhenConditionInterfaceFactoryWithServiceProvider.TParam.TResult.TPipelineBuilder.TPipeline..md = Docs\1.0.0\IAsyncPipelineBuilderBranchWhenConditionInterfaceFactoryWithServiceProvider.TParam.TResult.TPipelineBuilder.TPipeline..md
-		Docs\1.0.0\IAsyncPipelineBuilderBranchWhenConditionInterfaceServiceProvider.TParam.TResult.TPipelineBuilder.TPipeline..md = Docs\1.0.0\IAsyncPipelineBuilderBranchWhenConditionInterfaceServiceProvider.TParam.TResult.TPipelineBuilder.TPipeline..md
-		Docs\1.0.0\IAsyncPipelineBuilderBranchWhenConditionPredicate.TParam.TResult.TPipelineBuilder.TPipeline..md = Docs\1.0.0\IAsyncPipelineBuilderBranchWhenConditionPredicate.TParam.TResult.TPipelineBuilder.TPipeline..md
-		Docs\1.0.0\IAsyncPipelineBuilderBranchWhenConditionPredicateFactory.TParam.TResult.TPipelineBuilder.TPipeline..md = Docs\1.0.0\IAsyncPipelineBuilderBranchWhenConditionPredicateFactory.TParam.TResult.TPipelineBuilder.TPipeline..md
-		Docs\1.0.0\IAsyncPipelineBuilderBranchWhenConditionPredicateFactoryWithServiceProvider.TParam.TResult.TPipelineBuilder.TPipeline..md = Docs\1.0.0\IAsyncPipelineBuilderBranchWhenConditionPredicateFactoryWithServiceProvider.TParam.TResult.TPipelineBuilder.TPipeline..md
-		Docs\1.0.0\IAsyncPipelineBuilderBranchWhenConditionPredicateServiceProvider.TParam.TResult.TPipelineBuilder.TPipeline..md = Docs\1.0.0\IAsyncPipelineBuilderBranchWhenConditionPredicateServiceProvider.TParam.TResult.TPipelineBuilder.TPipeline..md
-		Docs\1.0.0\IAsyncPipelineBuilderComplete.TParam.TResult.TPipelineBuilder.TPipeline..md = Docs\1.0.0\IAsyncPipelineBuilderComplete.TParam.TResult.TPipelineBuilder.TPipeline..md
-		Docs\1.0.0\IAsyncPipelineBuilderFactory.md = Docs\1.0.0\IAsyncPipelineBuilderFactory.md
-		Docs\1.0.0\IAsyncPipelineBuilderStepInterface.TParam.TResult.TPipelineBuilder.TPipeline..md = Docs\1.0.0\IAsyncPipelineBuilderStepInterface.TParam.TResult.TPipelineBuilder.TPipeline..md
-		Docs\1.0.0\IAsyncPipelineBuilderStepInterfaceFactory.TParam.TResult.TPipelineBuilder.TPipeline..md = Docs\1.0.0\IAsyncPipelineBuilderStepInterfaceFactory.TParam.TResult.TPipelineBuilder.TPipeline..md
-		Docs\1.0.0\IAsyncPipelineBuilderStepInterfaceFactoryWithServiceProvider.TParam.TResult.TPipelineBuilder.TPipeline..md = Docs\1.0.0\IAsyncPipelineBuilderStepInterfaceFactoryWithServiceProvider.TParam.TResult.TPipelineBuilder.TPipeline..md
-		Docs\1.0.0\IAsyncPipelineBuilderStepInterfaceServiceProvider.TParam.TResult.TPipelineBuilder.TPipeline..md = Docs\1.0.0\IAsyncPipelineBuilderStepInterfaceServiceProvider.TParam.TResult.TPipelineBuilder.TPipeline..md
-		Docs\1.0.0\IAsyncPipelineBuilderUseWhen.TParam.TResult.TPipelineBuilder.TPipeline..md = Docs\1.0.0\IAsyncPipelineBuilderUseWhen.TParam.TResult.TPipelineBuilder.TPipeline..md
-		Docs\1.0.0\IAsyncPipelineBuilderUseWhenConditionInterface.TParam.TResult.TPipelineBuilder.TPipeline..md = Docs\1.0.0\IAsyncPipelineBuilderUseWhenConditionInterface.TParam.TResult.TPipelineBuilder.TPipeline..md
-		Docs\1.0.0\IAsyncPipelineBuilderUseWhenConditionInterfaceFactory.TParam.TResult.TPipelineBuilder.TPipeline..md = Docs\1.0.0\IAsyncPipelineBuilderUseWhenConditionInterfaceFactory.TParam.TResult.TPipelineBuilder.TPipeline..md
-		Docs\1.0.0\IAsyncPipelineBuilderUseWhenConditionInterfaceFactoryWithServiceProvider.TParam.TResult.TPipelineBuilder.TPipeline..md = Docs\1.0.0\IAsyncPipelineBuilderUseWhenConditionInterfaceFactoryWithServiceProvider.TParam.TResult.TPipelineBuilder.TPipeline..md
-		Docs\1.0.0\IAsyncPipelineBuilderUseWhenConditionInterfaceServiceProvider.TParam.TResult.TPipelineBuilder.TPipeline..md = Docs\1.0.0\IAsyncPipelineBuilderUseWhenConditionInterfaceServiceProvider.TParam.TResult.TPipelineBuilder.TPipeline..md
-		Docs\1.0.0\IAsyncPipelineBuilderUseWhenConditionPredicate.TParam.TResult.TPipelineBuilder.TPipeline..md = Docs\1.0.0\IAsyncPipelineBuilderUseWhenConditionPredicate.TParam.TResult.TPipelineBuilder.TPipeline..md
-		Docs\1.0.0\IAsyncPipelineBuilderUseWhenConditionPredicateFactory.TParam.TResult.TPipelineBuilder.TPipeline..md = Docs\1.0.0\IAsyncPipelineBuilderUseWhenConditionPredicateFactory.TParam.TResult.TPipelineBuilder.TPipeline..md
-		Docs\1.0.0\IAsyncPipelineBuilderUseWhenConditionPredicateFactoryWithServiceProvider.TParam.TResult.TPipelineBuilder.TPipeline..md = Docs\1.0.0\IAsyncPipelineBuilderUseWhenConditionPredicateFactoryWithServiceProvider.TParam.TResult.TPipelineBuilder.TPipeline..md
-		Docs\1.0.0\IAsyncPipelineBuilderUseWhenConditionPredicateServiceProvider.TParam.TResult.TPipelineBuilder.TPipeline..md = Docs\1.0.0\IAsyncPipelineBuilderUseWhenConditionPredicateServiceProvider.TParam.TResult.TPipelineBuilder.TPipeline..md
-		Docs\1.0.0\IAsyncPipelineCondition.TParam..md = Docs\1.0.0\IAsyncPipelineCondition.TParam..md
-		Docs\1.0.0\IAsyncPipelineStep.TParam.TResult..md = Docs\1.0.0\IAsyncPipelineStep.TParam.TResult..md
-		Docs\1.0.0\IPipeline.TParam.TResult..md = Docs\1.0.0\IPipeline.TParam.TResult..md
-		Docs\1.0.0\IPipelineBuilder.TParam.TResult..md = Docs\1.0.0\IPipelineBuilder.TParam.TResult..md
-		Docs\1.0.0\IPipelineBuilderBranchWhen.TParam.TResult.TPipelineBuilder.TPipeline..md = Docs\1.0.0\IPipelineBuilderBranchWhen.TParam.TResult.TPipelineBuilder.TPipeline..md
-		Docs\1.0.0\IPipelineBuilderBranchWhenConditionInterface.TParam.TResult.TPipelineBuilder.TPipeline..md = Docs\1.0.0\IPipelineBuilderBranchWhenConditionInterface.TParam.TResult.TPipelineBuilder.TPipeline..md
-		Docs\1.0.0\IPipelineBuilderBranchWhenConditionInterfaceFactory.TParam.TResult.TPipelineBuilder.TPipeline..md = Docs\1.0.0\IPipelineBuilderBranchWhenConditionInterfaceFactory.TParam.TResult.TPipelineBuilder.TPipeline..md
-		Docs\1.0.0\IPipelineBuilderBranchWhenConditionInterfaceFactoryWithServiceProvider.TParam.TResult.TPipelineBuilder.TPipeline..md = Docs\1.0.0\IPipelineBuilderBranchWhenConditionInterfaceFactoryWithServiceProvider.TParam.TResult.TPipelineBuilder.TPipeline..md
-		Docs\1.0.0\IPipelineBuilderBranchWhenConditionInterfaceServiceProvider.TParam.TResult.TPipelineBuilder.TPipeline..md = Docs\1.0.0\IPipelineBuilderBranchWhenConditionInterfaceServiceProvider.TParam.TResult.TPipelineBuilder.TPipeline..md
-		Docs\1.0.0\IPipelineBuilderBranchWhenConditionPredicate.TParam.TResult.TPipelineBuilder.TPipeline..md = Docs\1.0.0\IPipelineBuilderBranchWhenConditionPredicate.TParam.TResult.TPipelineBuilder.TPipeline..md
-		Docs\1.0.0\IPipelineBuilderBranchWhenConditionPredicateFactory.TParam.TResult.TPipelineBuilder.TPipeline..md = Docs\1.0.0\IPipelineBuilderBranchWhenConditionPredicateFactory.TParam.TResult.TPipelineBuilder.TPipeline..md
-		Docs\1.0.0\IPipelineBuilderBranchWhenConditionPredicateFactoryWithServiceProvider.TParam.TResult.TPipelineBuilder.TPipeline..md = Docs\1.0.0\IPipelineBuilderBranchWhenConditionPredicateFactoryWithServiceProvider.TParam.TResult.TPipelineBuilder.TPipeline..md
-		Docs\1.0.0\IPipelineBuilderBranchWhenConditionPredicateServiceProvider.TParam.TResult.TPipelineBuilder.TPipeline..md = Docs\1.0.0\IPipelineBuilderBranchWhenConditionPredicateServiceProvider.TParam.TResult.TPipelineBuilder.TPipeline..md
-		Docs\1.0.0\IPipelineBuilderComplete.TParam.TResult.TPipelineBuilder.TPipeline..md = Docs\1.0.0\IPipelineBuilderComplete.TParam.TResult.TPipelineBuilder.TPipeline..md
-		Docs\1.0.0\IPipelineBuilderCore.TPipelineDelegate.TPipelineBuilder.TPipeline..md = Docs\1.0.0\IPipelineBuilderCore.TPipelineDelegate.TPipelineBuilder.TPipeline..md
-		Docs\1.0.0\IPipelineBuilderCreate.TPipelineDelegate.TPipelineBuilder.TPipeline..md = Docs\1.0.0\IPipelineBuilderCreate.TPipelineDelegate.TPipelineBuilder.TPipeline..md
-		Docs\1.0.0\IPipelineBuilderFactory.md = Docs\1.0.0\IPipelineBuilderFactory.md
-		Docs\1.0.0\IPipelineBuilderFromDelegate.TPipelineDelegate.TPipelineBuilder.TPipeline..md = Docs\1.0.0\IPipelineBuilderFromDelegate.TPipelineDelegate.TPipelineBuilder.TPipeline..md
-		Docs\1.0.0\IPipelineBuilderServiceProvider.TPipelineDelegate.TPipelineBuilder.TPipeline..md = Docs\1.0.0\IPipelineBuilderServiceProvider.TPipelineDelegate.TPipelineBuilder.TPipeline..md
-		Docs\1.0.0\IPipelineBuilderStepInterface.TParam.TResult.TPipelineBuilder.TPipeline..md = Docs\1.0.0\IPipelineBuilderStepInterface.TParam.TResult.TPipelineBuilder.TPipeline..md
-		Docs\1.0.0\IPipelineBuilderStepInterfaceFactory.TParam.TResult.TPipelineBuilder.TPipeline..md = Docs\1.0.0\IPipelineBuilderStepInterfaceFactory.TParam.TResult.TPipelineBuilder.TPipeline..md
-		Docs\1.0.0\IPipelineBuilderStepInterfaceFactoryWithServiceProvider.TParam.TResult.TPipelineBuilder.TPipeline..md = Docs\1.0.0\IPipelineBuilderStepInterfaceFactoryWithServiceProvider.TParam.TResult.TPipelineBuilder.TPipeline..md
-		Docs\1.0.0\IPipelineBuilderStepInterfaceServiceProvider.TParam.TResult.TPipelineBuilder.TPipeline..md = Docs\1.0.0\IPipelineBuilderStepInterfaceServiceProvider.TParam.TResult.TPipelineBuilder.TPipeline..md
-		Docs\1.0.0\IPipelineBuilderUseWhen.TParam.TResult.TPipelineBuilder.TPipeline..md = Docs\1.0.0\IPipelineBuilderUseWhen.TParam.TResult.TPipelineBuilder.TPipeline..md
-		Docs\1.0.0\IPipelineBuilderUseWhenConditionInterface.TParam.TResult.TPipelineBuilder.TPipeline..md = Docs\1.0.0\IPipelineBuilderUseWhenConditionInterface.TParam.TResult.TPipelineBuilder.TPipeline..md
-		Docs\1.0.0\IPipelineBuilderUseWhenConditionInterfaceFactory.TParam.TResult.TPipelineBuilder.TPipeline..md = Docs\1.0.0\IPipelineBuilderUseWhenConditionInterfaceFactory.TParam.TResult.TPipelineBuilder.TPipeline..md
-		Docs\1.0.0\IPipelineBuilderUseWhenConditionInterfaceFactoryWithServiceProvider.TParam.TResult.TPipelineBuilder.TPipeline..md = Docs\1.0.0\IPipelineBuilderUseWhenConditionInterfaceFactoryWithServiceProvider.TParam.TResult.TPipelineBuilder.TPipeline..md
-		Docs\1.0.0\IPipelineBuilderUseWhenConditionInterfaceServiceProvider.TParam.TResult.TPipelineBuilder.TPipeline..md = Docs\1.0.0\IPipelineBuilderUseWhenConditionInterfaceServiceProvider.TParam.TResult.TPipelineBuilder.TPipeline..md
-		Docs\1.0.0\IPipelineBuilderUseWhenConditionPredicate.TParam.TResult.TPipelineBuilder.TPipeline..md = Docs\1.0.0\IPipelineBuilderUseWhenConditionPredicate.TParam.TResult.TPipelineBuilder.TPipeline..md
-		Docs\1.0.0\IPipelineBuilderUseWhenConditionPredicateFactory.TParam.TResult.TPipelineBuilder.TPipeline..md = Docs\1.0.0\IPipelineBuilderUseWhenConditionPredicateFactory.TParam.TResult.TPipelineBuilder.TPipeline..md
-		Docs\1.0.0\IPipelineBuilderUseWhenConditionPredicateFactoryWithServiceProvider.TParam.TResult.TPipelineBuilder.TPipeline..md = Docs\1.0.0\IPipelineBuilderUseWhenConditionPredicateFactoryWithServiceProvider.TParam.TResult.TPipelineBuilder.TPipeline..md
-		Docs\1.0.0\IPipelineBuilderUseWhenConditionPredicateServiceProvider.TParam.TResult.TPipelineBuilder.TPipeline..md = Docs\1.0.0\IPipelineBuilderUseWhenConditionPredicateServiceProvider.TParam.TResult.TPipelineBuilder.TPipeline..md
-		Docs\1.0.0\IPipelineCondition.TParam..md = Docs\1.0.0\IPipelineCondition.TParam..md
-		Docs\1.0.0\IPipelineStep.TParam.TResult..md = Docs\1.0.0\IPipelineStep.TParam.TResult..md
-		Docs\1.0.0\Pipelines.md = Docs\1.0.0\Pipelines.md
-		Docs\1.0.0\Usage.md = Docs\1.0.0\Usage.md
-	EndProjectSection
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tools", "Tools", "{D9247D5D-96A8-43C2-B3F2-63EA5A76DEF9}"
 	ProjectSection(SolutionItems) = preProject
 		Docs\Tools\Docs Generation Tools.md = Docs\Tools\Docs Generation Tools.md
@@ -121,6 +47,12 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ContinuousIntegration", "ContinuousIntegration", "{B33E2EA8-5379-4977-88FD-91D6A378712D}"
 	ProjectSection(SolutionItems) = preProject
 		Scripts\ContinuousIntegration\Run.ps1 = Scripts\ContinuousIntegration\Run.ps1
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Nugets", "Nugets", "{DE44E916-1C24-42C3-9EBC-EAE2EE96BCE3}"
+	ProjectSection(SolutionItems) = preProject
+		Nugets\Icon.png = Nugets\Icon.png
+		Nugets\Readme.md = Nugets\Readme.md
 	EndProjectSection
 EndProject
 Global
@@ -143,19 +75,14 @@ Global
 		{B997E7B8-CC36-474F-A5C6-1B4B24C379BF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{E80B8B11-1C7A-436F-976C-4DE6DA0DC86B} = {D335BAB0-1B4D-4E04-A9D2-EBF20A951117}
-		{32CE3BD4-57EC-4C03-BF5F-D91A17BB5F43} = {D335BAB0-1B4D-4E04-A9D2-EBF20A951117}
-		{71887612-5D1B-4A4B-8CB0-8CC41DD35D68} = {C2808C10-1A3E-4EB2-9B83-607EEA976BE2}
-		{8DEE0AEB-274F-4ECB-9564-622B11F9C49F} = {C2808C10-1A3E-4EB2-9B83-607EEA976BE2}
-		{E3EDFF1C-4EDD-4584-B175-2708235A5902} = {E80B8B11-1C7A-436F-976C-4DE6DA0DC86B}
-		{F63E2253-2786-40C8-9602-6F8D59288307} = {32CE3BD4-57EC-4C03-BF5F-D91A17BB5F43}
-		{B997E7B8-CC36-474F-A5C6-1B4B24C379BF} = {8DEE0AEB-274F-4ECB-9564-622B11F9C49F}
 		{C3E0D2C8-870D-4E44-A27E-767AD45E971B} = {E7EF10D8-136C-4517-8E61-7B321A66A57B}
 		{CBA00985-3768-46B2-B42B-098A6C058650} = {E7EF10D8-136C-4517-8E61-7B321A66A57B}
 		{5D4E40B8-1720-481B-A4C9-6079034ADED7} = {E7EF10D8-136C-4517-8E61-7B321A66A57B}
 		{1EFC9A72-1EB5-406F-8AFC-1E838E70CFC9} = {E7EF10D8-136C-4517-8E61-7B321A66A57B}
-		{09AA4F3C-C05C-45EE-943B-FF419E4DE898} = {B335A35C-27CA-410A-A22F-094F740F1E36}
 		{D9247D5D-96A8-43C2-B3F2-63EA5A76DEF9} = {B335A35C-27CA-410A-A22F-094F740F1E36}
 		{B33E2EA8-5379-4977-88FD-91D6A378712D} = {E7EF10D8-136C-4517-8E61-7B321A66A57B}
+		{B997E7B8-CC36-474F-A5C6-1B4B24C379BF} = {C2808C10-1A3E-4EB2-9B83-607EEA976BE2}
+		{F63E2253-2786-40C8-9602-6F8D59288307} = {D335BAB0-1B4D-4E04-A9D2-EBF20A951117}
+		{E3EDFF1C-4EDD-4584-B175-2708235A5902} = {D335BAB0-1B4D-4E04-A9D2-EBF20A951117}
 	EndGlobalSection
 EndGlobal

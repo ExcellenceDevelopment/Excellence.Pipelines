@@ -21,8 +21,6 @@ Packages for building pipelines.
 
 A pipeline is the set of ordered steps executed one after another.
 
-The last step of a pipeline is a pipeline target.
-
 <br/>
 
 ### **Pipelines are very similar to middlewares in .NET.**
@@ -31,18 +29,18 @@ The last step of a pipeline is a pipeline target.
 
 ## Nuget packages
 
- - [Excellence.Pipelines.Core](https://github.com/ExcellenceDevelopment/Excellence.Pipelines/tree/main/Excellence.Pipelines/Sources/Core/Excellence.Pipelines.Core) - interfaces for Pipelines 
- - [Excellence.Pipelines](https://github.com/ExcellenceDevelopment/Excellence.Pipelines/tree/main/Excellence.Pipelines/Sources/Infrastructure/Excellence.Pipelines) - default implementation of Pipelines 
+ - [Excellence.Pipelines.Core](./Excellence.Pipelines/Sources/Excellence.Pipelines.Core) - interfaces for Pipelines 
+ - [Excellence.Pipelines](./Excellence.Pipelines/Sources/Excellence.Pipelines) - default implementation of Pipelines 
 
 
 <br />
 
 ## References
 
-  - [Documentation & Usage](https://github.com/ExcellenceDevelopment/Excellence.Pipelines/tree/main/Excellence.Pipelines/Docs)
-  - [Tools](https://github.com/ExcellenceDevelopment/Excellence.Pipelines/tree/main/Excellence.Pipelines/Docs/Tools)
-  - [Scripts](https://github.com/ExcellenceDevelopment/Excellence.Pipelines/tree/main/Excellence.Pipelines/Scripts)
+  - [Docs](./Excellence.Pipelines/Docs)
+  - [Scripts](./Excellence.Pipelines/Scripts)
+  - [Usage](./Excellence.Pipelines/Nugets/Readme.md)
 
 <br/>
 
-**Note**: Documentation and usage examples for every version can be found in the `Docs/x.x.x` directory where `x.x.x` is the package version.
+**Note**: Documentation for every version can be found in the `Docs/x.x.x` directory where `x.x.x` is the package version.

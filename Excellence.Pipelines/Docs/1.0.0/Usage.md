@@ -32,7 +32,7 @@ Pipelines are created using pipeline builders.
 
 `IAsyncPipelineBuilder<TParam, TResult>` is used to create pipelines that accept arguments (`TParam`, `CancellationToken`) and return a result (`Task<TResult>`).
 
-All examples below use`IAsyncPipelineBuilder<TParam, TResult>`.
+All examples below use `IAsyncPipelineBuilder<TParam, TResult>`.
 
 <br />
 

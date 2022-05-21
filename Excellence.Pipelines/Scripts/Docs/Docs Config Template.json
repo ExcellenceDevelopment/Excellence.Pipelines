@@ -1,8 +1,8 @@
 {
-    "AssemblyFilePath": "{{{solutionRoot}}}\\Sources\\Core\\Excellence.Pipelines.Core\\bin\\Release\\{{{framework}}}\\Excellence.Pipelines.Core.dll",
+    "AssemblyFilePath": "{{{solutionRoot}}}\\Sources\\Excellence.Pipelines.Core\\bin\\Release\\{{{framework}}}\\Excellence.Pipelines.Core.dll",
     "AssemblyPageName": "Excellence.Pipelines",
     "GeneratedPages": "Types",
-    "GeneratedAccessModifiers": "Private,PrivateProtected,Protected,Internal,ProtectedInternal,Public",
+    "GeneratedAccessModifiers": "Public",
     "FileNameFactory": "Name",
     "Markdown.InvalidCharReplacement": "_",
     "OutputDirectoryPath": "{{{solutionRoot}}}\\Local\\Docs\\{{{framework}}}"

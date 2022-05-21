@@ -1,0 +1,811 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Excellence.Pipelines.Core</name>
+    </assembly>
+    <members>
+        <member name="T:Excellence.Pipelines.Core.PipelineBuilderFactories.IAsyncPipelineBuilderFactory">
+            <summary>
+            The pipeline builder factory.
+            </summary>
+        </member>
+        <member name="M:Excellence.Pipelines.Core.PipelineBuilderFactories.IAsyncPipelineBuilderFactory.CreateAsyncPipelineBuilder``2">
+            <summary>
+            Creates the new async pipeline builder instance.
+            </summary>
+            <typeparam name="TParam">The parameter type.</typeparam>
+            <typeparam name="TResult">The result type.</typeparam>
+            <returns>The pipeline builder.</returns>
+        </member>
+        <member name="T:Excellence.Pipelines.Core.PipelineBuilderFactories.IPipelineBuilderFactory">
+            <summary>
+            The pipeline builder factory.
+            </summary>
+        </member>
+        <member name="M:Excellence.Pipelines.Core.PipelineBuilderFactories.IPipelineBuilderFactory.CreatePipelineBuilder``2">
+            <summary>
+            Creates the new pipeline builder instance.
+            </summary>
+            <typeparam name="TParam">The parameter type.</typeparam>
+            <typeparam name="TResult">The result type.</typeparam>
+            <returns>The pipeline builder.</returns>
+        </member>
+        <member name="T:Excellence.Pipelines.Core.PipelineBuilders.Async.IAsyncPipelineBuilderBranchWhen`3">
+            <summary>
+            The pipeline builder with the possibility to execute the pipeline steps conditionally.
+            </summary>
+            <typeparam name="TParam">The parameter type.</typeparam>
+            <typeparam name="TResult">The result type.</typeparam>
+            <typeparam name="TPipelineBuilder">The pipeline builder type.</typeparam>
+        </member>
+        <member name="T:Excellence.Pipelines.Core.PipelineBuilders.Async.IAsyncPipelineBuilderBranchWhenConditionInterfaceFactory`3">
+            <summary>
+            The pipeline builder with the possibility to execute the pipeline steps conditionally.
+            </summary>
+            <typeparam name="TParam">The parameter type.</typeparam>
+            <typeparam name="TResult">The result type.</typeparam>
+            <typeparam name="TPipelineBuilder">The pipeline builder type.</typeparam>
+        </member>
+        <member name="M:Excellence.Pipelines.Core.PipelineBuilders.Async.IAsyncPipelineBuilderBranchWhenConditionInterfaceFactory`3.BranchWhen``1(System.Func{``0},System.Action{`2},System.Func{`2})">
+            <summary>
+            Adds the pipeline branch with own configuration that is executed when the condition is met.
+            When the condition is met the branch is executed and the main pipeline is NOT executed.
+            When the condition is NOT met the branch is skipped and the main pipeline is executed.
+            </summary>
+            <param name="pipelineConditionFactory">The pipeline builder condition factory.</param>
+            <param name="branchPipelineBuilderConfiguration">The branch pipeline builder configuration.</param>
+            <param name="branchPipelineBuilderFactory">The pipeline builder factory.</param>
+            <returns>The current pipeline builder instance.</returns>
+        </member>
+        <member name="T:Excellence.Pipelines.Core.PipelineBuilders.Async.IAsyncPipelineBuilderBranchWhenConditionInterfaceFactoryWithServiceProvider`3">
+            <summary>
+            The pipeline builder with the possibility to execute the pipeline steps conditionally.
+            </summary>
+            <typeparam name="TParam">The parameter type.</typeparam>
+            <typeparam name="TResult">The result type.</typeparam>
+            <typeparam name="TPipelineBuilder">The pipeline builder type.</typeparam>
+        </member>
+        <member name="M:Excellence.Pipelines.Core.PipelineBuilders.Async.IAsyncPipelineBuilderBranchWhenConditionInterfaceFactoryWithServiceProvider`3.BranchWhen``1(System.Func{System.IServiceProvider,``0},System.Action{`2},System.Func{System.IServiceProvider,`2})">
+            <summary>
+            Adds the pipeline branch with own configuration that is executed when the condition is met.
+            When the condition is met the branch is executed and the main pipeline is NOT executed.
+            When the condition is NOT met the branch is skipped and the main pipeline is executed.
+            </summary>
+            <param name="pipelineConditionFactory">The pipeline builder condition factory.</param>
+            <param name="branchPipelineBuilderConfiguration">The branch pipeline builder configuration.</param>
+            <param name="branchPipelineBuilderFactory">The pipeline builder factory.</param>
+            <returns>The current pipeline builder instance.</returns>
+        </member>
+        <member name="T:Excellence.Pipelines.Core.PipelineBuilders.Async.IAsyncPipelineBuilderBranchWhenConditionInterfaceServiceProvider`3">
+            <summary>
+            The pipeline builder with the possibility to execute the pipeline steps conditionally.
+            </summary>
+            <typeparam name="TParam">The parameter type.</typeparam>
+            <typeparam name="TResult">The result type.</typeparam>
+            <typeparam name="TPipelineBuilder">The pipeline builder type.</typeparam>
+        </member>
+        <member name="M:Excellence.Pipelines.Core.PipelineBuilders.Async.IAsyncPipelineBuilderBranchWhenConditionInterfaceServiceProvider`3.BranchWhen``1(System.Action{`2})">
+            <summary>
+            Adds the pipeline branch with own configuration that is executed when the condition is met.
+            When the condition is met the branch is executed and the main pipeline is NOT executed.
+            When the condition is NOT met the branch is skipped and the main pipeline is executed.
+            </summary>
+            <param name="branchPipelineBuilderConfiguration">The branch pipeline builder configuration.</param>
+            <returns>The current pipeline builder instance.</returns>
+        </member>
+        <member name="T:Excellence.Pipelines.Core.PipelineBuilders.Async.IAsyncPipelineBuilderBranchWhenConditionInterface`3">
+            <summary>
+            The pipeline builder with the possibility to execute the pipeline steps conditionally.
+            </summary>
+            <typeparam name="TParam">The parameter type.</typeparam>
+            <typeparam name="TResult">The result type.</typeparam>
+            <typeparam name="TPipelineBuilder">The pipeline builder type.</typeparam>
+        </member>
+        <member name="T:Excellence.Pipelines.Core.PipelineBuilders.Async.IAsyncPipelineBuilderBranchWhenConditionPredicateFactory`3">
+            <summary>
+            The pipeline builder with the possibility to execute the pipeline steps conditionally.
+            </summary>
+            <typeparam name="TParam">The parameter type.</typeparam>
+            <typeparam name="TResult">The result type.</typeparam>
+            <typeparam name="TPipelineBuilder">The pipeline builder type.</typeparam>
+        </member>
+        <member name="M:Excellence.Pipelines.Core.PipelineBuilders.Async.IAsyncPipelineBuilderBranchWhenConditionPredicateFactory`3.BranchWhen(System.Func{`0,System.Threading.Tasks.Task{System.Boolean}},System.Action{`2},System.Func{`2})">
+            <summary>
+            Adds the pipeline branch with own configuration that is executed when the condition is met.
+            When the condition is met the branch is executed and the main pipeline is NOT executed.
+            When the condition is NOT met the branch is skipped and the main pipeline is executed.
+            </summary>
+            <param name="predicate">The predicate.</param>
+            <param name="branchPipelineBuilderConfiguration">The branch pipeline builder configuration.</param>
+            <param name="branchPipelineBuilderFactory">The pipeline builder factory.</param>
+            <returns>The current pipeline builder instance.</returns>
+        </member>
+        <member name="T:Excellence.Pipelines.Core.PipelineBuilders.Async.IAsyncPipelineBuilderBranchWhenConditionPredicateFactoryWithServiceProvider`3">
+            <summary>
+            The pipeline builder with the possibility to execute the pipeline steps conditionally.
+            </summary>
+            <typeparam name="TParam">The parameter type.</typeparam>
+            <typeparam name="TResult">The result type.</typeparam>
+            <typeparam name="TPipelineBuilder">The pipeline builder type.</typeparam>
+        </member>
+        <member name="M:Excellence.Pipelines.Core.PipelineBuilders.Async.IAsyncPipelineBuilderBranchWhenConditionPredicateFactoryWithServiceProvider`3.BranchWhen(System.Func{`0,System.Threading.Tasks.Task{System.Boolean}},System.Action{`2},System.Func{System.IServiceProvider,`2})">
+            <summary>
+            Adds the pipeline branch with own configuration that is executed when the condition is met.
+            When the condition is met the branch is executed and the main pipeline is NOT executed.
+            When the condition is NOT met the branch is skipped and the main pipeline is executed.
+            </summary>
+            <param name="predicate">The predicate.</param>
+            <param name="branchPipelineBuilderConfiguration">The branch pipeline builder configuration.</param>
+            <param name="branchPipelineBuilderFactory">The pipeline builder factory.</param>
+            <returns>The current pipeline builder instance.</returns>
+        </member>
+        <member name="T:Excellence.Pipelines.Core.PipelineBuilders.Async.IAsyncPipelineBuilderBranchWhenConditionPredicateServiceProvider`3">
+            <summary>
+            The pipeline builder with the possibility to execute the pipeline steps conditionally.
+            </summary>
+            <typeparam name="TParam">The parameter type.</typeparam>
+            <typeparam name="TResult">The result type.</typeparam>
+            <typeparam name="TPipelineBuilder">The pipeline builder type.</typeparam>
+        </member>
+        <member name="M:Excellence.Pipelines.Core.PipelineBuilders.Async.IAsyncPipelineBuilderBranchWhenConditionPredicateServiceProvider`3.BranchWhen(System.Func{`0,System.Threading.Tasks.Task{System.Boolean}},System.Action{`2})">
+            <summary>
+            Adds the pipeline branch with own configuration that is executed when the condition is met.
+            When the condition is met the branch is executed and the main pipeline is NOT executed.
+            When the condition is NOT met the branch is skipped and the main pipeline is executed.
+            </summary>
+            <param name="predicate">The predicate.</param>
+            <param name="branchPipelineBuilderConfiguration">The branch pipeline builder configuration.</param>
+            <returns>The current pipeline builder instance.</returns>
+        </member>
+        <member name="T:Excellence.Pipelines.Core.PipelineBuilders.Async.IAsyncPipelineBuilderBranchWhenConditionPredicate`3">
+            <summary>
+            The pipeline builder with the possibility to execute the pipeline steps conditionally.
+            </summary>
+            <typeparam name="TParam">The parameter type.</typeparam>
+            <typeparam name="TResult">The result type.</typeparam>
+            <typeparam name="TPipelineBuilder">The pipeline builder type.</typeparam>
+        </member>
+        <member name="T:Excellence.Pipelines.Core.PipelineBuilders.Async.IAsyncPipelineBuilderUseWhen`3">
+            <summary>
+            The pipeline builder with the possibility to execute the pipeline steps conditionally.
+            </summary>
+            <typeparam name="TParam">The parameter type.</typeparam>
+            <typeparam name="TResult">The result type.</typeparam>
+            <typeparam name="TPipelineBuilder">The pipeline builder type.</typeparam>
+        </member>
+        <member name="T:Excellence.Pipelines.Core.PipelineBuilders.Async.IAsyncPipelineBuilderUseWhenConditionInterfaceFactory`3">
+            <summary>
+            The pipeline builder with the possibility to execute the pipeline steps conditionally.
+            </summary>
+            <typeparam name="TParam">The parameter type.</typeparam>
+            <typeparam name="TResult">The result type.</typeparam>
+            <typeparam name="TPipelineBuilder">The pipeline builder type.</typeparam>
+        </member>
+        <member name="M:Excellence.Pipelines.Core.PipelineBuilders.Async.IAsyncPipelineBuilderUseWhenConditionInterfaceFactory`3.UseWhen``1(System.Func{``0},System.Action{`2},System.Func{`2})">
+            <summary>
+            Adds the pipeline branch with own configuration that is executed when the condition is met.
+            When the condition is met the branch is executed and then the main pipeline is executed.
+            When the condition is NOT met the branch is skipped and the main pipeline is executed.
+            </summary>
+            <param name="pipelineConditionFactory">The pipeline builder condition factory.</param>
+            <param name="branchPipelineBuilderConfiguration">The branch pipeline builder configuration.</param>
+            <param name="branchPipelineBuilderFactory">The pipeline builder factory.</param>
+            <returns>The current pipeline builder instance.</returns>
+        </member>
+        <member name="T:Excellence.Pipelines.Core.PipelineBuilders.Async.IAsyncPipelineBuilderUseWhenConditionInterfaceFactoryWithServiceProvider`3">
+            <summary>
+            The pipeline builder with the possibility to execute the pipeline steps conditionally.
+            </summary>
+            <typeparam name="TParam">The parameter type.</typeparam>
+            <typeparam name="TResult">The result type.</typeparam>
+            <typeparam name="TPipelineBuilder">The pipeline builder type.</typeparam>
+        </member>
+        <member name="M:Excellence.Pipelines.Core.PipelineBuilders.Async.IAsyncPipelineBuilderUseWhenConditionInterfaceFactoryWithServiceProvider`3.UseWhen``1(System.Func{System.IServiceProvider,``0},System.Action{`2},System.Func{System.IServiceProvider,`2})">
+            <summary>
+            Adds the pipeline branch with own configuration that is executed when the condition is met.
+            When the condition is met the branch is executed and then the main pipeline is executed.
+            When the condition is NOT met the branch is skipped and the main pipeline is executed.
+            </summary>
+            <param name="pipelineConditionFactory">The pipeline builder condition factory.</param>
+            <param name="branchPipelineBuilderConfiguration">The branch pipeline builder configuration.</param>
+            <param name="branchPipelineBuilderFactory">The pipeline builder factory.</param>
+            <returns>The current pipeline builder instance.</returns>
+        </member>
+        <member name="T:Excellence.Pipelines.Core.PipelineBuilders.Async.IAsyncPipelineBuilderUseWhenConditionInterfaceServiceProvider`3">
+            <summary>
+            The pipeline builder with the possibility to execute the pipeline steps conditionally.
+            </summary>
+            <typeparam name="TParam">The parameter type.</typeparam>
+            <typeparam name="TResult">The result type.</typeparam>
+            <typeparam name="TPipelineBuilder">The pipeline builder type.</typeparam>
+        </member>
+        <member name="M:Excellence.Pipelines.Core.PipelineBuilders.Async.IAsyncPipelineBuilderUseWhenConditionInterfaceServiceProvider`3.UseWhen``1(System.Action{`2})">
+            <summary>
+            Adds the pipeline branch with own configuration that is executed when the condition is met.
+            When the condition is met the branch is executed and then the main pipeline is executed.
+            When the condition is NOT met the branch is skipped and the main pipeline is executed.
+            </summary>
+            <param name="branchPipelineBuilderConfiguration">The branch pipeline builder configuration.</param>
+            <returns>The current pipeline builder instance.</returns>
+        </member>
+        <member name="T:Excellence.Pipelines.Core.PipelineBuilders.Async.IAsyncPipelineBuilderUseWhenConditionInterface`3">
+            <summary>
+            The pipeline builder with the possibility to execute the pipeline steps conditionally.
+            </summary>
+            <typeparam name="TParam">The parameter type.</typeparam>
+            <typeparam name="TResult">The result type.</typeparam>
+            <typeparam name="TPipelineBuilder">The pipeline builder type.</typeparam>
+        </member>
+        <member name="T:Excellence.Pipelines.Core.PipelineBuilders.Async.IAsyncPipelineBuilderUseWhenConditionPredicateFactory`3">
+            <summary>
+            The pipeline builder with the possibility to execute the pipeline steps conditionally.
+            </summary>
+            <typeparam name="TParam">The parameter type.</typeparam>
+            <typeparam name="TResult">The result type.</typeparam>
+            <typeparam name="TPipelineBuilder">The pipeline builder type.</typeparam>
+        </member>
+        <member name="M:Excellence.Pipelines.Core.PipelineBuilders.Async.IAsyncPipelineBuilderUseWhenConditionPredicateFactory`3.UseWhen(System.Func{`0,System.Threading.Tasks.Task{System.Boolean}},System.Action{`2},System.Func{`2})">
+            <summary>
+            Adds the pipeline branch with own configuration that is executed when the condition is met.
+            When the condition is met the branch is executed and then the main pipeline is executed.
+            When the condition is NOT met the branch is skipped and the main pipeline is executed.
+            </summary>
+            <param name="predicate">The predicate.</param>
+            <param name="branchPipelineBuilderConfiguration">The branch pipeline builder configuration.</param>
+            <param name="branchPipelineBuilderFactory">The pipeline builder factory.</param>
+            <returns>The current pipeline builder instance.</returns>
+        </member>
+        <member name="T:Excellence.Pipelines.Core.PipelineBuilders.Async.IAsyncPipelineBuilderUseWhenConditionPredicateFactoryWithServiceProvider`3">
+            <summary>
+            The pipeline builder with the possibility to execute the pipeline steps conditionally.
+            </summary>
+            <typeparam name="TParam">The parameter type.</typeparam>
+            <typeparam name="TResult">The result type.</typeparam>
+            <typeparam name="TPipelineBuilder">The pipeline builder type.</typeparam>
+        </member>
+        <member name="M:Excellence.Pipelines.Core.PipelineBuilders.Async.IAsyncPipelineBuilderUseWhenConditionPredicateFactoryWithServiceProvider`3.UseWhen(System.Func{`0,System.Threading.Tasks.Task{System.Boolean}},System.Action{`2},System.Func{System.IServiceProvider,`2})">
+            <summary>
+            Adds the pipeline branch with own configuration that is executed when the condition is met.
+            When the condition is met the branch is executed and then the main pipeline is executed.
+            When the condition is NOT met the branch is skipped and the main pipeline is executed.
+            </summary>
+            <param name="predicate">The predicate.</param>
+            <param name="branchPipelineBuilderConfiguration">The branch pipeline builder configuration.</param>
+            <param name="branchPipelineBuilderFactory">The pipeline builder factory.</param>
+            <returns>The current pipeline builder instance.</returns>
+        </member>
+        <member name="T:Excellence.Pipelines.Core.PipelineBuilders.Async.IAsyncPipelineBuilderUseWhenConditionPredicateServiceProvider`3">
+            <summary>
+            The pipeline builder with the possibility to execute the pipeline steps conditionally.
+            </summary>
+            <typeparam name="TParam">The parameter type.</typeparam>
+            <typeparam name="TResult">The result type.</typeparam>
+            <typeparam name="TPipelineBuilder">The pipeline builder type.</typeparam>
+        </member>
+        <member name="M:Excellence.Pipelines.Core.PipelineBuilders.Async.IAsyncPipelineBuilderUseWhenConditionPredicateServiceProvider`3.UseWhen(System.Func{`0,System.Threading.Tasks.Task{System.Boolean}},System.Action{`2})">
+            <summary>
+            Adds the pipeline branch with own configuration that is executed when the condition is met.
+            When the condition is met the branch is executed and then the main pipeline is executed.
+            When the condition is NOT met the branch is skipped and the main pipeline is executed.
+            </summary>
+            <param name="predicate">The predicate.</param>
+            <param name="branchPipelineBuilderConfiguration">The branch pipeline builder configuration.</param>
+            <returns>The current pipeline builder instance.</returns>
+        </member>
+        <member name="T:Excellence.Pipelines.Core.PipelineBuilders.Async.IAsyncPipelineBuilderUseWhenConditionPredicate`3">
+            <summary>
+            The pipeline builder with the possibility to execute the pipeline steps conditionally.
+            </summary>
+            <typeparam name="TParam">The parameter type.</typeparam>
+            <typeparam name="TResult">The result type.</typeparam>
+            <typeparam name="TPipelineBuilder">The pipeline builder type.</typeparam>
+        </member>
+        <member name="T:Excellence.Pipelines.Core.PipelineBuilders.Async.IAsyncPipelineBuilderComplete`3">
+            <summary>
+            The pipeline builder with all available features
+            </summary>
+            <typeparam name="TParam">The parameter type.</typeparam>
+            <typeparam name="TResult">The result type.</typeparam>
+            <typeparam name="TPipelineBuilder">The pipeline builder type.</typeparam>
+        </member>
+        <member name="T:Excellence.Pipelines.Core.PipelineBuilders.Async.IAsyncPipelineBuilderStepInterfaceFactory`3">
+            <summary>
+            The pipeline builder with the possibility to add a pipeline steps.
+            </summary>
+            <typeparam name="TParam">The parameter type.</typeparam>
+            <typeparam name="TResult">The result type.</typeparam>
+            <typeparam name="TPipelineBuilder">The pipeline builder type.</typeparam>
+        </member>
+        <member name="M:Excellence.Pipelines.Core.PipelineBuilders.Async.IAsyncPipelineBuilderStepInterfaceFactory`3.Use``1(System.Func{``0})">
+            <summary>
+            Add the pipeline step.
+            </summary>
+            <param name="factory">The pipeline step factory.</param>
+            <typeparam name="TPipelineStep">The pipeline step type.</typeparam>
+            <returns>The current pipeline builder instance.</returns>
+        </member>
+        <member name="T:Excellence.Pipelines.Core.PipelineBuilders.Async.IAsyncPipelineBuilderStepInterfaceFactoryWithServiceProvider`3">
+            <summary>
+            The pipeline builder with the possibility to add a pipeline steps.
+            </summary>
+            <typeparam name="TParam">The parameter type.</typeparam>
+            <typeparam name="TResult">The result type.</typeparam>
+            <typeparam name="TPipelineBuilder">The pipeline builder type.</typeparam>
+        </member>
+        <member name="M:Excellence.Pipelines.Core.PipelineBuilders.Async.IAsyncPipelineBuilderStepInterfaceFactoryWithServiceProvider`3.Use``1(System.Func{System.IServiceProvider,``0})">
+            <summary>
+            Add the pipeline step.
+            </summary>
+            <param name="factory">The pipeline step factory.</param>
+            <typeparam name="TPipelineStep">The pipeline step type.</typeparam>
+            <returns>The current pipeline builder instance.</returns>
+        </member>
+        <member name="T:Excellence.Pipelines.Core.PipelineBuilders.Async.IAsyncPipelineBuilderStepInterfaceServiceProvider`3">
+            <summary>
+            The pipeline builder with the possibility to add a pipeline steps.
+            </summary>
+            <typeparam name="TParam">The parameter type.</typeparam>
+            <typeparam name="TResult">The result type.</typeparam>
+            <typeparam name="TPipelineBuilder">The pipeline builder type.</typeparam>
+        </member>
+        <member name="M:Excellence.Pipelines.Core.PipelineBuilders.Async.IAsyncPipelineBuilderStepInterfaceServiceProvider`3.Use``1">
+            <summary>
+            Add the pipeline step.
+            </summary>
+            <typeparam name="TPipelineStep">The pipeline step type.</typeparam>
+            <returns>The current pipeline builder instance.</returns>
+        </member>
+        <member name="T:Excellence.Pipelines.Core.PipelineBuilders.Async.IAsyncPipelineBuilderStepInterface`3">
+            <summary>
+            The pipeline builder with the possibility to add a pipeline steps.
+            </summary>
+            <typeparam name="TParam">The parameter type.</typeparam>
+            <typeparam name="TResult">The result type.</typeparam>
+            <typeparam name="TPipelineBuilder">The pipeline builder type.</typeparam>
+        </member>
+        <member name="T:Excellence.Pipelines.Core.PipelineBuilders.Default.IPipelineBuilderBranchWhen`3">
+            <summary>
+            The pipeline builder with the possibility to execute the pipeline steps conditionally.
+            </summary>
+            <typeparam name="TParam">The parameter type.</typeparam>
+            <typeparam name="TResult">The result type.</typeparam>
+            <typeparam name="TPipelineBuilder">The pipeline builder type.</typeparam>
+        </member>
+        <member name="T:Excellence.Pipelines.Core.PipelineBuilders.Default.IPipelineBuilderBranchWhenConditionInterfaceFactory`3">
+            <summary>
+            The pipeline builder with the possibility to execute the pipeline steps conditionally.
+            </summary>
+            <typeparam name="TParam">The parameter type.</typeparam>
+            <typeparam name="TResult">The result type.</typeparam>
+            <typeparam name="TPipelineBuilder">The pipeline builder type.</typeparam>
+        </member>
+        <member name="M:Excellence.Pipelines.Core.PipelineBuilders.Default.IPipelineBuilderBranchWhenConditionInterfaceFactory`3.BranchWhen``1(System.Func{``0},System.Action{`2},System.Func{`2})">
+            <summary>
+            Adds the pipeline branch with own configuration that is executed when the condition is met.
+            When the condition is met the branch is executed and the main pipeline is NOT executed.
+            When the condition is NOT met the branch is skipped and the main pipeline is executed.
+            </summary>
+            <param name="pipelineConditionFactory">The pipeline builder condition factory.</param>
+            <param name="branchPipelineBuilderConfiguration">The branch pipeline builder configuration.</param>
+            <param name="branchPipelineBuilderFactory">The pipeline builder factory.</param>
+            <returns>The current pipeline builder instance.</returns>
+        </member>
+        <member name="T:Excellence.Pipelines.Core.PipelineBuilders.Default.IPipelineBuilderBranchWhenConditionInterfaceFactoryWithServiceProvider`3">
+            <summary>
+            The pipeline builder with the possibility to execute the pipeline steps conditionally.
+            </summary>
+            <typeparam name="TParam">The parameter type.</typeparam>
+            <typeparam name="TResult">The result type.</typeparam>
+            <typeparam name="TPipelineBuilder">The pipeline builder type.</typeparam>
+        </member>
+        <member name="M:Excellence.Pipelines.Core.PipelineBuilders.Default.IPipelineBuilderBranchWhenConditionInterfaceFactoryWithServiceProvider`3.BranchWhen``1(System.Func{System.IServiceProvider,``0},System.Action{`2},System.Func{System.IServiceProvider,`2})">
+            <summary>
+            Adds the pipeline branch with own configuration that is executed when the condition is met.
+            When the condition is met the branch is executed and the main pipeline is NOT executed.
+            When the condition is NOT met the branch is skipped and the main pipeline is executed.
+            </summary>
+            <param name="pipelineConditionFactory">The pipeline builder condition factory.</param>
+            <param name="branchPipelineBuilderConfiguration">The branch pipeline builder configuration.</param>
+            <param name="branchPipelineBuilderFactory">The pipeline builder factory.</param>
+            <returns>The current pipeline builder instance.</returns>
+        </member>
+        <member name="T:Excellence.Pipelines.Core.PipelineBuilders.Default.IPipelineBuilderBranchWhenConditionInterfaceServiceProvider`3">
+            <summary>
+            The pipeline builder with the possibility to execute the pipeline steps conditionally.
+            </summary>
+            <typeparam name="TParam">The parameter type.</typeparam>
+            <typeparam name="TResult">The result type.</typeparam>
+            <typeparam name="TPipelineBuilder">The pipeline builder type.</typeparam>
+        </member>
+        <member name="M:Excellence.Pipelines.Core.PipelineBuilders.Default.IPipelineBuilderBranchWhenConditionInterfaceServiceProvider`3.BranchWhen``1(System.Action{`2})">
+            <summary>
+            Adds the pipeline branch with own configuration that is executed when the condition is met.
+            When the condition is met the branch is executed and the main pipeline is NOT executed.
+            When the condition is NOT met the branch is skipped and the main pipeline is executed.
+            </summary>
+            <param name="branchPipelineBuilderConfiguration">The branch pipeline builder configuration.</param>
+            <returns>The current pipeline builder instance.</returns>
+        </member>
+        <member name="T:Excellence.Pipelines.Core.PipelineBuilders.Default.IPipelineBuilderBranchWhenConditionInterface`3">
+            <summary>
+            The pipeline builder with the possibility to execute the pipeline steps conditionally.
+            </summary>
+            <typeparam name="TParam">The parameter type.</typeparam>
+            <typeparam name="TResult">The result type.</typeparam>
+            <typeparam name="TPipelineBuilder">The pipeline builder type.</typeparam>
+        </member>
+        <member name="T:Excellence.Pipelines.Core.PipelineBuilders.Default.IPipelineBuilderBranchWhenConditionPredicateFactory`3">
+            <summary>
+            The pipeline builder with the possibility to execute the pipeline steps conditionally.
+            </summary>
+            <typeparam name="TParam">The parameter type.</typeparam>
+            <typeparam name="TResult">The result type.</typeparam>
+            <typeparam name="TPipelineBuilder">The pipeline builder type.</typeparam>
+        </member>
+        <member name="M:Excellence.Pipelines.Core.PipelineBuilders.Default.IPipelineBuilderBranchWhenConditionPredicateFactory`3.BranchWhen(System.Func{`0,System.Boolean},System.Action{`2},System.Func{`2})">
+            <summary>
+            Adds the pipeline branch with own configuration that is executed when the condition is met.
+            When the condition is met the branch is executed and the main pipeline is NOT executed.
+            When the condition is NOT met the branch is skipped and the main pipeline is executed.
+            </summary>
+            <param name="predicate">The predicate.</param>
+            <param name="branchPipelineBuilderConfiguration">The branch pipeline builder configuration.</param>
+            <param name="branchPipelineBuilderFactory">The pipeline builder factory.</param>
+            <returns>The current pipeline builder instance.</returns>
+        </member>
+        <member name="T:Excellence.Pipelines.Core.PipelineBuilders.Default.IPipelineBuilderBranchWhenConditionPredicateFactoryWithServiceProvider`3">
+            <summary>
+            The pipeline builder with the possibility to execute the pipeline steps conditionally.
+            </summary>
+            <typeparam name="TParam">The parameter type.</typeparam>
+            <typeparam name="TResult">The result type.</typeparam>
+            <typeparam name="TPipelineBuilder">The pipeline builder type.</typeparam>
+        </member>
+        <member name="M:Excellence.Pipelines.Core.PipelineBuilders.Default.IPipelineBuilderBranchWhenConditionPredicateFactoryWithServiceProvider`3.BranchWhen(System.Func{`0,System.Boolean},System.Action{`2},System.Func{System.IServiceProvider,`2})">
+            <summary>
+            Adds the pipeline branch with own configuration that is executed when the condition is met.
+            When the condition is met the branch is executed and the main pipeline is NOT executed.
+            When the condition is NOT met the branch is skipped and the main pipeline is executed.
+            </summary>
+            <param name="predicate">The predicate.</param>
+            <param name="branchPipelineBuilderConfiguration">The branch pipeline builder configuration.</param>
+            <param name="branchPipelineBuilderFactory">The pipeline builder factory.</param>
+            <returns>The current pipeline builder instance.</returns>
+        </member>
+        <member name="T:Excellence.Pipelines.Core.PipelineBuilders.Default.IPipelineBuilderBranchWhenConditionPredicateServiceProvider`3">
+            <summary>
+            The pipeline builder with the possibility to execute the pipeline steps conditionally.
+            </summary>
+            <typeparam name="TParam">The parameter type.</typeparam>
+            <typeparam name="TResult">The result type.</typeparam>
+            <typeparam name="TPipelineBuilder">The pipeline builder type.</typeparam>
+        </member>
+        <member name="M:Excellence.Pipelines.Core.PipelineBuilders.Default.IPipelineBuilderBranchWhenConditionPredicateServiceProvider`3.BranchWhen(System.Func{`0,System.Boolean},System.Action{`2})">
+            <summary>
+            Adds the pipeline branch with own configuration that is executed when the condition is met.
+            When the condition is met the branch is executed and the main pipeline is NOT executed.
+            When the condition is NOT met the branch is skipped and the main pipeline is executed.
+            </summary>
+            <param name="predicate">The predicate.</param>
+            <param name="branchPipelineBuilderConfiguration">The branch pipeline builder configuration.</param>
+            <returns>The current pipeline builder instance.</returns>
+        </member>
+        <member name="T:Excellence.Pipelines.Core.PipelineBuilders.Default.IPipelineBuilderBranchWhenConditionPredicate`3">
+            <summary>
+            The pipeline builder with the possibility to execute the pipeline steps conditionally.
+            </summary>
+            <typeparam name="TParam">The parameter type.</typeparam>
+            <typeparam name="TResult">The result type.</typeparam>
+            <typeparam name="TPipelineBuilder">The pipeline builder type.</typeparam>
+        </member>
+        <member name="T:Excellence.Pipelines.Core.PipelineBuilders.Default.IPipelineBuilderUseWhen`3">
+            <summary>
+            The pipeline builder with the possibility to execute the pipeline steps conditionally.
+            </summary>
+            <typeparam name="TParam">The parameter type.</typeparam>
+            <typeparam name="TResult">The result type.</typeparam>
+            <typeparam name="TPipelineBuilder">The pipeline builder type.</typeparam>
+        </member>
+        <member name="T:Excellence.Pipelines.Core.PipelineBuilders.Default.IPipelineBuilderUseWhenConditionInterfaceFactory`3">
+            <summary>
+            The pipeline builder with the possibility to execute the pipeline steps conditionally.
+            </summary>
+            <typeparam name="TParam">The parameter type.</typeparam>
+            <typeparam name="TResult">The result type.</typeparam>
+            <typeparam name="TPipelineBuilder">The pipeline builder type.</typeparam>
+        </member>
+        <member name="M:Excellence.Pipelines.Core.PipelineBuilders.Default.IPipelineBuilderUseWhenConditionInterfaceFactory`3.UseWhen``1(System.Func{``0},System.Action{`2},System.Func{`2})">
+            <summary>
+            Adds the pipeline branch with own configuration that is executed when the condition is met.
+            When the condition is met the branch is executed and then the main pipeline is executed.
+            When the condition is NOT met the branch is skipped and the main pipeline is executed.
+            </summary>
+            <param name="pipelineConditionFactory">The pipeline builder condition factory.</param>
+            <param name="branchPipelineBuilderConfiguration">The branch pipeline builder configuration.</param>
+            <param name="branchPipelineBuilderFactory">The pipeline builder factory.</param>
+            <returns>The current pipeline builder instance.</returns>
+        </member>
+        <member name="T:Excellence.Pipelines.Core.PipelineBuilders.Default.IPipelineBuilderUseWhenConditionInterfaceFactoryWithServiceProvider`3">
+            <summary>
+            The pipeline builder with the possibility to execute the pipeline steps conditionally.
+            </summary>
+            <typeparam name="TParam">The parameter type.</typeparam>
+            <typeparam name="TResult">The result type.</typeparam>
+            <typeparam name="TPipelineBuilder">The pipeline builder type.</typeparam>
+        </member>
+        <member name="M:Excellence.Pipelines.Core.PipelineBuilders.Default.IPipelineBuilderUseWhenConditionInterfaceFactoryWithServiceProvider`3.UseWhen``1(System.Func{System.IServiceProvider,``0},System.Action{`2},System.Func{System.IServiceProvider,`2})">
+            <summary>
+            Adds the pipeline branch with own configuration that is executed when the condition is met.
+            When the condition is met the branch is executed and then the main pipeline is executed.
+            When the condition is NOT met the branch is skipped and the main pipeline is executed.
+            </summary>
+            <param name="pipelineConditionFactory">The pipeline builder condition factory.</param>
+            <param name="branchPipelineBuilderConfiguration">The branch pipeline builder configuration.</param>
+            <param name="branchPipelineBuilderFactory">The pipeline builder factory.</param>
+            <returns>The current pipeline builder instance.</returns>
+        </member>
+        <member name="T:Excellence.Pipelines.Core.PipelineBuilders.Default.IPipelineBuilderUseWhenConditionInterfaceServiceProvider`3">
+            <summary>
+            The pipeline builder with the possibility to execute the pipeline steps conditionally.
+            </summary>
+            <typeparam name="TParam">The parameter type.</typeparam>
+            <typeparam name="TResult">The result type.</typeparam>
+            <typeparam name="TPipelineBuilder">The pipeline builder type.</typeparam>
+        </member>
+        <member name="M:Excellence.Pipelines.Core.PipelineBuilders.Default.IPipelineBuilderUseWhenConditionInterfaceServiceProvider`3.UseWhen``1(System.Action{`2})">
+            <summary>
+            Adds the pipeline branch with own configuration that is executed when the condition is met.
+            When the condition is met the branch is executed and then the main pipeline is executed.
+            When the condition is NOT met the branch is skipped and the main pipeline is executed.
+            </summary>
+            <param name="branchPipelineBuilderConfiguration">The branch pipeline builder configuration.</param>
+            <returns>The current pipeline builder instance.</returns>
+        </member>
+        <member name="T:Excellence.Pipelines.Core.PipelineBuilders.Default.IPipelineBuilderUseWhenConditionInterface`3">
+            <summary>
+            The pipeline builder with the possibility to execute the pipeline steps conditionally.
+            </summary>
+            <typeparam name="TParam">The parameter type.</typeparam>
+            <typeparam name="TResult">The result type.</typeparam>
+            <typeparam name="TPipelineBuilder">The pipeline builder type.</typeparam>
+        </member>
+        <member name="T:Excellence.Pipelines.Core.PipelineBuilders.Default.IPipelineBuilderUseWhenConditionPredicateFactory`3">
+            <summary>
+            The pipeline builder with the possibility to execute the pipeline steps conditionally.
+            </summary>
+            <typeparam name="TParam">The parameter type.</typeparam>
+            <typeparam name="TResult">The result type.</typeparam>
+            <typeparam name="TPipelineBuilder">The pipeline builder type.</typeparam>
+        </member>
+        <member name="M:Excellence.Pipelines.Core.PipelineBuilders.Default.IPipelineBuilderUseWhenConditionPredicateFactory`3.UseWhen(System.Func{`0,System.Boolean},System.Action{`2},System.Func{`2})">
+            <summary>
+            Adds the pipeline branch with own configuration that is executed when the condition is met.
+            When the condition is met the branch is executed and then the main pipeline is executed.
+            When the condition is NOT met the branch is skipped and the main pipeline is executed.
+            </summary>
+            <param name="predicate">The predicate.</param>
+            <param name="branchPipelineBuilderConfiguration">The branch pipeline builder configuration.</param>
+            <param name="branchPipelineBuilderFactory">The pipeline builder factory.</param>
+            <returns>The current pipeline builder instance.</returns>
+        </member>
+        <member name="T:Excellence.Pipelines.Core.PipelineBuilders.Default.IPipelineBuilderUseWhenConditionPredicateFactoryWithServiceProvider`3">
+            <summary>
+            The pipeline builder with the possibility to execute the pipeline steps conditionally.
+            </summary>
+            <typeparam name="TParam">The parameter type.</typeparam>
+            <typeparam name="TResult">The result type.</typeparam>
+            <typeparam name="TPipelineBuilder">The pipeline builder type.</typeparam>
+        </member>
+        <member name="M:Excellence.Pipelines.Core.PipelineBuilders.Default.IPipelineBuilderUseWhenConditionPredicateFactoryWithServiceProvider`3.UseWhen(System.Func{`0,System.Boolean},System.Action{`2},System.Func{System.IServiceProvider,`2})">
+            <summary>
+            Adds the pipeline branch with own configuration that is executed when the condition is met.
+            When the condition is met the branch is executed and then the main pipeline is executed.
+            When the condition is NOT met the branch is skipped and the main pipeline is executed.
+            </summary>
+            <param name="predicate">The predicate.</param>
+            <param name="branchPipelineBuilderConfiguration">The branch pipeline builder configuration.</param>
+            <param name="branchPipelineBuilderFactory">The pipeline builder factory.</param>
+            <returns>The current pipeline builder instance.</returns>
+        </member>
+        <member name="T:Excellence.Pipelines.Core.PipelineBuilders.Default.IPipelineBuilderUseWhenConditionPredicateServiceProvider`3">
+            <summary>
+            The pipeline builder with the possibility to execute the pipeline steps conditionally.
+            </summary>
+            <typeparam name="TParam">The parameter type.</typeparam>
+            <typeparam name="TResult">The result type.</typeparam>
+            <typeparam name="TPipelineBuilder">The pipeline builder type.</typeparam>
+        </member>
+        <member name="M:Excellence.Pipelines.Core.PipelineBuilders.Default.IPipelineBuilderUseWhenConditionPredicateServiceProvider`3.UseWhen(System.Func{`0,System.Boolean},System.Action{`2})">
+            <summary>
+            Adds the pipeline branch with own configuration that is executed when the condition is met.
+            When the condition is met the branch is executed and then the main pipeline is executed.
+            When the condition is NOT met the branch is skipped and the main pipeline is executed.
+            </summary>
+            <param name="predicate">The predicate.</param>
+            <param name="branchPipelineBuilderConfiguration">The branch pipeline builder configuration.</param>
+            <returns>The current pipeline builder instance.</returns>
+        </member>
+        <member name="T:Excellence.Pipelines.Core.PipelineBuilders.Default.IPipelineBuilderUseWhenConditionPredicate`3">
+            <summary>
+            The pipeline builder with the possibility to execute the pipeline steps conditionally.
+            </summary>
+            <typeparam name="TParam">The parameter type.</typeparam>
+            <typeparam name="TResult">The result type.</typeparam>
+            <typeparam name="TPipelineBuilder">The pipeline builder type.</typeparam>
+        </member>
+        <member name="T:Excellence.Pipelines.Core.PipelineBuilders.Default.IPipelineBuilderComplete`3">
+            <summary>
+            The pipeline builder with all available features
+            </summary>
+            <typeparam name="TParam">The parameter type.</typeparam>
+            <typeparam name="TResult">The result type.</typeparam>
+            <typeparam name="TPipelineBuilder">The pipeline builder type.</typeparam>
+        </member>
+        <member name="T:Excellence.Pipelines.Core.PipelineBuilders.Default.IPipelineBuilderStepInterfaceFactory`3">
+            <summary>
+            The pipeline builder with the possibility to add a pipeline steps.
+            </summary>
+            <typeparam name="TParam">The parameter type.</typeparam>
+            <typeparam name="TResult">The result type.</typeparam>
+            <typeparam name="TPipelineBuilder">The pipeline builder type.</typeparam>
+        </member>
+        <member name="M:Excellence.Pipelines.Core.PipelineBuilders.Default.IPipelineBuilderStepInterfaceFactory`3.Use``1(System.Func{``0})">
+            <summary>
+            Add the pipeline step.
+            </summary>
+            <param name="factory">The pipeline step factory.</param>
+            <typeparam name="TPipelineStep">The pipeline step type.</typeparam>
+            <returns>The current pipeline builder instance.</returns>
+        </member>
+        <member name="T:Excellence.Pipelines.Core.PipelineBuilders.Default.IPipelineBuilderStepInterfaceFactoryWithServiceProvider`3">
+            <summary>
+            The pipeline builder with the possibility to add a pipeline steps.
+            </summary>
+            <typeparam name="TParam">The parameter type.</typeparam>
+            <typeparam name="TResult">The result type.</typeparam>
+            <typeparam name="TPipelineBuilder">The pipeline builder type.</typeparam>
+        </member>
+        <member name="M:Excellence.Pipelines.Core.PipelineBuilders.Default.IPipelineBuilderStepInterfaceFactoryWithServiceProvider`3.Use``1(System.Func{System.IServiceProvider,``0})">
+            <summary>
+            Add the pipeline step.
+            </summary>
+            <param name="factory">The pipeline step factory.</param>
+            <typeparam name="TPipelineStep">The pipeline step type.</typeparam>
+            <returns>The current pipeline builder instance.</returns>
+        </member>
+        <member name="T:Excellence.Pipelines.Core.PipelineBuilders.Default.IPipelineBuilderStepInterfaceServiceProvider`3">
+            <summary>
+            The pipeline builder with the possibility to add a pipeline steps.
+            </summary>
+            <typeparam name="TParam">The parameter type.</typeparam>
+            <typeparam name="TResult">The result type.</typeparam>
+            <typeparam name="TPipelineBuilder">The pipeline builder type.</typeparam>
+        </member>
+        <member name="M:Excellence.Pipelines.Core.PipelineBuilders.Default.IPipelineBuilderStepInterfaceServiceProvider`3.Use``1">
+            <summary>
+            Add the pipeline step.
+            </summary>
+            <typeparam name="TPipelineStep">The pipeline step type.</typeparam>
+            <returns>The current pipeline builder instance.</returns>
+        </member>
+        <member name="T:Excellence.Pipelines.Core.PipelineBuilders.Default.IPipelineBuilderStepInterface`3">
+            <summary>
+            The pipeline builder with the possibility to add a pipeline steps.
+            </summary>
+            <typeparam name="TParam">The parameter type.</typeparam>
+            <typeparam name="TResult">The result type.</typeparam>
+            <typeparam name="TPipelineBuilder">The pipeline builder type.</typeparam>
+        </member>
+        <member name="T:Excellence.Pipelines.Core.PipelineBuilders.IAsyncPipelineBuilder`2">
+            <summary>
+            The async pipeline builder.
+            </summary>
+            <typeparam name="TParam">The parameter type.</typeparam>
+            <typeparam name="TResult">The result type.</typeparam>
+        </member>
+        <member name="T:Excellence.Pipelines.Core.PipelineBuilders.IPipelineBuilder`2">
+            <summary>
+            The pipeline builder.
+            </summary>
+            <typeparam name="TParam">The parameter type.</typeparam>
+            <typeparam name="TResult">The result type.</typeparam>
+        </member>
+        <member name="T:Excellence.Pipelines.Core.PipelineBuilders.Shared.IPipelineBuilderCore`2">
+            <summary>
+            The core pipeline builder.
+            </summary>
+            <typeparam name="TPipelineDelegate">The pipeline builder delegate type.</typeparam>
+            <typeparam name="TPipelineBuilder">The pipeline builder type.</typeparam>
+        </member>
+        <member name="M:Excellence.Pipelines.Core.PipelineBuilders.Shared.IPipelineBuilderCore`2.Use(System.Func{`0,`0})">
+            <summary>
+            Adds the component to the pipeline builder.
+            </summary>
+            <param name="component">The component.</param>
+            <returns>The current pipeline builder instance.</returns>
+        </member>
+        <member name="M:Excellence.Pipelines.Core.PipelineBuilders.Shared.IPipelineBuilderCore`2.UseTarget(`0)">
+            <summary>
+            Sets the target.
+            </summary>
+            <param name="target">The target.</param>
+            <returns>The current pipeline builder instance.</returns>
+        </member>
+        <member name="M:Excellence.Pipelines.Core.PipelineBuilders.Shared.IPipelineBuilderCore`2.BuildPipeline">
+            <summary>
+            Builds the pipeline.
+            </summary>
+            <returns>The pipeline.</returns>
+        </member>
+        <member name="T:Excellence.Pipelines.Core.PipelineBuilders.Shared.IPipelineBuilderCoreUtils`2">
+            <summary>
+            The core pipeline builder.
+            </summary>
+            <typeparam name="TPipelineDelegate">The pipeline builder delegate type.</typeparam>
+            <typeparam name="TPipelineBuilder">The pipeline builder type.</typeparam>
+        </member>
+        <member name="M:Excellence.Pipelines.Core.PipelineBuilders.Shared.IPipelineBuilderCoreUtils`2.Copy">
+            <summary>
+            Copies the pipeline builder.
+            </summary>
+            <returns>The new pipeline builder instance that has the same configuration as the current one.</returns>
+        </member>
+        <member name="T:Excellence.Pipelines.Core.PipelineConditions.IAsyncPipelineCondition`1">
+            <summary>
+            The pipeline builder condition.
+            </summary>
+            <typeparam name="TParam">The parameter type.</typeparam>
+        </member>
+        <member name="M:Excellence.Pipelines.Core.PipelineConditions.IAsyncPipelineCondition`1.Invoke(`0)">
+            <summary>
+            Checks if the parameter meets the condition.
+            </summary>
+            <param name="param">The parameter.</param>
+            <returns><see langword="true"/> when the parameter meets the condition or <see langword="false"/> when it doesn't.</returns>
+        </member>
+        <member name="T:Excellence.Pipelines.Core.PipelineConditions.IPipelineCondition`1">
+            <summary>
+            The pipeline builder condition.
+            </summary>
+            <typeparam name="TParam">The parameter type.</typeparam>
+        </member>
+        <member name="M:Excellence.Pipelines.Core.PipelineConditions.IPipelineCondition`1.Invoke(`0)">
+            <summary>
+            Checks if the parameter meets the condition.
+            </summary>
+            <param name="param">The parameter.</param>
+            <returns><see langword="true"/> when the parameter meets the condition or <see langword="false"/> when it doesn't.</returns>
+        </member>
+        <member name="T:Excellence.Pipelines.Core.PipelineSteps.IAsyncPipelineStep`2">
+            <summary>
+            The async pipeline step.
+            </summary>
+            <typeparam name="TParam">The parameter type.</typeparam>
+            <typeparam name="TResult">The result type.</typeparam>
+        </member>
+        <member name="M:Excellence.Pipelines.Core.PipelineSteps.IAsyncPipelineStep`2.Invoke(`0,System.Threading.CancellationToken,System.Func{`0,System.Threading.CancellationToken,System.Threading.Tasks.Task{`1}})">
+            <summary>
+            Executes the pipeline step logic.
+            </summary>
+            <param name="param">The parameter.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <param name="next">The pipeline next step delegate.</param>
+            <returns>The result.</returns>
+        </member>
+        <member name="T:Excellence.Pipelines.Core.PipelineSteps.IPipelineStep`2">
+            <summary>
+            The pipeline step.
+            </summary>
+            <typeparam name="TParam">The parameter type.</typeparam>
+            <typeparam name="TResult">The result type.</typeparam>
+        </member>
+        <member name="M:Excellence.Pipelines.Core.PipelineSteps.IPipelineStep`2.Invoke(`0,System.Func{`0,`1})">
+            <summary>
+            Executes the pipeline step logic.
+            </summary>
+            <param name="param">The parameter.</param>
+            <param name="next">The pipeline next step delegate.</param>
+            <returns>The result.</returns>
+        </member>
+    </members>
+</doc>

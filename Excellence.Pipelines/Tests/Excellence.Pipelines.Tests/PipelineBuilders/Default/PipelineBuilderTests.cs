@@ -51,6 +51,8 @@ namespace Excellence.Pipelines.Tests.PipelineBuilders.Default
 
             var pipelineBuilder = factory.CreatePipelineBuilder<int, int>();
 
+            // Use
+
             Func<Func<int, int>, Func<int, int>> component =
                 next => (param) =>
                 {
@@ -59,12 +61,10 @@ namespace Excellence.Pipelines.Tests.PipelineBuilders.Default
                     return next.Invoke(modifiedParam);
                 };
 
-            // Use component
-
+            // one component
             pipelineBuilder.Use(component);
 
-            // Use components
-
+            // collection of components
             pipelineBuilder.Use(new[] { component, component, component });
 
             // Use interface

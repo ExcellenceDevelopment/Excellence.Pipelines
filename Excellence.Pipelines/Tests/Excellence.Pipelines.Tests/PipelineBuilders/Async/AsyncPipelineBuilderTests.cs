@@ -53,6 +53,8 @@ namespace Excellence.Pipelines.Tests.PipelineBuilders.Async
 
             var pipelineBuilder = factory.CreateAsyncPipelineBuilder<int, int>();
 
+            // Use
+
             Func<Func<int, CancellationToken, Task<int>>, Func<int, CancellationToken, Task<int>>> component =
                 next => (param, cancellationToken) =>
                 {
@@ -61,12 +63,10 @@ namespace Excellence.Pipelines.Tests.PipelineBuilders.Async
                     return next.Invoke(modifiedParam, cancellationToken);
                 };
 
-            // Use component
-
+            // one component
             pipelineBuilder.Use(component);
 
-            // Use components
-
+            // collection of components
             pipelineBuilder.Use(new[] { component, component, component });
 
             // Use interface

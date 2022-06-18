@@ -8,12 +8,12 @@ using Excellence.Pipelines.PipelineBuilders.Shared;
 
 namespace Excellence.Pipelines.PipelineBuilders.Async
 {
-    /// <inheritdoc cref="IPipelineBuilderCore{TPipelineDelegate, TPipelineBuilder} " />
-    /// <inheritdoc cref="IPipelineBuilderCoreUtils{TPipelineDelegate, TPipelineBuilder} " />
-    /// <inheritdoc cref="IPipelineBuilderCoreUseUtils{TPipelineDelegate, TPipelineBuilder} " />
-    /// <inheritdoc cref="IAsyncPipelineBuilderStepInterface{TParam, TResult, TPipelineBuilder} " />
-    /// <inheritdoc cref="IAsyncPipelineBuilderUseWhen{TParam, TResult, TPipelineBuilder} " />
-    /// <inheritdoc cref="IAsyncPipelineBuilderBranchWhen{TParam, TResult, TPipelineBuilder} " />
+    /// <inheritdoc cref="IPipelineBuilderCore{TPipelineDelegate, TPipelineBuilder}" />
+    /// <inheritdoc cref="IPipelineBuilderCoreUtils{TPipelineDelegate, TPipelineBuilder}" />
+    /// <inheritdoc cref="IPipelineBuilderCoreUseUtils{TPipelineDelegate, TPipelineBuilder}" />
+    /// <inheritdoc cref="IAsyncPipelineBuilderStepInterface{TParam, TResult, TPipelineBuilder}" />
+    /// <inheritdoc cref="IAsyncPipelineBuilderUseWhen{TParam, TResult, TPipelineBuilder}" />
+    /// <inheritdoc cref="IAsyncPipelineBuilderBranchWhen{TParam, TResult, TPipelineBuilder}" />
     public partial class AsyncPipelineBuilderComplete<TParam, TResult, TPipelineBuilder> :
         PipelineBuilderCoreComplete<Func<TParam, CancellationToken, Task<TResult>>, TPipelineBuilder>,
         IPipelineBuilderCore<Func<TParam, CancellationToken, Task<TResult>>, TPipelineBuilder>,

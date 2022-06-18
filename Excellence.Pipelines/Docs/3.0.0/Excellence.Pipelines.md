@@ -1,0 +1,108 @@
+#### [Excellence.Pipelines.Core](Excellence.Pipelines.md 'Excellence.Pipelines')
+
+## Excellence.Pipelines.Core Assembly
+### Namespaces
+
+<a name='Excellence.Pipelines.Core.PipelineBuilderFactories'></a>
+
+## Excellence.Pipelines.Core.PipelineBuilderFactories Namespace
+
+| Interfaces | |
+| :--- | :--- |
+| [IAsyncPipelineBuilderFactory](IAsyncPipelineBuilderFactory.md 'Excellence.Pipelines.Core.PipelineBuilderFactories.IAsyncPipelineBuilderFactory') | The pipeline builder factory. |
+| [IPipelineBuilderFactory](IPipelineBuilderFactory.md 'Excellence.Pipelines.Core.PipelineBuilderFactories.IPipelineBuilderFactory') | The pipeline builder factory. |
+
+<a name='Excellence.Pipelines.Core.PipelineBuilders'></a>
+
+## Excellence.Pipelines.Core.PipelineBuilders Namespace
+
+| Interfaces | |
+| :--- | :--- |
+| [IAsyncPipelineBuilder&lt;TParam,TResult&gt;](IAsyncPipelineBuilder_TParam,TResult_.md 'Excellence.Pipelines.Core.PipelineBuilders.IAsyncPipelineBuilder<TParam,TResult>') | The async pipeline builder. |
+| [IPipelineBuilder&lt;TParam,TResult&gt;](IPipelineBuilder_TParam,TResult_.md 'Excellence.Pipelines.Core.PipelineBuilders.IPipelineBuilder<TParam,TResult>') | The pipeline builder. |
+
+<a name='Excellence.Pipelines.Core.PipelineBuilders.Async'></a>
+
+## Excellence.Pipelines.Core.PipelineBuilders.Async Namespace
+
+| Interfaces | |
+| :--- | :--- |
+| [IAsyncPipelineBuilderBranchWhen&lt;TParam,TResult,TPipelineBuilder&gt;](IAsyncPipelineBuilderBranchWhen_TParam,TResult,TPipelineBuilder_.md 'Excellence.Pipelines.Core.PipelineBuilders.Async.IAsyncPipelineBuilderBranchWhen<TParam,TResult,TPipelineBuilder>') | The pipeline builder with the possibility to execute the pipeline steps conditionally. |
+| [IAsyncPipelineBuilderBranchWhenConditionInterface&lt;TParam,TResult,TPipelineBuilder&gt;](IAsyncPipelineBuilderBranchWhenConditionInterface_TParam,TResult,TPipelineBuilder_.md 'Excellence.Pipelines.Core.PipelineBuilders.Async.IAsyncPipelineBuilderBranchWhenConditionInterface<TParam,TResult,TPipelineBuilder>') | The pipeline builder with the possibility to execute the pipeline steps conditionally. |
+| [IAsyncPipelineBuilderBranchWhenConditionInterfaceFactory&lt;TParam,TResult,TPipelineBuilder&gt;](IAsyncPipelineBuilderBranchWhenConditionInterfaceFactory_TParam,TResult,TPipelineBuilder_.md 'Excellence.Pipelines.Core.PipelineBuilders.Async.IAsyncPipelineBuilderBranchWhenConditionInterfaceFactory<TParam,TResult,TPipelineBuilder>') | The pipeline builder with the possibility to execute the pipeline steps conditionally. |
+| [IAsyncPipelineBuilderBranchWhenConditionInterfaceFactoryWithServiceProvider&lt;TParam,TResult,TPipelineBuilder&gt;](IAsyncPipelineBuilderBranchWhenConditionInterfaceFactoryWithServiceProvider_TParam,TResult,TPipelineBuilder_.md 'Excellence.Pipelines.Core.PipelineBuilders.Async.IAsyncPipelineBuilderBranchWhenConditionInterfaceFactoryWithServiceProvider<TParam,TResult,TPipelineBuilder>') | The pipeline builder with the possibility to execute the pipeline steps conditionally. |
+| [IAsyncPipelineBuilderBranchWhenConditionInterfaceServiceProvider&lt;TParam,TResult,TPipelineBuilder&gt;](IAsyncPipelineBuilderBranchWhenConditionInterfaceServiceProvider_TParam,TResult,TPipelineBuilder_.md 'Excellence.Pipelines.Core.PipelineBuilders.Async.IAsyncPipelineBuilderBranchWhenConditionInterfaceServiceProvider<TParam,TResult,TPipelineBuilder>') | The pipeline builder with the possibility to execute the pipeline steps conditionally. |
+| [IAsyncPipelineBuilderBranchWhenConditionPredicate&lt;TParam,TResult,TPipelineBuilder&gt;](IAsyncPipelineBuilderBranchWhenConditionPredicate_TParam,TResult,TPipelineBuilder_.md 'Excellence.Pipelines.Core.PipelineBuilders.Async.IAsyncPipelineBuilderBranchWhenConditionPredicate<TParam,TResult,TPipelineBuilder>') | The pipeline builder with the possibility to execute the pipeline steps conditionally. |
+| [IAsyncPipelineBuilderBranchWhenConditionPredicateFactory&lt;TParam,TResult,TPipelineBuilder&gt;](IAsyncPipelineBuilderBranchWhenConditionPredicateFactory_TParam,TResult,TPipelineBuilder_.md 'Excellence.Pipelines.Core.PipelineBuilders.Async.IAsyncPipelineBuilderBranchWhenConditionPredicateFactory<TParam,TResult,TPipelineBuilder>') | The pipeline builder with the possibility to execute the pipeline steps conditionally. |
+| [IAsyncPipelineBuilderBranchWhenConditionPredicateFactoryWithServiceProvider&lt;TParam,TResult,TPipelineBuilder&gt;](IAsyncPipelineBuilderBranchWhenConditionPredicateFactoryWithServiceProvider_TParam,TResult,TPipelineBuilder_.md 'Excellence.Pipelines.Core.PipelineBuilders.Async.IAsyncPipelineBuilderBranchWhenConditionPredicateFactoryWithServiceProvider<TParam,TResult,TPipelineBuilder>') | The pipeline builder with the possibility to execute the pipeline steps conditionally. |
+| [IAsyncPipelineBuilderBranchWhenConditionPredicateServiceProvider&lt;TParam,TResult,TPipelineBuilder&gt;](IAsyncPipelineBuilderBranchWhenConditionPredicateServiceProvider_TParam,TResult,TPipelineBuilder_.md 'Excellence.Pipelines.Core.PipelineBuilders.Async.IAsyncPipelineBuilderBranchWhenConditionPredicateServiceProvider<TParam,TResult,TPipelineBuilder>') | The pipeline builder with the possibility to execute the pipeline steps conditionally. |
+| [IAsyncPipelineBuilderStepInterface&lt;TParam,TResult,TPipelineBuilder&gt;](IAsyncPipelineBuilderStepInterface_TParam,TResult,TPipelineBuilder_.md 'Excellence.Pipelines.Core.PipelineBuilders.Async.IAsyncPipelineBuilderStepInterface<TParam,TResult,TPipelineBuilder>') | The pipeline builder with the possibility to add a pipeline steps. |
+| [IAsyncPipelineBuilderStepInterfaceFactory&lt;TParam,TResult,TPipelineBuilder&gt;](IAsyncPipelineBuilderStepInterfaceFactory_TParam,TResult,TPipelineBuilder_.md 'Excellence.Pipelines.Core.PipelineBuilders.Async.IAsyncPipelineBuilderStepInterfaceFactory<TParam,TResult,TPipelineBuilder>') | The pipeline builder with the possibility to add a pipeline steps. |
+| [IAsyncPipelineBuilderStepInterfaceFactoryWithServiceProvider&lt;TParam,TResult,TPipelineBuilder&gt;](IAsyncPipelineBuilderStepInterfaceFactoryWithServiceProvider_TParam,TResult,TPipelineBuilder_.md 'Excellence.Pipelines.Core.PipelineBuilders.Async.IAsyncPipelineBuilderStepInterfaceFactoryWithServiceProvider<TParam,TResult,TPipelineBuilder>') | The pipeline builder with the possibility to add a pipeline steps. |
+| [IAsyncPipelineBuilderStepInterfaceServiceProvider&lt;TParam,TResult,TPipelineBuilder&gt;](IAsyncPipelineBuilderStepInterfaceServiceProvider_TParam,TResult,TPipelineBuilder_.md 'Excellence.Pipelines.Core.PipelineBuilders.Async.IAsyncPipelineBuilderStepInterfaceServiceProvider<TParam,TResult,TPipelineBuilder>') | The pipeline builder with the possibility to add a pipeline steps. |
+| [IAsyncPipelineBuilderUseWhen&lt;TParam,TResult,TPipelineBuilder&gt;](IAsyncPipelineBuilderUseWhen_TParam,TResult,TPipelineBuilder_.md 'Excellence.Pipelines.Core.PipelineBuilders.Async.IAsyncPipelineBuilderUseWhen<TParam,TResult,TPipelineBuilder>') | The pipeline builder with the possibility to execute the pipeline steps conditionally. |
+| [IAsyncPipelineBuilderUseWhenConditionInterface&lt;TParam,TResult,TPipelineBuilder&gt;](IAsyncPipelineBuilderUseWhenConditionInterface_TParam,TResult,TPipelineBuilder_.md 'Excellence.Pipelines.Core.PipelineBuilders.Async.IAsyncPipelineBuilderUseWhenConditionInterface<TParam,TResult,TPipelineBuilder>') | The pipeline builder with the possibility to execute the pipeline steps conditionally. |
+| [IAsyncPipelineBuilderUseWhenConditionInterfaceFactory&lt;TParam,TResult,TPipelineBuilder&gt;](IAsyncPipelineBuilderUseWhenConditionInterfaceFactory_TParam,TResult,TPipelineBuilder_.md 'Excellence.Pipelines.Core.PipelineBuilders.Async.IAsyncPipelineBuilderUseWhenConditionInterfaceFactory<TParam,TResult,TPipelineBuilder>') | The pipeline builder with the possibility to execute the pipeline steps conditionally. |
+| [IAsyncPipelineBuilderUseWhenConditionInterfaceFactoryWithServiceProvider&lt;TParam,TResult,TPipelineBuilder&gt;](IAsyncPipelineBuilderUseWhenConditionInterfaceFactoryWithServiceProvider_TParam,TResult,TPipelineBuilder_.md 'Excellence.Pipelines.Core.PipelineBuilders.Async.IAsyncPipelineBuilderUseWhenConditionInterfaceFactoryWithServiceProvider<TParam,TResult,TPipelineBuilder>') | The pipeline builder with the possibility to execute the pipeline steps conditionally. |
+| [IAsyncPipelineBuilderUseWhenConditionInterfaceServiceProvider&lt;TParam,TResult,TPipelineBuilder&gt;](IAsyncPipelineBuilderUseWhenConditionInterfaceServiceProvider_TParam,TResult,TPipelineBuilder_.md 'Excellence.Pipelines.Core.PipelineBuilders.Async.IAsyncPipelineBuilderUseWhenConditionInterfaceServiceProvider<TParam,TResult,TPipelineBuilder>') | The pipeline builder with the possibility to execute the pipeline steps conditionally. |
+| [IAsyncPipelineBuilderUseWhenConditionPredicate&lt;TParam,TResult,TPipelineBuilder&gt;](IAsyncPipelineBuilderUseWhenConditionPredicate_TParam,TResult,TPipelineBuilder_.md 'Excellence.Pipelines.Core.PipelineBuilders.Async.IAsyncPipelineBuilderUseWhenConditionPredicate<TParam,TResult,TPipelineBuilder>') | The pipeline builder with the possibility to execute the pipeline steps conditionally. |
+| [IAsyncPipelineBuilderUseWhenConditionPredicateFactory&lt;TParam,TResult,TPipelineBuilder&gt;](IAsyncPipelineBuilderUseWhenConditionPredicateFactory_TParam,TResult,TPipelineBuilder_.md 'Excellence.Pipelines.Core.PipelineBuilders.Async.IAsyncPipelineBuilderUseWhenConditionPredicateFactory<TParam,TResult,TPipelineBuilder>') | The pipeline builder with the possibility to execute the pipeline steps conditionally. |
+| [IAsyncPipelineBuilderUseWhenConditionPredicateFactoryWithServiceProvider&lt;TParam,TResult,TPipelineBuilder&gt;](IAsyncPipelineBuilderUseWhenConditionPredicateFactoryWithServiceProvider_TParam,TResult,TPipelineBuilder_.md 'Excellence.Pipelines.Core.PipelineBuilders.Async.IAsyncPipelineBuilderUseWhenConditionPredicateFactoryWithServiceProvider<TParam,TResult,TPipelineBuilder>') | The pipeline builder with the possibility to execute the pipeline steps conditionally. |
+| [IAsyncPipelineBuilderUseWhenConditionPredicateServiceProvider&lt;TParam,TResult,TPipelineBuilder&gt;](IAsyncPipelineBuilderUseWhenConditionPredicateServiceProvider_TParam,TResult,TPipelineBuilder_.md 'Excellence.Pipelines.Core.PipelineBuilders.Async.IAsyncPipelineBuilderUseWhenConditionPredicateServiceProvider<TParam,TResult,TPipelineBuilder>') | The pipeline builder with the possibility to execute the pipeline steps conditionally. |
+
+<a name='Excellence.Pipelines.Core.PipelineBuilders.Default'></a>
+
+## Excellence.Pipelines.Core.PipelineBuilders.Default Namespace
+
+| Interfaces | |
+| :--- | :--- |
+| [IPipelineBuilderBranchWhen&lt;TParam,TResult,TPipelineBuilder&gt;](IPipelineBuilderBranchWhen_TParam,TResult,TPipelineBuilder_.md 'Excellence.Pipelines.Core.PipelineBuilders.Default.IPipelineBuilderBranchWhen<TParam,TResult,TPipelineBuilder>') | The pipeline builder with the possibility to execute the pipeline steps conditionally. |
+| [IPipelineBuilderBranchWhenConditionInterface&lt;TParam,TResult,TPipelineBuilder&gt;](IPipelineBuilderBranchWhenConditionInterface_TParam,TResult,TPipelineBuilder_.md 'Excellence.Pipelines.Core.PipelineBuilders.Default.IPipelineBuilderBranchWhenConditionInterface<TParam,TResult,TPipelineBuilder>') | The pipeline builder with the possibility to execute the pipeline steps conditionally. |
+| [IPipelineBuilderBranchWhenConditionInterfaceFactory&lt;TParam,TResult,TPipelineBuilder&gt;](IPipelineBuilderBranchWhenConditionInterfaceFactory_TParam,TResult,TPipelineBuilder_.md 'Excellence.Pipelines.Core.PipelineBuilders.Default.IPipelineBuilderBranchWhenConditionInterfaceFactory<TParam,TResult,TPipelineBuilder>') | The pipeline builder with the possibility to execute the pipeline steps conditionally. |
+| [IPipelineBuilderBranchWhenConditionInterfaceFactoryWithServiceProvider&lt;TParam,TResult,TPipelineBuilder&gt;](IPipelineBuilderBranchWhenConditionInterfaceFactoryWithServiceProvider_TParam,TResult,TPipelineBuilder_.md 'Excellence.Pipelines.Core.PipelineBuilders.Default.IPipelineBuilderBranchWhenConditionInterfaceFactoryWithServiceProvider<TParam,TResult,TPipelineBuilder>') | The pipeline builder with the possibility to execute the pipeline steps conditionally. |
+| [IPipelineBuilderBranchWhenConditionInterfaceServiceProvider&lt;TParam,TResult,TPipelineBuilder&gt;](IPipelineBuilderBranchWhenConditionInterfaceServiceProvider_TParam,TResult,TPipelineBuilder_.md 'Excellence.Pipelines.Core.PipelineBuilders.Default.IPipelineBuilderBranchWhenConditionInterfaceServiceProvider<TParam,TResult,TPipelineBuilder>') | The pipeline builder with the possibility to execute the pipeline steps conditionally. |
+| [IPipelineBuilderBranchWhenConditionPredicate&lt;TParam,TResult,TPipelineBuilder&gt;](IPipelineBuilderBranchWhenConditionPredicate_TParam,TResult,TPipelineBuilder_.md 'Excellence.Pipelines.Core.PipelineBuilders.Default.IPipelineBuilderBranchWhenConditionPredicate<TParam,TResult,TPipelineBuilder>') | The pipeline builder with the possibility to execute the pipeline steps conditionally. |
+| [IPipelineBuilderBranchWhenConditionPredicateFactory&lt;TParam,TResult,TPipelineBuilder&gt;](IPipelineBuilderBranchWhenConditionPredicateFactory_TParam,TResult,TPipelineBuilder_.md 'Excellence.Pipelines.Core.PipelineBuilders.Default.IPipelineBuilderBranchWhenConditionPredicateFactory<TParam,TResult,TPipelineBuilder>') | The pipeline builder with the possibility to execute the pipeline steps conditionally. |
+| [IPipelineBuilderBranchWhenConditionPredicateFactoryWithServiceProvider&lt;TParam,TResult,TPipelineBuilder&gt;](IPipelineBuilderBranchWhenConditionPredicateFactoryWithServiceProvider_TParam,TResult,TPipelineBuilder_.md 'Excellence.Pipelines.Core.PipelineBuilders.Default.IPipelineBuilderBranchWhenConditionPredicateFactoryWithServiceProvider<TParam,TResult,TPipelineBuilder>') | The pipeline builder with the possibility to execute the pipeline steps conditionally. |
+| [IPipelineBuilderBranchWhenConditionPredicateServiceProvider&lt;TParam,TResult,TPipelineBuilder&gt;](IPipelineBuilderBranchWhenConditionPredicateServiceProvider_TParam,TResult,TPipelineBuilder_.md 'Excellence.Pipelines.Core.PipelineBuilders.Default.IPipelineBuilderBranchWhenConditionPredicateServiceProvider<TParam,TResult,TPipelineBuilder>') | The pipeline builder with the possibility to execute the pipeline steps conditionally. |
+| [IPipelineBuilderStepInterface&lt;TParam,TResult,TPipelineBuilder&gt;](IPipelineBuilderStepInterface_TParam,TResult,TPipelineBuilder_.md 'Excellence.Pipelines.Core.PipelineBuilders.Default.IPipelineBuilderStepInterface<TParam,TResult,TPipelineBuilder>') | The pipeline builder with the possibility to add a pipeline steps. |
+| [IPipelineBuilderStepInterfaceFactory&lt;TParam,TResult,TPipelineBuilder&gt;](IPipelineBuilderStepInterfaceFactory_TParam,TResult,TPipelineBuilder_.md 'Excellence.Pipelines.Core.PipelineBuilders.Default.IPipelineBuilderStepInterfaceFactory<TParam,TResult,TPipelineBuilder>') | The pipeline builder with the possibility to add a pipeline steps. |
+| [IPipelineBuilderStepInterfaceFactoryWithServiceProvider&lt;TParam,TResult,TPipelineBuilder&gt;](IPipelineBuilderStepInterfaceFactoryWithServiceProvider_TParam,TResult,TPipelineBuilder_.md 'Excellence.Pipelines.Core.PipelineBuilders.Default.IPipelineBuilderStepInterfaceFactoryWithServiceProvider<TParam,TResult,TPipelineBuilder>') | The pipeline builder with the possibility to add a pipeline steps. |
+| [IPipelineBuilderStepInterfaceServiceProvider&lt;TParam,TResult,TPipelineBuilder&gt;](IPipelineBuilderStepInterfaceServiceProvider_TParam,TResult,TPipelineBuilder_.md 'Excellence.Pipelines.Core.PipelineBuilders.Default.IPipelineBuilderStepInterfaceServiceProvider<TParam,TResult,TPipelineBuilder>') | The pipeline builder with the possibility to add a pipeline steps. |
+| [IPipelineBuilderUseWhen&lt;TParam,TResult,TPipelineBuilder&gt;](IPipelineBuilderUseWhen_TParam,TResult,TPipelineBuilder_.md 'Excellence.Pipelines.Core.PipelineBuilders.Default.IPipelineBuilderUseWhen<TParam,TResult,TPipelineBuilder>') | The pipeline builder with the possibility to execute the pipeline steps conditionally. |
+| [IPipelineBuilderUseWhenConditionInterface&lt;TParam,TResult,TPipelineBuilder&gt;](IPipelineBuilderUseWhenConditionInterface_TParam,TResult,TPipelineBuilder_.md 'Excellence.Pipelines.Core.PipelineBuilders.Default.IPipelineBuilderUseWhenConditionInterface<TParam,TResult,TPipelineBuilder>') | The pipeline builder with the possibility to execute the pipeline steps conditionally. |
+| [IPipelineBuilderUseWhenConditionInterfaceFactory&lt;TParam,TResult,TPipelineBuilder&gt;](IPipelineBuilderUseWhenConditionInterfaceFactory_TParam,TResult,TPipelineBuilder_.md 'Excellence.Pipelines.Core.PipelineBuilders.Default.IPipelineBuilderUseWhenConditionInterfaceFactory<TParam,TResult,TPipelineBuilder>') | The pipeline builder with the possibility to execute the pipeline steps conditionally. |
+| [IPipelineBuilderUseWhenConditionInterfaceFactoryWithServiceProvider&lt;TParam,TResult,TPipelineBuilder&gt;](IPipelineBuilderUseWhenConditionInterfaceFactoryWithServiceProvider_TParam,TResult,TPipelineBuilder_.md 'Excellence.Pipelines.Core.PipelineBuilders.Default.IPipelineBuilderUseWhenConditionInterfaceFactoryWithServiceProvider<TParam,TResult,TPipelineBuilder>') | The pipeline builder with the possibility to execute the pipeline steps conditionally. |
+| [IPipelineBuilderUseWhenConditionInterfaceServiceProvider&lt;TParam,TResult,TPipelineBuilder&gt;](IPipelineBuilderUseWhenConditionInterfaceServiceProvider_TParam,TResult,TPipelineBuilder_.md 'Excellence.Pipelines.Core.PipelineBuilders.Default.IPipelineBuilderUseWhenConditionInterfaceServiceProvider<TParam,TResult,TPipelineBuilder>') | The pipeline builder with the possibility to execute the pipeline steps conditionally. |
+| [IPipelineBuilderUseWhenConditionPredicate&lt;TParam,TResult,TPipelineBuilder&gt;](IPipelineBuilderUseWhenConditionPredicate_TParam,TResult,TPipelineBuilder_.md 'Excellence.Pipelines.Core.PipelineBuilders.Default.IPipelineBuilderUseWhenConditionPredicate<TParam,TResult,TPipelineBuilder>') | The pipeline builder with the possibility to execute the pipeline steps conditionally. |
+| [IPipelineBuilderUseWhenConditionPredicateFactory&lt;TParam,TResult,TPipelineBuilder&gt;](IPipelineBuilderUseWhenConditionPredicateFactory_TParam,TResult,TPipelineBuilder_.md 'Excellence.Pipelines.Core.PipelineBuilders.Default.IPipelineBuilderUseWhenConditionPredicateFactory<TParam,TResult,TPipelineBuilder>') | The pipeline builder with the possibility to execute the pipeline steps conditionally. |
+| [IPipelineBuilderUseWhenConditionPredicateFactoryWithServiceProvider&lt;TParam,TResult,TPipelineBuilder&gt;](IPipelineBuilderUseWhenConditionPredicateFactoryWithServiceProvider_TParam,TResult,TPipelineBuilder_.md 'Excellence.Pipelines.Core.PipelineBuilders.Default.IPipelineBuilderUseWhenConditionPredicateFactoryWithServiceProvider<TParam,TResult,TPipelineBuilder>') | The pipeline builder with the possibility to execute the pipeline steps conditionally. |
+| [IPipelineBuilderUseWhenConditionPredicateServiceProvider&lt;TParam,TResult,TPipelineBuilder&gt;](IPipelineBuilderUseWhenConditionPredicateServiceProvider_TParam,TResult,TPipelineBuilder_.md 'Excellence.Pipelines.Core.PipelineBuilders.Default.IPipelineBuilderUseWhenConditionPredicateServiceProvider<TParam,TResult,TPipelineBuilder>') | The pipeline builder with the possibility to execute the pipeline steps conditionally. |
+
+<a name='Excellence.Pipelines.Core.PipelineBuilders.Shared'></a>
+
+## Excellence.Pipelines.Core.PipelineBuilders.Shared Namespace
+
+| Interfaces | |
+| :--- | :--- |
+| [IPipelineBuilderCore&lt;TPipelineDelegate,TPipelineBuilder&gt;](IPipelineBuilderCore_TPipelineDelegate,TPipelineBuilder_.md 'Excellence.Pipelines.Core.PipelineBuilders.Shared.IPipelineBuilderCore<TPipelineDelegate,TPipelineBuilder>') | The core pipeline builder. |
+| [IPipelineBuilderCoreUseUtils&lt;TPipelineDelegate,TPipelineBuilder&gt;](IPipelineBuilderCoreUseUtils_TPipelineDelegate,TPipelineBuilder_.md 'Excellence.Pipelines.Core.PipelineBuilders.Shared.IPipelineBuilderCoreUseUtils<TPipelineDelegate,TPipelineBuilder>') | The core pipeline builder Use utils. |
+| [IPipelineBuilderCoreUtils&lt;TPipelineDelegate,TPipelineBuilder&gt;](IPipelineBuilderCoreUtils_TPipelineDelegate,TPipelineBuilder_.md 'Excellence.Pipelines.Core.PipelineBuilders.Shared.IPipelineBuilderCoreUtils<TPipelineDelegate,TPipelineBuilder>') | The core pipeline builder utils. |
+
+<a name='Excellence.Pipelines.Core.PipelineConditions'></a>
+
+## Excellence.Pipelines.Core.PipelineConditions Namespace
+
+| Interfaces | |
+| :--- | :--- |
+| [IAsyncPipelineCondition&lt;TParam&gt;](IAsyncPipelineCondition_TParam_.md 'Excellence.Pipelines.Core.PipelineConditions.IAsyncPipelineCondition<TParam>') | The pipeline builder condition. |
+| [IPipelineCondition&lt;TParam&gt;](IPipelineCondition_TParam_.md 'Excellence.Pipelines.Core.PipelineConditions.IPipelineCondition<TParam>') | The pipeline builder condition. |
+
+<a name='Excellence.Pipelines.Core.PipelineSteps'></a>
+
+## Excellence.Pipelines.Core.PipelineSteps Namespace
+
+| Interfaces | |
+| :--- | :--- |
+| [IAsyncPipelineStep&lt;TParam,TResult&gt;](IAsyncPipelineStep_TParam,TResult_.md 'Excellence.Pipelines.Core.PipelineSteps.IAsyncPipelineStep<TParam,TResult>') | The async pipeline step. |
+| [IPipelineStep&lt;TParam,TResult&gt;](IPipelineStep_TParam,TResult_.md 'Excellence.Pipelines.Core.PipelineSteps.IPipelineStep<TParam,TResult>') | The pipeline step. |

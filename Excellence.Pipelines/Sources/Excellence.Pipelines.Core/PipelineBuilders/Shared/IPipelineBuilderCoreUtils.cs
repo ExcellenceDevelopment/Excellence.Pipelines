@@ -3,7 +3,7 @@
 namespace Excellence.Pipelines.Core.PipelineBuilders.Shared
 {
     /// <summary>
-    /// The core pipeline builder.
+    /// The core pipeline builder utils.
     /// </summary>
     /// <typeparam name="TPipelineDelegate">The pipeline builder delegate type.</typeparam>
     /// <typeparam name="TPipelineBuilder">The pipeline builder type.</typeparam>

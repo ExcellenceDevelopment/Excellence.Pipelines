@@ -27,7 +27,6 @@ namespace Excellence.Pipelines.Tests.PipelineBuilders.Async
                     .BranchWhen(PipelineConditionTrueFactory, ConfigurationWithBranchTarget, null!),
                 (builder) => builder
                     .BranchWhen(PipelineConditionTrueFactory, ConfigurationWithBranchTarget, () => (IAsyncPipelineBuilderCompleteTestSut?)null!),
-
                 (builder) => builder
                     .UseServiceProvider(new ServiceCollection().BuildServiceProvider())
                     .BranchWhen((Func<IServiceProvider, AsyncPipelineConditionTrue>)null!, ConfigurationWithBranchTarget, PipelineBuilderFactoryWithServiceProvider),
@@ -35,10 +34,13 @@ namespace Excellence.Pipelines.Tests.PipelineBuilders.Async
                     .UseServiceProvider(new ServiceCollection().BuildServiceProvider())
                     .BranchWhen((_) => (AsyncPipelineConditionTrue?)null!, ConfigurationWithBranchTarget, PipelineBuilderFactoryWithServiceProvider),
                 (builder) => builder
-                    .UseServiceProvider(new ServiceCollection()
-                        .AddTransient<AsyncPipelineConditionTrue>()
-                        .AddTransient<IAsyncPipelineBuilderCompleteTestSut, AsyncPipelineBuilderCompleteTestSut>()
-                        .BuildServiceProvider())
+                    .UseServiceProvider
+                    (
+                        new ServiceCollection()
+                            .AddTransient<AsyncPipelineConditionTrue>()
+                            .AddTransient<IAsyncPipelineBuilderCompleteTestSut, AsyncPipelineBuilderCompleteTestSut>()
+                            .BuildServiceProvider()
+                    )
                     .BranchWhen(PipelineConditionTrueFactoryWithServiceProvider, null!, PipelineBuilderFactoryWithServiceProvider),
                 (builder) => builder
                     .UseServiceProvider(new ServiceCollection().AddTransient<AsyncPipelineConditionTrue>().BuildServiceProvider())
@@ -46,7 +48,6 @@ namespace Excellence.Pipelines.Tests.PipelineBuilders.Async
                 (builder) => builder
                     .UseServiceProvider(new ServiceCollection().AddTransient<AsyncPipelineConditionTrue>().BuildServiceProvider())
                     .BranchWhen(PipelineConditionTrueFactoryWithServiceProvider, ConfigurationWithBranchTarget, (_) => (IAsyncPipelineBuilderCompleteTestSut?)null!),
-
                 (builder) => builder
                     .UseServiceProvider(new ServiceCollection().AddTransient<AsyncPipelineConditionTrue>().BuildServiceProvider())
                     .BranchWhen<AsyncPipelineConditionTrue>(null!)
@@ -75,7 +76,6 @@ namespace Excellence.Pipelines.Tests.PipelineBuilders.Async
                     .UseServiceProvider(new ServiceCollection().AddTransient<AsyncPipelineConditionTrue>().BuildServiceProvider())
                     .BranchWhen
                         (PipelineConditionTrueFactoryWithServiceProvider, ConfigurationWithBranchTarget, (sp) => sp.GetRequiredService<AsyncPipelineBuilderCompleteTestSut>()),
-
                 (builder) => builder
                     .UseServiceProvider(new ServiceCollection().BuildServiceProvider())
                     .BranchWhen<AsyncPipelineConditionTrue>(ConfigurationWithBranchTarget)
@@ -103,15 +103,16 @@ namespace Excellence.Pipelines.Tests.PipelineBuilders.Async
                 (builder) => builder
                     .BranchWhen(PipelineConditionTrueFactory, ConfigurationWithBranchTarget, PipelineBuilderFactory)
                     .UseTarget(TargetMain),
-
                 (builder) => builder
-                    .UseServiceProvider(new ServiceCollection()
-                        .AddTransient<AsyncPipelineConditionTrue>()
-                        .AddTransient<IAsyncPipelineBuilderCompleteTestSut, AsyncPipelineBuilderCompleteTestSut>()
-                        .BuildServiceProvider())
+                    .UseServiceProvider
+                    (
+                        new ServiceCollection()
+                            .AddTransient<AsyncPipelineConditionTrue>()
+                            .AddTransient<IAsyncPipelineBuilderCompleteTestSut, AsyncPipelineBuilderCompleteTestSut>()
+                            .BuildServiceProvider()
+                    )
                     .BranchWhen(PipelineConditionTrueFactoryWithServiceProvider, ConfigurationWithBranchTarget, PipelineBuilderFactoryWithServiceProvider)
                     .UseTarget(TargetMain),
-
                 (builder) => builder
                     .UseServiceProvider(new ServiceCollection().AddTransient<AsyncPipelineConditionTrue>().BuildServiceProvider())
                     .BranchWhen<AsyncPipelineConditionTrue>(ConfigurationWithBranchTarget)
@@ -144,15 +145,16 @@ namespace Excellence.Pipelines.Tests.PipelineBuilders.Async
                 (builder) => builder
                     .BranchWhen(PipelineConditionFalseFactory, ConfigurationWithBranchTarget, PipelineBuilderFactory)
                     .UseTarget(TargetMain),
-
                 (builder) => builder
-                    .UseServiceProvider(new ServiceCollection()
-                        .AddTransient<AsyncPipelineConditionFalse>()
-                        .AddTransient<IAsyncPipelineBuilderCompleteTestSut, AsyncPipelineBuilderCompleteTestSut>()
-                        .BuildServiceProvider())
+                    .UseServiceProvider
+                    (
+                        new ServiceCollection()
+                            .AddTransient<AsyncPipelineConditionFalse>()
+                            .AddTransient<IAsyncPipelineBuilderCompleteTestSut, AsyncPipelineBuilderCompleteTestSut>()
+                            .BuildServiceProvider()
+                    )
                     .BranchWhen(PipelineConditionFalseFactoryWithServiceProvider, ConfigurationWithBranchTarget, PipelineBuilderFactoryWithServiceProvider)
                     .UseTarget(TargetMain),
-
                 (builder) => builder
                     .UseServiceProvider(new ServiceCollection().AddTransient<AsyncPipelineConditionFalse>().BuildServiceProvider())
                     .BranchWhen<AsyncPipelineConditionFalse>(ConfigurationWithBranchTarget)

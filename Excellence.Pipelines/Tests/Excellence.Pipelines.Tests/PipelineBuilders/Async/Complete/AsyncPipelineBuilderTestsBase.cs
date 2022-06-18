@@ -3,6 +3,7 @@ using System.Threading;
 using System.Threading.Tasks;
 
 using Excellence.Pipelines.Core.PipelineBuilders.Async;
+using Excellence.Pipelines.Core.PipelineBuilders.Shared;
 using Excellence.Pipelines.PipelineBuilders.Async;
 
 using Microsoft.Extensions.DependencyInjection;
@@ -24,7 +25,13 @@ namespace Excellence.Pipelines.Tests.PipelineBuilders.Async
 
         #region Types
 
-        public interface IAsyncPipelineBuilderCompleteTestSut : IAsyncPipelineBuilderComplete<int, int, IAsyncPipelineBuilderCompleteTestSut>
+        public interface IAsyncPipelineBuilderCompleteTestSut :
+            IPipelineBuilderCore<Func<int, CancellationToken, Task<int>>, IAsyncPipelineBuilderCompleteTestSut>,
+            IPipelineBuilderCoreUtils<Func<int, CancellationToken, Task<int>>, IAsyncPipelineBuilderCompleteTestSut>,
+            IPipelineBuilderCoreUseUtils<Func<int, CancellationToken, Task<int>>, IAsyncPipelineBuilderCompleteTestSut>,
+            IAsyncPipelineBuilderStepInterface<int, int, IAsyncPipelineBuilderCompleteTestSut>,
+            IAsyncPipelineBuilderUseWhen<int, int, IAsyncPipelineBuilderCompleteTestSut>,
+            IAsyncPipelineBuilderBranchWhen<int, int, IAsyncPipelineBuilderCompleteTestSut>
         {
             public IAsyncPipelineBuilderCompleteTestSut UseServiceProvider(IServiceProvider serviceProvider);
         }

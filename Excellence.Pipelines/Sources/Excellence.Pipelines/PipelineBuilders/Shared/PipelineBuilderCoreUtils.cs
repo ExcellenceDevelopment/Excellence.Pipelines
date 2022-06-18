@@ -2,22 +2,17 @@
 using System.Collections.Generic;
 using System.Linq;
 
-using Excellence.Pipelines.Core.PipelineBuilders.Shared;
 using Excellence.Pipelines.Utils;
 
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Excellence.Pipelines.PipelineBuilders.Shared
 {
-    public class PipelineBuilderCoreUtils<TPipelineDelegate, TPipelineBuilder> :
-        PipelineBuilderCore<TPipelineDelegate, TPipelineBuilder>,
-        IPipelineBuilderCoreUtils<TPipelineDelegate, TPipelineBuilder>
-        where TPipelineDelegate : Delegate
-        where TPipelineBuilder : IPipelineBuilderCoreUtils<TPipelineDelegate, TPipelineBuilder>
+    public partial class PipelineBuilderCoreComplete<TPipelineDelegate, TPipelineBuilder>
     {
         protected IServiceProvider ServiceProvider { get; set; }
 
-        public PipelineBuilderCoreUtils(IServiceProvider serviceProvider)
+        public PipelineBuilderCoreComplete(IServiceProvider serviceProvider)
         {
             ExceptionUtils.Process(serviceProvider, ExceptionUtils.IsNull, () => new ArgumentNullException(nameof(serviceProvider)));
 
@@ -27,7 +22,7 @@ namespace Excellence.Pipelines.PipelineBuilders.Shared
         /// <inheritdoc />
         public virtual TPipelineBuilder Copy()
         {
-            var newInstance = (PipelineBuilderCoreUtils<TPipelineDelegate, TPipelineBuilder>)this.MemberwiseClone();
+            var newInstance = (PipelineBuilderCoreComplete<TPipelineDelegate, TPipelineBuilder>)this.MemberwiseClone();
             newInstance.Components = this.Components.Select(item => (Func<TPipelineDelegate, TPipelineDelegate>)item.Clone()).ToList();
             newInstance.Target = (TPipelineDelegate?)this.Target?.Clone();
             newInstance.ServiceProvider = this.ServiceProvider;
@@ -37,7 +32,7 @@ namespace Excellence.Pipelines.PipelineBuilders.Shared
 
         protected virtual TPipelineBuilder New()
         {
-            var newInstance = (PipelineBuilderCoreUtils<TPipelineDelegate, TPipelineBuilder>)this.MemberwiseClone();
+            var newInstance = (PipelineBuilderCoreComplete<TPipelineDelegate, TPipelineBuilder>)this.MemberwiseClone();
             newInstance.Components = new List<Func<TPipelineDelegate, TPipelineDelegate>>();
             newInstance.Target = null;
 

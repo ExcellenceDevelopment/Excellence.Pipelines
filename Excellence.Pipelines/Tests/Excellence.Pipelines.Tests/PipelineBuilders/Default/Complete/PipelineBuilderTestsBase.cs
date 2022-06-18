@@ -1,6 +1,7 @@
 ﻿using System;
 
 using Excellence.Pipelines.Core.PipelineBuilders.Default;
+using Excellence.Pipelines.Core.PipelineBuilders.Shared;
 using Excellence.Pipelines.PipelineBuilders.Default;
 
 using Microsoft.Extensions.DependencyInjection;
@@ -22,7 +23,13 @@ namespace Excellence.Pipelines.Tests.PipelineBuilders.Default
 
         #region Types
 
-        public interface IPipelineBuilderCompleteTestSut : IPipelineBuilderComplete<int, int, IPipelineBuilderCompleteTestSut>
+        public interface IPipelineBuilderCompleteTestSut :
+            IPipelineBuilderCore<Func<int, int>, IPipelineBuilderCompleteTestSut>,
+            IPipelineBuilderCoreUtils<Func<int, int>, IPipelineBuilderCompleteTestSut>,
+            IPipelineBuilderCoreUseUtils<Func<int, int>, IPipelineBuilderCompleteTestSut>,
+            IPipelineBuilderStepInterface<int, int, IPipelineBuilderCompleteTestSut>,
+            IPipelineBuilderUseWhen<int, int, IPipelineBuilderCompleteTestSut>,
+            IPipelineBuilderBranchWhen<int, int, IPipelineBuilderCompleteTestSut>
         {
             public IPipelineBuilderCompleteTestSut UseServiceProvider(IServiceProvider serviceProvider);
         }

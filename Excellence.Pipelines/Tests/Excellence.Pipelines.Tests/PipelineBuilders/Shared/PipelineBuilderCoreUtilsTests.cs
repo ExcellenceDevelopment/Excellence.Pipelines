@@ -23,24 +23,26 @@ namespace Excellence.Pipelines.Tests.PipelineBuilders.Shared
                 return nextResult * nextResult;
             };
 
-        protected interface IPipelineBuilderCoreUtilsTestSut :
-            IPipelineBuilderCoreUtils<Func<int, CancellationToken, Task<int>>, IPipelineBuilderCoreUtilsTestSut>
+        protected interface IPipelineBuilderCoreCompleteTestSut :
+            IPipelineBuilderCore<Func<int, CancellationToken, Task<int>>, IPipelineBuilderCoreCompleteTestSut>,
+            IPipelineBuilderCoreUtils<Func<int, CancellationToken, Task<int>>, IPipelineBuilderCoreCompleteTestSut>,
+            IPipelineBuilderCoreUseUtils<Func<int, CancellationToken, Task<int>>, IPipelineBuilderCoreCompleteTestSut>
         {
             public IServiceProvider ServiceProviderPublic { get; }
         }
 
 
-        protected class PipelineBuilderCoreUtilsTestSut :
-            PipelineBuilderCoreUtils<Func<int, CancellationToken, Task<int>>, IPipelineBuilderCoreUtilsTestSut>,
-            IPipelineBuilderCoreUtilsTestSut
+        protected class PipelineBuilderCoreCompleteTestSut :
+            PipelineBuilderCoreComplete<Func<int, CancellationToken, Task<int>>, IPipelineBuilderCoreCompleteTestSut>,
+            IPipelineBuilderCoreCompleteTestSut
         {
             public IServiceProvider ServiceProviderPublic => this.ServiceProvider;
 
-            public PipelineBuilderCoreUtilsTestSut(IServiceProvider serviceProvider) : base(serviceProvider) { }
+            public PipelineBuilderCoreCompleteTestSut(IServiceProvider serviceProvider) : base(serviceProvider) { }
         }
 
-        protected static IPipelineBuilderCoreUtilsTestSut CreateSut(IServiceProvider serviceProvider) =>
-            new PipelineBuilderCoreUtilsTestSut(serviceProvider);
+        protected static IPipelineBuilderCoreCompleteTestSut CreateSut(IServiceProvider serviceProvider) =>
+            new PipelineBuilderCoreCompleteTestSut(serviceProvider);
 
         #endregion Shared
 
@@ -63,11 +65,7 @@ namespace Excellence.Pipelines.Tests.PipelineBuilders.Shared
 
         #region Copy
 
-        public static TheoryData<bool> CopyTargetSetOrderTestData => new TheoryData<bool>()
-        {
-            { true },
-            { false }
-        };
+        public static TheoryData<bool> CopyTargetSetOrderTestData => new TheoryData<bool>() { { true }, { false } };
 
         [Theory]
         [MemberData(nameof(CopyTargetSetOrderTestData))]

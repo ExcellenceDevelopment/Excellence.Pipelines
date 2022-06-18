@@ -300,14 +300,6 @@
             <typeparam name="TResult">The result type.</typeparam>
             <typeparam name="TPipelineBuilder">The pipeline builder type.</typeparam>
         </member>
-        <member name="T:Excellence.Pipelines.Core.PipelineBuilders.Async.IAsyncPipelineBuilderComplete`3">
-            <summary>
-            The pipeline builder with all available features
-            </summary>
-            <typeparam name="TParam">The parameter type.</typeparam>
-            <typeparam name="TResult">The result type.</typeparam>
-            <typeparam name="TPipelineBuilder">The pipeline builder type.</typeparam>
-        </member>
         <member name="T:Excellence.Pipelines.Core.PipelineBuilders.Async.IAsyncPipelineBuilderStepInterfaceFactory`3">
             <summary>
             The pipeline builder with the possibility to add a pipeline steps.
@@ -633,14 +625,6 @@
             <typeparam name="TResult">The result type.</typeparam>
             <typeparam name="TPipelineBuilder">The pipeline builder type.</typeparam>
         </member>
-        <member name="T:Excellence.Pipelines.Core.PipelineBuilders.Default.IPipelineBuilderComplete`3">
-            <summary>
-            The pipeline builder with all available features
-            </summary>
-            <typeparam name="TParam">The parameter type.</typeparam>
-            <typeparam name="TResult">The result type.</typeparam>
-            <typeparam name="TPipelineBuilder">The pipeline builder type.</typeparam>
-        </member>
         <member name="T:Excellence.Pipelines.Core.PipelineBuilders.Default.IPipelineBuilderStepInterfaceFactory`3">
             <summary>
             The pipeline builder with the possibility to add a pipeline steps.
@@ -737,9 +721,23 @@
             </summary>
             <returns>The pipeline.</returns>
         </member>
+        <member name="T:Excellence.Pipelines.Core.PipelineBuilders.Shared.IPipelineBuilderCoreUseUtils`2">
+            <summary>
+            The core pipeline builder Use utils.
+            </summary>
+            <typeparam name="TPipelineDelegate">The pipeline builder delegate type.</typeparam>
+            <typeparam name="TPipelineBuilder">The pipeline builder type.</typeparam>
+        </member>
+        <member name="M:Excellence.Pipelines.Core.PipelineBuilders.Shared.IPipelineBuilderCoreUseUtils`2.Use(System.Collections.Generic.IEnumerable{System.Func{`0,`0}})">
+            <summary>
+            Adds the components to the pipeline builder.
+            </summary>
+            <param name="components">The components.</param>
+            <returns>The current pipeline builder instance.</returns>
+        </member>
         <member name="T:Excellence.Pipelines.Core.PipelineBuilders.Shared.IPipelineBuilderCoreUtils`2">
             <summary>
-            The core pipeline builder.
+            The core pipeline builder utils.
             </summary>
             <typeparam name="TPipelineDelegate">The pipeline builder delegate type.</typeparam>
             <typeparam name="TPipelineBuilder">The pipeline builder type.</typeparam>

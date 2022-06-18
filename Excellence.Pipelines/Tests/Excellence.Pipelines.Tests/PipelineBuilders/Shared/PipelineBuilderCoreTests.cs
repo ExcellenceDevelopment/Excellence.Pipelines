@@ -39,7 +39,7 @@ namespace Excellence.Pipelines.Tests.PipelineBuilders.Shared
         }
 
         [Fact]
-        public async Task Use_Component_AddsComponentToPipeline()
+        public async Task Use_AddsComponentToPipeline()
         {
             const int incrementValue = 10;
 

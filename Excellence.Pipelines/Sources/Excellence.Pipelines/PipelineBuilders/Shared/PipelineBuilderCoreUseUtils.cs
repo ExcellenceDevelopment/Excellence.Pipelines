@@ -11,11 +11,11 @@ namespace Excellence.Pipelines.PipelineBuilders.Shared
         /// <inheritdoc />
         public TPipelineBuilder Use(IEnumerable<Func<TPipelineDelegate, TPipelineDelegate>> components)
         {
-            var componentList = components?.ToList();
+            var componentCollection = components?.ToList();
 
-            ExceptionUtils.Process(componentList, ExceptionUtils.IsNull, () => new ArgumentNullException(nameof(components)));
+            ExceptionUtils.Process(componentCollection, ExceptionUtils.IsNull, () => new ArgumentNullException(nameof(components)));
 
-            foreach (var component in componentList!)
+            foreach (var component in componentCollection!)
             {
                 this.Use(component);
             }

@@ -5,11 +5,11 @@
         <LangVersion>default</LangVersion>
         <Nullable>enable</Nullable>
 
-        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
         <IsPackable>true</IsPackable>
         <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
         <PackageId>Excellence.Pipelines.Core</PackageId>
-        <PackageVersion>2.0.0</PackageVersion>
+        <PackageVersion>3.0.0</PackageVersion>
         <Title>Excellence.Pipelines.Core</Title>
         <Authors>Excellence Development;Roman Doskoch</Authors>
         <Description>Interfaces for Pipelines.</Description>

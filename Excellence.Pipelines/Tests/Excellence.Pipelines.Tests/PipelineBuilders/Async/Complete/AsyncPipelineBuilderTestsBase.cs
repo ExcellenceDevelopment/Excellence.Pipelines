@@ -3,7 +3,7 @@ using System.Threading;
 using System.Threading.Tasks;
 
 using Excellence.Pipelines.Core.PipelineBuilders.Async;
-using Excellence.Pipelines.Core.PipelineBuilders.Shared;
+using Excellence.Pipelines.Core.PipelineBuilders.Core;
 using Excellence.Pipelines.PipelineBuilders.Async;
 
 using Microsoft.Extensions.DependencyInjection;

@@ -2,12 +2,12 @@
 using System.Threading;
 using System.Threading.Tasks;
 
-using Excellence.Pipelines.Core.PipelineBuilders.Shared;
-using Excellence.Pipelines.PipelineBuilders.Shared;
+using Excellence.Pipelines.Core.PipelineBuilders.Core;
+using Excellence.Pipelines.PipelineBuilders.Core;
 
 using Xunit;
 
-namespace Excellence.Pipelines.Tests.PipelineBuilders.Shared
+namespace Excellence.Pipelines.Tests.PipelineBuilders.Core
 {
     public class PipelineBuilderCoreTests : PipelineBuilderTestsBase
     {

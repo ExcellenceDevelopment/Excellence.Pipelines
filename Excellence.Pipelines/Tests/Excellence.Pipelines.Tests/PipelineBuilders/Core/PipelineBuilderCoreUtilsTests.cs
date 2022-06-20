@@ -6,9 +6,9 @@ using Microsoft.Extensions.DependencyInjection;
 
 using Xunit;
 
-namespace Excellence.Pipelines.Tests.PipelineBuilders.Shared
+namespace Excellence.Pipelines.Tests.PipelineBuilders.Core
 {
-    public class PipelineBuilderCoreUtilsTests : PipelineBuilderCompleteTestsBase
+    public class PipelineBuilderCoreUtilsTests : PipelineBuilderCoreCompleteTestsBase
     {
         #region Constructors
 

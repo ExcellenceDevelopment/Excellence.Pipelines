@@ -1,7 +1,7 @@
 ﻿using System;
 
+using Excellence.Pipelines.Core.PipelineBuilders.Core;
 using Excellence.Pipelines.Core.PipelineBuilders.Default;
-using Excellence.Pipelines.Core.PipelineBuilders.Shared;
 
 namespace Excellence.Pipelines.Core.PipelineBuilders
 {

@@ -1,7 +1,7 @@
 ﻿using System;
 
+using Excellence.Pipelines.Core.PipelineBuilders.Core;
 using Excellence.Pipelines.Core.PipelineBuilders.Default;
-using Excellence.Pipelines.Core.PipelineBuilders.Shared;
 using Excellence.Pipelines.PipelineBuilders.Default;
 
 using Microsoft.Extensions.DependencyInjection;

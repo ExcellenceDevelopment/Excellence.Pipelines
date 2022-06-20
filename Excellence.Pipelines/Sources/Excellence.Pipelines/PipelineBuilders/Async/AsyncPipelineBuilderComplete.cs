@@ -3,8 +3,8 @@ using System.Threading;
 using System.Threading.Tasks;
 
 using Excellence.Pipelines.Core.PipelineBuilders.Async;
-using Excellence.Pipelines.Core.PipelineBuilders.Shared;
-using Excellence.Pipelines.PipelineBuilders.Shared;
+using Excellence.Pipelines.Core.PipelineBuilders.Core;
+using Excellence.Pipelines.PipelineBuilders.Core;
 
 namespace Excellence.Pipelines.PipelineBuilders.Async
 {
@@ -16,9 +16,6 @@ namespace Excellence.Pipelines.PipelineBuilders.Async
     /// <inheritdoc cref="IAsyncPipelineBuilderBranchWhen{TParam, TResult, TPipelineBuilder}" />
     public partial class AsyncPipelineBuilderComplete<TParam, TResult, TPipelineBuilder> :
         PipelineBuilderCoreComplete<Func<TParam, CancellationToken, Task<TResult>>, TPipelineBuilder>,
-        IPipelineBuilderCore<Func<TParam, CancellationToken, Task<TResult>>, TPipelineBuilder>,
-        IPipelineBuilderCoreUtils<Func<TParam, CancellationToken, Task<TResult>>, TPipelineBuilder>,
-        IPipelineBuilderCoreUseUtils<Func<TParam, CancellationToken, Task<TResult>>, TPipelineBuilder>,
         IAsyncPipelineBuilderStepInterface<TParam, TResult, TPipelineBuilder>,
         IAsyncPipelineBuilderUseWhen<TParam, TResult, TPipelineBuilder>,
         IAsyncPipelineBuilderBranchWhen<TParam, TResult, TPipelineBuilder>

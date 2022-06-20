@@ -1,5 +1,5 @@
 #### [Excellence.Pipelines.Core](Excellence.Pipelines.md 'Excellence.Pipelines')
-### [Excellence.Pipelines.Core.PipelineBuilders.Shared](Excellence.Pipelines.md#Excellence.Pipelines.Core.PipelineBuilders.Shared 'Excellence.Pipelines.Core.PipelineBuilders.Shared')
+### [Excellence.Pipelines.Core.PipelineBuilders.Core](Excellence.Pipelines.md#Excellence.Pipelines.Core.PipelineBuilders.Core 'Excellence.Pipelines.Core.PipelineBuilders.Core')
 
 ## IPipelineBuilderCore<TPipelineDelegate,TPipelineBuilder> Interface
 
@@ -8,17 +8,17 @@ The core pipeline builder.
 ```csharp
 public interface IPipelineBuilderCore<TPipelineDelegate,out TPipelineBuilder>
     where TPipelineDelegate : System.Delegate
-    where TPipelineBuilder : Excellence.Pipelines.Core.PipelineBuilders.Shared.IPipelineBuilderCore<TPipelineDelegate, TPipelineBuilder>
+    where TPipelineBuilder : Excellence.Pipelines.Core.PipelineBuilders.Core.IPipelineBuilderCore<TPipelineDelegate, TPipelineBuilder>
 ```
 #### Type parameters
 
-<a name='Excellence.Pipelines.Core.PipelineBuilders.Shared.IPipelineBuilderCore_TPipelineDelegate,TPipelineBuilder_.TPipelineDelegate'></a>
+<a name='Excellence.Pipelines.Core.PipelineBuilders.Core.IPipelineBuilderCore_TPipelineDelegate,TPipelineBuilder_.TPipelineDelegate'></a>
 
 `TPipelineDelegate`
 
 The pipeline builder delegate type.
 
-<a name='Excellence.Pipelines.Core.PipelineBuilders.Shared.IPipelineBuilderCore_TPipelineDelegate,TPipelineBuilder_.TPipelineBuilder'></a>
+<a name='Excellence.Pipelines.Core.PipelineBuilders.Core.IPipelineBuilderCore_TPipelineDelegate,TPipelineBuilder_.TPipelineBuilder'></a>
 
 `TPipelineBuilder`
 
@@ -47,6 +47,8 @@ Derived
 &#8627; [IAsyncPipelineBuilderUseWhenConditionPredicateFactory&lt;TParam,TResult,TPipelineBuilder&gt;](IAsyncPipelineBuilderUseWhenConditionPredicateFactory_TParam,TResult,TPipelineBuilder_.md 'Excellence.Pipelines.Core.PipelineBuilders.Async.IAsyncPipelineBuilderUseWhenConditionPredicateFactory<TParam,TResult,TPipelineBuilder>')  
 &#8627; [IAsyncPipelineBuilderUseWhenConditionPredicateFactoryWithServiceProvider&lt;TParam,TResult,TPipelineBuilder&gt;](IAsyncPipelineBuilderUseWhenConditionPredicateFactoryWithServiceProvider_TParam,TResult,TPipelineBuilder_.md 'Excellence.Pipelines.Core.PipelineBuilders.Async.IAsyncPipelineBuilderUseWhenConditionPredicateFactoryWithServiceProvider<TParam,TResult,TPipelineBuilder>')  
 &#8627; [IAsyncPipelineBuilderUseWhenConditionPredicateServiceProvider&lt;TParam,TResult,TPipelineBuilder&gt;](IAsyncPipelineBuilderUseWhenConditionPredicateServiceProvider_TParam,TResult,TPipelineBuilder_.md 'Excellence.Pipelines.Core.PipelineBuilders.Async.IAsyncPipelineBuilderUseWhenConditionPredicateServiceProvider<TParam,TResult,TPipelineBuilder>')  
+&#8627; [IPipelineBuilderCoreUseUtils&lt;TPipelineDelegate,TPipelineBuilder&gt;](IPipelineBuilderCoreUseUtils_TPipelineDelegate,TPipelineBuilder_.md 'Excellence.Pipelines.Core.PipelineBuilders.Core.IPipelineBuilderCoreUseUtils<TPipelineDelegate,TPipelineBuilder>')  
+&#8627; [IPipelineBuilderCoreUtils&lt;TPipelineDelegate,TPipelineBuilder&gt;](IPipelineBuilderCoreUtils_TPipelineDelegate,TPipelineBuilder_.md 'Excellence.Pipelines.Core.PipelineBuilders.Core.IPipelineBuilderCoreUtils<TPipelineDelegate,TPipelineBuilder>')  
 &#8627; [IPipelineBuilderBranchWhen&lt;TParam,TResult,TPipelineBuilder&gt;](IPipelineBuilderBranchWhen_TParam,TResult,TPipelineBuilder_.md 'Excellence.Pipelines.Core.PipelineBuilders.Default.IPipelineBuilderBranchWhen<TParam,TResult,TPipelineBuilder>')  
 &#8627; [IPipelineBuilderBranchWhenConditionInterface&lt;TParam,TResult,TPipelineBuilder&gt;](IPipelineBuilderBranchWhenConditionInterface_TParam,TResult,TPipelineBuilder_.md 'Excellence.Pipelines.Core.PipelineBuilders.Default.IPipelineBuilderBranchWhenConditionInterface<TParam,TResult,TPipelineBuilder>')  
 &#8627; [IPipelineBuilderBranchWhenConditionInterfaceFactory&lt;TParam,TResult,TPipelineBuilder&gt;](IPipelineBuilderBranchWhenConditionInterfaceFactory_TParam,TResult,TPipelineBuilder_.md 'Excellence.Pipelines.Core.PipelineBuilders.Default.IPipelineBuilderBranchWhenConditionInterfaceFactory<TParam,TResult,TPipelineBuilder>')  
@@ -70,12 +72,10 @@ Derived
 &#8627; [IPipelineBuilderUseWhenConditionPredicateFactoryWithServiceProvider&lt;TParam,TResult,TPipelineBuilder&gt;](IPipelineBuilderUseWhenConditionPredicateFactoryWithServiceProvider_TParam,TResult,TPipelineBuilder_.md 'Excellence.Pipelines.Core.PipelineBuilders.Default.IPipelineBuilderUseWhenConditionPredicateFactoryWithServiceProvider<TParam,TResult,TPipelineBuilder>')  
 &#8627; [IPipelineBuilderUseWhenConditionPredicateServiceProvider&lt;TParam,TResult,TPipelineBuilder&gt;](IPipelineBuilderUseWhenConditionPredicateServiceProvider_TParam,TResult,TPipelineBuilder_.md 'Excellence.Pipelines.Core.PipelineBuilders.Default.IPipelineBuilderUseWhenConditionPredicateServiceProvider<TParam,TResult,TPipelineBuilder>')  
 &#8627; [IAsyncPipelineBuilder&lt;TParam,TResult&gt;](IAsyncPipelineBuilder_TParam,TResult_.md 'Excellence.Pipelines.Core.PipelineBuilders.IAsyncPipelineBuilder<TParam,TResult>')  
-&#8627; [IPipelineBuilder&lt;TParam,TResult&gt;](IPipelineBuilder_TParam,TResult_.md 'Excellence.Pipelines.Core.PipelineBuilders.IPipelineBuilder<TParam,TResult>')  
-&#8627; [IPipelineBuilderCoreUseUtils&lt;TPipelineDelegate,TPipelineBuilder&gt;](IPipelineBuilderCoreUseUtils_TPipelineDelegate,TPipelineBuilder_.md 'Excellence.Pipelines.Core.PipelineBuilders.Shared.IPipelineBuilderCoreUseUtils<TPipelineDelegate,TPipelineBuilder>')  
-&#8627; [IPipelineBuilderCoreUtils&lt;TPipelineDelegate,TPipelineBuilder&gt;](IPipelineBuilderCoreUtils_TPipelineDelegate,TPipelineBuilder_.md 'Excellence.Pipelines.Core.PipelineBuilders.Shared.IPipelineBuilderCoreUtils<TPipelineDelegate,TPipelineBuilder>')
+&#8627; [IPipelineBuilder&lt;TParam,TResult&gt;](IPipelineBuilder_TParam,TResult_.md 'Excellence.Pipelines.Core.PipelineBuilders.IPipelineBuilder<TParam,TResult>')
 ### Methods
 
-<a name='Excellence.Pipelines.Core.PipelineBuilders.Shared.IPipelineBuilderCore_TPipelineDelegate,TPipelineBuilder_.BuildPipeline()'></a>
+<a name='Excellence.Pipelines.Core.PipelineBuilders.Core.IPipelineBuilderCore_TPipelineDelegate,TPipelineBuilder_.BuildPipeline()'></a>
 
 ## IPipelineBuilderCore<TPipelineDelegate,TPipelineBuilder>.BuildPipeline() Method
 
@@ -86,10 +86,10 @@ TPipelineDelegate BuildPipeline();
 ```
 
 #### Returns
-[TPipelineDelegate](IPipelineBuilderCore_TPipelineDelegate,TPipelineBuilder_.md#Excellence.Pipelines.Core.PipelineBuilders.Shared.IPipelineBuilderCore_TPipelineDelegate,TPipelineBuilder_.TPipelineDelegate 'Excellence.Pipelines.Core.PipelineBuilders.Shared.IPipelineBuilderCore<TPipelineDelegate,TPipelineBuilder>.TPipelineDelegate')  
+[TPipelineDelegate](IPipelineBuilderCore_TPipelineDelegate,TPipelineBuilder_.md#Excellence.Pipelines.Core.PipelineBuilders.Core.IPipelineBuilderCore_TPipelineDelegate,TPipelineBuilder_.TPipelineDelegate 'Excellence.Pipelines.Core.PipelineBuilders.Core.IPipelineBuilderCore<TPipelineDelegate,TPipelineBuilder>.TPipelineDelegate')  
 The pipeline.
 
-<a name='Excellence.Pipelines.Core.PipelineBuilders.Shared.IPipelineBuilderCore_TPipelineDelegate,TPipelineBuilder_.Use(System.Func_TPipelineDelegate,TPipelineDelegate_)'></a>
+<a name='Excellence.Pipelines.Core.PipelineBuilders.Core.IPipelineBuilderCore_TPipelineDelegate,TPipelineBuilder_.Use(System.Func_TPipelineDelegate,TPipelineDelegate_)'></a>
 
 ## IPipelineBuilderCore<TPipelineDelegate,TPipelineBuilder>.Use(Func<TPipelineDelegate,TPipelineDelegate>) Method
 
@@ -100,17 +100,17 @@ TPipelineBuilder Use(System.Func<TPipelineDelegate,TPipelineDelegate> component)
 ```
 #### Parameters
 
-<a name='Excellence.Pipelines.Core.PipelineBuilders.Shared.IPipelineBuilderCore_TPipelineDelegate,TPipelineBuilder_.Use(System.Func_TPipelineDelegate,TPipelineDelegate_).component'></a>
+<a name='Excellence.Pipelines.Core.PipelineBuilders.Core.IPipelineBuilderCore_TPipelineDelegate,TPipelineBuilder_.Use(System.Func_TPipelineDelegate,TPipelineDelegate_).component'></a>
 
-`component` [System.Func&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Func-2 'System.Func`2')[TPipelineDelegate](IPipelineBuilderCore_TPipelineDelegate,TPipelineBuilder_.md#Excellence.Pipelines.Core.PipelineBuilders.Shared.IPipelineBuilderCore_TPipelineDelegate,TPipelineBuilder_.TPipelineDelegate 'Excellence.Pipelines.Core.PipelineBuilders.Shared.IPipelineBuilderCore<TPipelineDelegate,TPipelineBuilder>.TPipelineDelegate')[,](https://docs.microsoft.com/en-us/dotnet/api/System.Func-2 'System.Func`2')[TPipelineDelegate](IPipelineBuilderCore_TPipelineDelegate,TPipelineBuilder_.md#Excellence.Pipelines.Core.PipelineBuilders.Shared.IPipelineBuilderCore_TPipelineDelegate,TPipelineBuilder_.TPipelineDelegate 'Excellence.Pipelines.Core.PipelineBuilders.Shared.IPipelineBuilderCore<TPipelineDelegate,TPipelineBuilder>.TPipelineDelegate')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Func-2 'System.Func`2')
+`component` [System.Func&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Func-2 'System.Func`2')[TPipelineDelegate](IPipelineBuilderCore_TPipelineDelegate,TPipelineBuilder_.md#Excellence.Pipelines.Core.PipelineBuilders.Core.IPipelineBuilderCore_TPipelineDelegate,TPipelineBuilder_.TPipelineDelegate 'Excellence.Pipelines.Core.PipelineBuilders.Core.IPipelineBuilderCore<TPipelineDelegate,TPipelineBuilder>.TPipelineDelegate')[,](https://docs.microsoft.com/en-us/dotnet/api/System.Func-2 'System.Func`2')[TPipelineDelegate](IPipelineBuilderCore_TPipelineDelegate,TPipelineBuilder_.md#Excellence.Pipelines.Core.PipelineBuilders.Core.IPipelineBuilderCore_TPipelineDelegate,TPipelineBuilder_.TPipelineDelegate 'Excellence.Pipelines.Core.PipelineBuilders.Core.IPipelineBuilderCore<TPipelineDelegate,TPipelineBuilder>.TPipelineDelegate')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Func-2 'System.Func`2')
 
 The component.
 
 #### Returns
-[TPipelineBuilder](IPipelineBuilderCore_TPipelineDelegate,TPipelineBuilder_.md#Excellence.Pipelines.Core.PipelineBuilders.Shared.IPipelineBuilderCore_TPipelineDelegate,TPipelineBuilder_.TPipelineBuilder 'Excellence.Pipelines.Core.PipelineBuilders.Shared.IPipelineBuilderCore<TPipelineDelegate,TPipelineBuilder>.TPipelineBuilder')  
+[TPipelineBuilder](IPipelineBuilderCore_TPipelineDelegate,TPipelineBuilder_.md#Excellence.Pipelines.Core.PipelineBuilders.Core.IPipelineBuilderCore_TPipelineDelegate,TPipelineBuilder_.TPipelineBuilder 'Excellence.Pipelines.Core.PipelineBuilders.Core.IPipelineBuilderCore<TPipelineDelegate,TPipelineBuilder>.TPipelineBuilder')  
 The current pipeline builder instance.
 
-<a name='Excellence.Pipelines.Core.PipelineBuilders.Shared.IPipelineBuilderCore_TPipelineDelegate,TPipelineBuilder_.UseTarget(TPipelineDelegate)'></a>
+<a name='Excellence.Pipelines.Core.PipelineBuilders.Core.IPipelineBuilderCore_TPipelineDelegate,TPipelineBuilder_.UseTarget(TPipelineDelegate)'></a>
 
 ## IPipelineBuilderCore<TPipelineDelegate,TPipelineBuilder>.UseTarget(TPipelineDelegate) Method
 
@@ -121,12 +121,12 @@ TPipelineBuilder UseTarget(TPipelineDelegate target);
 ```
 #### Parameters
 
-<a name='Excellence.Pipelines.Core.PipelineBuilders.Shared.IPipelineBuilderCore_TPipelineDelegate,TPipelineBuilder_.UseTarget(TPipelineDelegate).target'></a>
+<a name='Excellence.Pipelines.Core.PipelineBuilders.Core.IPipelineBuilderCore_TPipelineDelegate,TPipelineBuilder_.UseTarget(TPipelineDelegate).target'></a>
 
-`target` [TPipelineDelegate](IPipelineBuilderCore_TPipelineDelegate,TPipelineBuilder_.md#Excellence.Pipelines.Core.PipelineBuilders.Shared.IPipelineBuilderCore_TPipelineDelegate,TPipelineBuilder_.TPipelineDelegate 'Excellence.Pipelines.Core.PipelineBuilders.Shared.IPipelineBuilderCore<TPipelineDelegate,TPipelineBuilder>.TPipelineDelegate')
+`target` [TPipelineDelegate](IPipelineBuilderCore_TPipelineDelegate,TPipelineBuilder_.md#Excellence.Pipelines.Core.PipelineBuilders.Core.IPipelineBuilderCore_TPipelineDelegate,TPipelineBuilder_.TPipelineDelegate 'Excellence.Pipelines.Core.PipelineBuilders.Core.IPipelineBuilderCore<TPipelineDelegate,TPipelineBuilder>.TPipelineDelegate')
 
 The target.
 
 #### Returns
-[TPipelineBuilder](IPipelineBuilderCore_TPipelineDelegate,TPipelineBuilder_.md#Excellence.Pipelines.Core.PipelineBuilders.Shared.IPipelineBuilderCore_TPipelineDelegate,TPipelineBuilder_.TPipelineBuilder 'Excellence.Pipelines.Core.PipelineBuilders.Shared.IPipelineBuilderCore<TPipelineDelegate,TPipelineBuilder>.TPipelineBuilder')  
+[TPipelineBuilder](IPipelineBuilderCore_TPipelineDelegate,TPipelineBuilder_.md#Excellence.Pipelines.Core.PipelineBuilders.Core.IPipelineBuilderCore_TPipelineDelegate,TPipelineBuilder_.TPipelineBuilder 'Excellence.Pipelines.Core.PipelineBuilders.Core.IPipelineBuilderCore<TPipelineDelegate,TPipelineBuilder>.TPipelineBuilder')  
 The current pipeline builder instance.

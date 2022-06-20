@@ -1,6 +1,6 @@
 ﻿using System;
 
-using Excellence.Pipelines.Core.PipelineBuilders.Shared;
+using Excellence.Pipelines.Core.PipelineBuilders.Core;
 
 namespace Excellence.Pipelines.Core.PipelineBuilders.Default
 {

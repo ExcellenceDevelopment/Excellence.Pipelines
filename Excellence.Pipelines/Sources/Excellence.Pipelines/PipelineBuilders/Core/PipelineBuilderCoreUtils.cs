@@ -6,7 +6,7 @@ using Excellence.Pipelines.Utils;
 
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Excellence.Pipelines.PipelineBuilders.Shared
+namespace Excellence.Pipelines.PipelineBuilders.Core
 {
     public partial class PipelineBuilderCoreComplete<TPipelineDelegate, TPipelineBuilder>
     {

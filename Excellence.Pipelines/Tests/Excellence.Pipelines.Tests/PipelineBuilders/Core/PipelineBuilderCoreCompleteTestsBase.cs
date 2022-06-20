@@ -2,12 +2,12 @@
 using System.Threading;
 using System.Threading.Tasks;
 
-using Excellence.Pipelines.Core.PipelineBuilders.Shared;
-using Excellence.Pipelines.PipelineBuilders.Shared;
+using Excellence.Pipelines.Core.PipelineBuilders.Core;
+using Excellence.Pipelines.PipelineBuilders.Core;
 
-namespace Excellence.Pipelines.Tests.PipelineBuilders.Shared
+namespace Excellence.Pipelines.Tests.PipelineBuilders.Core
 {
-    public abstract class PipelineBuilderCompleteTestsBase : PipelineBuilderTestsBase
+    public abstract class PipelineBuilderCoreCompleteTestsBase : PipelineBuilderTestsBase
     {
         protected Func<Func<int, CancellationToken, Task<int>>, Func<int, CancellationToken, Task<int>>> Component =>
             next => async (param, cancellationToken) =>
@@ -24,7 +24,6 @@ namespace Excellence.Pipelines.Tests.PipelineBuilders.Shared
         {
             public IServiceProvider ServiceProviderPublic { get; }
         }
-
 
         protected class PipelineBuilderCoreCompleteTestSut :
             PipelineBuilderCoreComplete<Func<int, CancellationToken, Task<int>>, IPipelineBuilderCoreCompleteTestSut>,

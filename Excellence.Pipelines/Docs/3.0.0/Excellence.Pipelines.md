@@ -50,6 +50,16 @@
 | [IAsyncPipelineBuilderUseWhenConditionPredicateFactoryWithServiceProvider&lt;TParam,TResult,TPipelineBuilder&gt;](IAsyncPipelineBuilderUseWhenConditionPredicateFactoryWithServiceProvider_TParam,TResult,TPipelineBuilder_.md 'Excellence.Pipelines.Core.PipelineBuilders.Async.IAsyncPipelineBuilderUseWhenConditionPredicateFactoryWithServiceProvider<TParam,TResult,TPipelineBuilder>') | The pipeline builder with the possibility to execute the pipeline steps conditionally. |
 | [IAsyncPipelineBuilderUseWhenConditionPredicateServiceProvider&lt;TParam,TResult,TPipelineBuilder&gt;](IAsyncPipelineBuilderUseWhenConditionPredicateServiceProvider_TParam,TResult,TPipelineBuilder_.md 'Excellence.Pipelines.Core.PipelineBuilders.Async.IAsyncPipelineBuilderUseWhenConditionPredicateServiceProvider<TParam,TResult,TPipelineBuilder>') | The pipeline builder with the possibility to execute the pipeline steps conditionally. |
 
+<a name='Excellence.Pipelines.Core.PipelineBuilders.Core'></a>
+
+## Excellence.Pipelines.Core.PipelineBuilders.Core Namespace
+
+| Interfaces | |
+| :--- | :--- |
+| [IPipelineBuilderCore&lt;TPipelineDelegate,TPipelineBuilder&gt;](IPipelineBuilderCore_TPipelineDelegate,TPipelineBuilder_.md 'Excellence.Pipelines.Core.PipelineBuilders.Core.IPipelineBuilderCore<TPipelineDelegate,TPipelineBuilder>') | The core pipeline builder. |
+| [IPipelineBuilderCoreUseUtils&lt;TPipelineDelegate,TPipelineBuilder&gt;](IPipelineBuilderCoreUseUtils_TPipelineDelegate,TPipelineBuilder_.md 'Excellence.Pipelines.Core.PipelineBuilders.Core.IPipelineBuilderCoreUseUtils<TPipelineDelegate,TPipelineBuilder>') | The core pipeline builder Use utils. |
+| [IPipelineBuilderCoreUtils&lt;TPipelineDelegate,TPipelineBuilder&gt;](IPipelineBuilderCoreUtils_TPipelineDelegate,TPipelineBuilder_.md 'Excellence.Pipelines.Core.PipelineBuilders.Core.IPipelineBuilderCoreUtils<TPipelineDelegate,TPipelineBuilder>') | The core pipeline builder utils. |
+
 <a name='Excellence.Pipelines.Core.PipelineBuilders.Default'></a>
 
 ## Excellence.Pipelines.Core.PipelineBuilders.Default Namespace
@@ -78,16 +88,6 @@
 | [IPipelineBuilderUseWhenConditionPredicateFactory&lt;TParam,TResult,TPipelineBuilder&gt;](IPipelineBuilderUseWhenConditionPredicateFactory_TParam,TResult,TPipelineBuilder_.md 'Excellence.Pipelines.Core.PipelineBuilders.Default.IPipelineBuilderUseWhenConditionPredicateFactory<TParam,TResult,TPipelineBuilder>') | The pipeline builder with the possibility to execute the pipeline steps conditionally. |
 | [IPipelineBuilderUseWhenConditionPredicateFactoryWithServiceProvider&lt;TParam,TResult,TPipelineBuilder&gt;](IPipelineBuilderUseWhenConditionPredicateFactoryWithServiceProvider_TParam,TResult,TPipelineBuilder_.md 'Excellence.Pipelines.Core.PipelineBuilders.Default.IPipelineBuilderUseWhenConditionPredicateFactoryWithServiceProvider<TParam,TResult,TPipelineBuilder>') | The pipeline builder with the possibility to execute the pipeline steps conditionally. |
 | [IPipelineBuilderUseWhenConditionPredicateServiceProvider&lt;TParam,TResult,TPipelineBuilder&gt;](IPipelineBuilderUseWhenConditionPredicateServiceProvider_TParam,TResult,TPipelineBuilder_.md 'Excellence.Pipelines.Core.PipelineBuilders.Default.IPipelineBuilderUseWhenConditionPredicateServiceProvider<TParam,TResult,TPipelineBuilder>') | The pipeline builder with the possibility to execute the pipeline steps conditionally. |
-
-<a name='Excellence.Pipelines.Core.PipelineBuilders.Shared'></a>
-
-## Excellence.Pipelines.Core.PipelineBuilders.Shared Namespace
-
-| Interfaces | |
-| :--- | :--- |
-| [IPipelineBuilderCore&lt;TPipelineDelegate,TPipelineBuilder&gt;](IPipelineBuilderCore_TPipelineDelegate,TPipelineBuilder_.md 'Excellence.Pipelines.Core.PipelineBuilders.Shared.IPipelineBuilderCore<TPipelineDelegate,TPipelineBuilder>') | The core pipeline builder. |
-| [IPipelineBuilderCoreUseUtils&lt;TPipelineDelegate,TPipelineBuilder&gt;](IPipelineBuilderCoreUseUtils_TPipelineDelegate,TPipelineBuilder_.md 'Excellence.Pipelines.Core.PipelineBuilders.Shared.IPipelineBuilderCoreUseUtils<TPipelineDelegate,TPipelineBuilder>') | The core pipeline builder Use utils. |
-| [IPipelineBuilderCoreUtils&lt;TPipelineDelegate,TPipelineBuilder&gt;](IPipelineBuilderCoreUtils_TPipelineDelegate,TPipelineBuilder_.md 'Excellence.Pipelines.Core.PipelineBuilders.Shared.IPipelineBuilderCoreUtils<TPipelineDelegate,TPipelineBuilder>') | The core pipeline builder utils. |
 
 <a name='Excellence.Pipelines.Core.PipelineConditions'></a>
 

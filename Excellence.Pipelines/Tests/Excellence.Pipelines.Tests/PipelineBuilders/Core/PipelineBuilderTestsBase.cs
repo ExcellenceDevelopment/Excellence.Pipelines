@@ -2,7 +2,7 @@
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Excellence.Pipelines.Tests.PipelineBuilders.Shared
+namespace Excellence.Pipelines.Tests.PipelineBuilders.Core
 {
     public abstract class PipelineBuilderTestsBase
     {

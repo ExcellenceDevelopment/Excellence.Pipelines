@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 
-using Excellence.Pipelines.Core.PipelineBuilders.Shared;
+using Excellence.Pipelines.Core.PipelineBuilders.Core;
 using Excellence.Pipelines.Utils;
 
-namespace Excellence.Pipelines.PipelineBuilders.Shared
+namespace Excellence.Pipelines.PipelineBuilders.Core
 {
     /// <inheritdoc />
     public class PipelineBuilderCore<TPipelineDelegate, TPipelineBuilder> :

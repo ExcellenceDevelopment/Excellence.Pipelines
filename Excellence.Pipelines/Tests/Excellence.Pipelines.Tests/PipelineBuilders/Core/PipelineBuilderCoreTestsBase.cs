@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 
 namespace Excellence.Pipelines.Tests.PipelineBuilders.Core
 {
-    public abstract class PipelineBuilderTestsBase
+    public abstract class PipelineBuilderCoreTestsBase
     {
         protected int Arg => 37;
 

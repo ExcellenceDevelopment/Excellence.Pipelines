@@ -7,7 +7,7 @@ using Excellence.Pipelines.PipelineBuilders.Core;
 
 namespace Excellence.Pipelines.Tests.PipelineBuilders.Core
 {
-    public abstract class PipelineBuilderCoreCompleteTestsBase : PipelineBuilderTestsBase
+    public abstract class PipelineBuilderCoreCompleteTestsBase : PipelineBuilderCoreTestsBase
     {
         protected Func<Func<int, CancellationToken, Task<int>>, Func<int, CancellationToken, Task<int>>> Component =>
             next => async (param, cancellationToken) =>

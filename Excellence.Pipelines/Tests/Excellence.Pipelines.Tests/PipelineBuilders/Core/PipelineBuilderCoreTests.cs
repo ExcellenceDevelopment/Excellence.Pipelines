@@ -9,7 +9,7 @@ using Xunit;
 
 namespace Excellence.Pipelines.Tests.PipelineBuilders.Core
 {
-    public class PipelineBuilderCoreTests : PipelineBuilderTestsBase
+    public class PipelineBuilderCoreTests : PipelineBuilderCoreTestsBase
     {
         #region Shared
 

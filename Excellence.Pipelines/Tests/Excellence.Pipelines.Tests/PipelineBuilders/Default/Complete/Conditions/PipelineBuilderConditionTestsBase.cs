@@ -6,7 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace Excellence.Pipelines.Tests.PipelineBuilders.Default
 {
-    public abstract class PipelineBuilderConditionTestsBase : PipelineBuilderTestsBase
+    public abstract class PipelineBuilderConditionTestsBase : PipelineBuilderCompleteTestsBase
     {
         protected static Func<Func<int, int>, Func<int, int>> ComponentForConfiguration =>
             next => (param) =>

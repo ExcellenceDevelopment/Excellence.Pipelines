@@ -11,7 +11,7 @@ using Xunit;
 
 namespace Excellence.Pipelines.Tests.PipelineBuilders.Async
 {
-    public class AsyncPipelineBuilderCompleteTests : AsyncPipelineBuilderTestsBase
+    public class AsyncPipelineBuilderCompleteTests : AsyncPipelineBuilderCompleteTestsBase
     {
         #region Shared
 

@@ -51,17 +51,21 @@ namespace Excellence.Pipelines.Tests.PipelineBuilders.Default
 
             var pipelineBuilder = factory.CreatePipelineBuilder<int, int>();
 
-            // Use component
+            // Use
 
-            pipelineBuilder.Use
-            (
-                next => param =>
+            Func<Func<int, int>, Func<int, int>> component =
+                next => (param) =>
                 {
                     var modifiedParam = param + 5;
 
                     return next.Invoke(modifiedParam);
-                }
-            );
+                };
+
+            // one component
+            pipelineBuilder.Use(component);
+
+            // collection of components
+            pipelineBuilder.Use(new[] { component, component, component });
 
             // Use interface
 
@@ -191,7 +195,7 @@ namespace Excellence.Pipelines.Tests.PipelineBuilders.Default
 
             var pipelineCopyResult = pipelineCopy.Invoke(2);
 
-            var expectedResult = 512;
+            var expectedResult = 1472;
 
             Assert.Equal(expectedResult, pipelineResult);
             Assert.Equal(pipelineResult, pipelineCopyResult);

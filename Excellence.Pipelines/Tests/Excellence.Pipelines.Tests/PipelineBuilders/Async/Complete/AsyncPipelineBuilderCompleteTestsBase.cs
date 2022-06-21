@@ -10,7 +10,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace Excellence.Pipelines.Tests.PipelineBuilders.Async
 {
-    public class AsyncPipelineBuilderTestsBase
+    public class AsyncPipelineBuilderCompleteTestsBase
     {
         protected int Arg => 37;
 

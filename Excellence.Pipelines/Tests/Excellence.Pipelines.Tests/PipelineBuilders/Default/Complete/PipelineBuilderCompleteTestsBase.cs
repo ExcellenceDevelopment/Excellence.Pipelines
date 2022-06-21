@@ -8,7 +8,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace Excellence.Pipelines.Tests.PipelineBuilders.Default
 {
-    public class PipelineBuilderTestsBase
+    public class PipelineBuilderCompleteTestsBase
     {
         protected int Arg => 37;
 

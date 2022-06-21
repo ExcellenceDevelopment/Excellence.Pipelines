@@ -8,7 +8,7 @@ using Xunit;
 
 namespace Excellence.Pipelines.Tests.PipelineBuilders.Default
 {
-    public class PipelineBuilderStepInterfaceTests : PipelineBuilderTestsBase
+    public class PipelineBuilderStepInterfaceTests : PipelineBuilderCompleteTestsBase
     {
         #region Shared
 

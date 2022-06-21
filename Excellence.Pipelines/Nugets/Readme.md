@@ -102,20 +102,24 @@ Every pipeline executes steps in the order these steps have been added.
 
 ### `Use` delegate
 
-`Use` adds the component created from the delegate.
+`Use` adds the components created from the delegates.
 
 **Example**:
 
 ```csharp
-pipelineBuilder.Use
-(
+Func<Func<int, CancellationToken, Task<int>>, Func<int, CancellationToken, Task<int>>> component =
     next => (param, cancellationToken) =>
     {
         var modifiedParam = param + 5;
 
         return next.Invoke(modifiedParam, cancellationToken);
-    }
-);
+    };
+
+// one component
+pipelineBuilder.Use(component);
+
+// collection of components
+pipelineBuilder.Use(new[] { component, component, component });
 ```
 
 <br/>

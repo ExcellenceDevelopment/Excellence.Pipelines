@@ -10,7 +10,7 @@ using Xunit;
 
 namespace Excellence.Pipelines.Tests.PipelineBuilders.Async
 {
-    public class AsyncPipelineBuilderStepInterfaceTests : AsyncPipelineBuilderTestsBase
+    public class AsyncPipelineBuilderStepInterfaceTests : AsyncPipelineBuilderCompleteTestsBase
     {
         #region Shared
 

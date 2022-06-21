@@ -1,6 +1,6 @@
 ﻿using System;
 
-using Excellence.Pipelines.Core.PipelineBuilders.Shared;
+using Excellence.Pipelines.Core.PipelineBuilders.Core;
 
 namespace Excellence.Pipelines.Core.PipelineBuilders.Default
 {
@@ -93,6 +93,5 @@ namespace Excellence.Pipelines.Core.PipelineBuilders.Default
         IPipelineBuilderBranchWhenConditionPredicateFactory<TParam, TResult, TPipelineBuilder>,
         IPipelineBuilderBranchWhenConditionPredicateFactoryWithServiceProvider<TParam, TResult, TPipelineBuilder>,
         IPipelineBuilderBranchWhenConditionPredicateServiceProvider<TParam, TResult, TPipelineBuilder>
-        where TPipelineBuilder : IPipelineBuilderBranchWhenConditionPredicate<TParam, TResult, TPipelineBuilder>
- { }
+        where TPipelineBuilder : IPipelineBuilderBranchWhenConditionPredicate<TParam, TResult, TPipelineBuilder> { }
 }

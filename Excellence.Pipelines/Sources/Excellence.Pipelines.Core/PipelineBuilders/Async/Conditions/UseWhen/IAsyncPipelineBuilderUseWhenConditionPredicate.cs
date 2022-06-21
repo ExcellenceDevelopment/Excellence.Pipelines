@@ -2,7 +2,7 @@
 using System.Threading;
 using System.Threading.Tasks;
 
-using Excellence.Pipelines.Core.PipelineBuilders.Shared;
+using Excellence.Pipelines.Core.PipelineBuilders.Core;
 
 namespace Excellence.Pipelines.Core.PipelineBuilders.Async
 {

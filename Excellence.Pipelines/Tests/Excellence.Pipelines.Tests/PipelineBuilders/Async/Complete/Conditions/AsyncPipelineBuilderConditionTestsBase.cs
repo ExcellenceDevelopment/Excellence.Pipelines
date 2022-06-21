@@ -8,7 +8,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace Excellence.Pipelines.Tests.PipelineBuilders.Async
 {
-    public abstract class AsyncPipelineBuilderConditionTestsBase : AsyncPipelineBuilderTestsBase
+    public abstract class AsyncPipelineBuilderConditionTestsBase : AsyncPipelineBuilderCompleteTestsBase
     {
         protected static Func<Func<int, CancellationToken, Task<int>>, Func<int, CancellationToken, Task<int>>> ComponentForConfiguration =>
             next => async (param, cancellationToken) =>

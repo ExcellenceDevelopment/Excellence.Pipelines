@@ -5,6 +5,7 @@ using Excellence.Pipelines.PipelineBuilderFactories;
 using Excellence.Pipelines.Utils;
 
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 
 namespace Excellence.Pipelines.Extensions
 {
@@ -16,17 +17,17 @@ namespace Excellence.Pipelines.Extensions
         /// <summary>
         /// Adds the dependencies needed for the the pipelines.
         /// </summary>
-        /// <param name="serviceCollection">The service collection.</param>
+        /// <param name="services">The services.</param>
         /// <returns>The passed <see cref="IServiceCollection"/> instance with the added dependencies.</returns>
         /// <exception cref="ArgumentNullException">The exception when the argument is <see langword="null"/>.</exception>
-        public static IServiceCollection AddPipelines(this IServiceCollection serviceCollection)
+        public static IServiceCollection AddPipelines(this IServiceCollection services)
         {
-            ExceptionUtils.Process(serviceCollection, ExceptionUtils.IsNull, () => new ArgumentNullException(nameof(serviceCollection)));
+            ExceptionUtils.Process(services, ExceptionUtils.IsNull, () => new ArgumentNullException(nameof(services)));
 
-            serviceCollection.AddSingleton<IPipelineBuilderFactory>(serviceProvider => new PipelineBuilderFactory(serviceProvider));
-            serviceCollection.AddSingleton<IAsyncPipelineBuilderFactory>(serviceProvider => new AsyncPipelineBuilderFactory(serviceProvider));
+            services.TryAddSingleton<IPipelineBuilderFactory>(serviceProvider => new PipelineBuilderFactory(serviceProvider));
+            services.TryAddSingleton<IAsyncPipelineBuilderFactory>(serviceProvider => new AsyncPipelineBuilderFactory(serviceProvider));
 
-            return serviceCollection;
+            return services;
         }
     }
 }

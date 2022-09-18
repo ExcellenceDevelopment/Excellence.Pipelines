@@ -6,19 +6,19 @@
 
 - [Overview](#overview)
 - [Create pipeline builders](#create-pipeline-builders)
-  - [Constructor](#constructor)
-  - [Factory](#factory)
-  - [`Copy`](#copy)
+    - [Constructor](#constructor)
+    - [Factory](#factory)
+    - [`Copy`](#copy)
 - [Add components](#add-components)
-  - [`Use` delegate](#use-delegate)
-  - [`Use` interface](#use-interface)
+    - [`Use` delegate](#use-delegate)
+    - [`Use` interface](#use-interface)
 - [Add components and execute conditionally](#add-components-and-execute-conditionally)
-  - [`UseWhen`](#usewhen)
-  - [`BranchWhen`](#branchwhen)
+    - [`UseWhen`](#usewhen)
+    - [`BranchWhen`](#branchwhen)
 - [Set the pipeline target](#set-the-pipeline-target)
-  - [`UseTarget`](#usetarget)
+    - [`UseTarget`](#usetarget)
 - [Build the pipeline](#build-the-pipeline)
-  - [`BuildPipeline`](#buildpipeline)
+    - [`BuildPipeline`](#buildpipeline)
 
 <br/>
 

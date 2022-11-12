@@ -1,7 +1,4 @@
-﻿using System;
-using System.Threading.Tasks;
-
-using Excellence.Pipelines.Core.PipelineConditions;
+﻿using Excellence.Pipelines.Core.PipelineConditions;
 
 namespace Excellence.Pipelines.PipelineBuilders.Async
 {

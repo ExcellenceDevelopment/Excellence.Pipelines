@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-using Excellence.Pipelines.Core.PipelineBuilders.Core;
+﻿using Excellence.Pipelines.Core.PipelineBuilders.Core;
 
 namespace Excellence.Pipelines.PipelineBuilders.Core
 {

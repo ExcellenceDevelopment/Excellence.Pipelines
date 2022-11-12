@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Excellence.Pipelines.Core.PipelineSteps
+﻿namespace Excellence.Pipelines.Core.PipelineSteps
 {
     /// <summary>
     /// The pipeline step.

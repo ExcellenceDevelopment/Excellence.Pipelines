@@ -1,6 +1,4 @@
-﻿using System;
-
-using Excellence.Pipelines.Core.PipelineBuilderFactories;
+﻿using Excellence.Pipelines.Core.PipelineBuilderFactories;
 using Excellence.Pipelines.PipelineBuilderFactories;
 
 using Microsoft.Extensions.DependencyInjection;

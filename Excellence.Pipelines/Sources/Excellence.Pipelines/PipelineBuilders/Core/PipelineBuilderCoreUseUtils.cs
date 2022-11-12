@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace Excellence.Pipelines.PipelineBuilders.Core
+﻿namespace Excellence.Pipelines.PipelineBuilders.Core
 {
     public partial class PipelineBuilderCoreComplete<TPipelineDelegate, TPipelineBuilder>
     {

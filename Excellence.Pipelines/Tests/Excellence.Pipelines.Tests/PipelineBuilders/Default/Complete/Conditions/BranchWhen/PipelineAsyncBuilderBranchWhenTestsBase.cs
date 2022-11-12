@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Excellence.Pipelines.Tests.PipelineBuilders.Default
+﻿namespace Excellence.Pipelines.Tests.PipelineBuilders.Default
 {
     public abstract class PipelineBuilderBranchWhenTestsBase : PipelineBuilderConditionTestsBase
     {

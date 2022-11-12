@@ -1,8 +1,4 @@
-﻿using System;
-using System.Threading;
-using System.Threading.Tasks;
-
-namespace Excellence.Pipelines.Tests.PipelineBuilders.Async
+﻿namespace Excellence.Pipelines.Tests.PipelineBuilders.Async
 {
     public abstract class AsyncPipelineBuilderBranchWhenTestsBase : AsyncPipelineBuilderConditionTestsBase
     {

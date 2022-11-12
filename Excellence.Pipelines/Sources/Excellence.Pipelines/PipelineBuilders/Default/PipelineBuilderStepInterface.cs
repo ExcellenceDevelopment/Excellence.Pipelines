@@ -1,6 +1,4 @@
-﻿using System;
-
-using Excellence.Pipelines.Core.PipelineSteps;
+﻿using Excellence.Pipelines.Core.PipelineSteps;
 
 namespace Excellence.Pipelines.PipelineBuilders.Default
 {

@@ -1,5 +1,4 @@
-﻿using System;
-using System.Diagnostics.CodeAnalysis;
+﻿using System.Diagnostics.CodeAnalysis;
 
 using Excellence.Pipelines.Core.PipelineBuilders;
 using Excellence.Pipelines.Core.PipelineConditions;

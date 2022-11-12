@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Excellence.Pipelines.Core.PipelineBuilders.Core
+﻿namespace Excellence.Pipelines.Core.PipelineBuilders.Core
 {
     /// <summary>
     /// The core pipeline builder utils.

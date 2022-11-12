@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-
-using Excellence.Pipelines.Utils;
 
 namespace Excellence.Pipelines.PipelineBuilders.Core
 {
@@ -11,11 +8,9 @@ namespace Excellence.Pipelines.PipelineBuilders.Core
         /// <inheritdoc />
         public TPipelineBuilder Use(IEnumerable<Func<TPipelineDelegate, TPipelineDelegate>> components)
         {
-            var componentCollection = components?.ToList();
+            ArgumentNullException.ThrowIfNull(components);
 
-            ExceptionUtils.Process(componentCollection, ExceptionUtils.IsNull, () => new ArgumentNullException(nameof(components)));
-
-            foreach (var component in componentCollection!)
+            foreach (var component in components)
             {
                 this.Use(component);
             }

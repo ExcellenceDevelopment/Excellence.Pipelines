@@ -1,14 +1,13 @@
 ﻿using System;
 
 using Excellence.Pipelines.Core.PipelineSteps;
-using Excellence.Pipelines.Utils;
 
 namespace Excellence.Pipelines.PipelineBuilders.Default
 {
     public partial class PipelineBuilderComplete<TParam, TResult, TPipelineBuilder>
     {
         /// <inheritdoc />
-        public virtual TPipelineBuilder Use<TPipelineStep>(Func<TPipelineStep> pipelineStepFactory) where TPipelineStep : IPipelineStep<TParam, TResult>
+        public virtual TPipelineBuilder Use<TPipelineStep>(Func<TPipelineStep> pipelineStepFactory) where TPipelineStep : class, IPipelineStep<TParam, TResult>
         {
             var instance = this.GetFromFactory(pipelineStepFactory);
 
@@ -16,7 +15,7 @@ namespace Excellence.Pipelines.PipelineBuilders.Default
         }
 
         /// <inheritdoc />
-        public virtual TPipelineBuilder Use<TPipelineStep>(Func<IServiceProvider, TPipelineStep> pipelineStepFactory) where TPipelineStep : IPipelineStep<TParam, TResult>
+        public virtual TPipelineBuilder Use<TPipelineStep>(Func<IServiceProvider, TPipelineStep> pipelineStepFactory) where TPipelineStep : class, IPipelineStep<TParam, TResult>
         {
             var pipelineStepInstance = this.GetFromFactory(pipelineStepFactory);
 
@@ -24,16 +23,16 @@ namespace Excellence.Pipelines.PipelineBuilders.Default
         }
 
         /// <inheritdoc />
-        public virtual TPipelineBuilder Use<TPipelineStep>() where TPipelineStep : IPipelineStep<TParam, TResult>
+        public virtual TPipelineBuilder Use<TPipelineStep>() where TPipelineStep : class, IPipelineStep<TParam, TResult>
         {
             var instance = this.GetFromServiceProvider<TPipelineStep>();
 
             return this.UsePipelineStep(instance);
         }
 
-        protected virtual TPipelineBuilder UsePipelineStep<TPipelineStep>(TPipelineStep pipelineStep) where TPipelineStep : IPipelineStep<TParam, TResult>
+        protected virtual TPipelineBuilder UsePipelineStep<TPipelineStep>(TPipelineStep pipelineStep) where TPipelineStep : class, IPipelineStep<TParam, TResult>
         {
-            ExceptionUtils.Process((object?)pipelineStep, ExceptionUtils.IsNull, () => new ArgumentNullException(nameof(pipelineStep)));
+            ArgumentNullException.ThrowIfNull(pipelineStep);
 
             Func<Func<TParam, TResult>, Func<TParam, TResult>> component =
                 next =>

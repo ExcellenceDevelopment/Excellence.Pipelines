@@ -9,5 +9,5 @@
     public interface IPipelineBuilderUseWhen<TParam, TResult, TPipelineBuilder> :
         IPipelineBuilderUseWhenConditionPredicate<TParam, TResult, TPipelineBuilder>,
         IPipelineBuilderUseWhenConditionInterface<TParam, TResult, TPipelineBuilder>
-        where TPipelineBuilder : IPipelineBuilderUseWhen<TParam, TResult, TPipelineBuilder> { }
+        where TPipelineBuilder : class, IPipelineBuilderUseWhen<TParam, TResult, TPipelineBuilder> { }
 }

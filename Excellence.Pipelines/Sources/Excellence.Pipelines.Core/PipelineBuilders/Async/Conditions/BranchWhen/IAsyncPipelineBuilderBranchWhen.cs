@@ -9,5 +9,5 @@
     public interface IAsyncPipelineBuilderBranchWhen<TParam, TResult, TPipelineBuilder> :
         IAsyncPipelineBuilderBranchWhenConditionPredicate<TParam, TResult, TPipelineBuilder>,
         IAsyncPipelineBuilderBranchWhenConditionInterface<TParam, TResult, TPipelineBuilder>
-        where TPipelineBuilder : IAsyncPipelineBuilderBranchWhen<TParam, TResult, TPipelineBuilder> { }
+        where TPipelineBuilder : class, IAsyncPipelineBuilderBranchWhen<TParam, TResult, TPipelineBuilder> { }
 }

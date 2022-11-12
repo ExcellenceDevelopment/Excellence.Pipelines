@@ -42,7 +42,7 @@ namespace Excellence.Pipelines.PipelineBuilders.Async
             Func<TPipelineCondition> pipelineConditionFactory,
             Action<TPipelineBuilder> branchPipelineBuilderConfiguration,
             Func<TPipelineBuilder> branchPipelineBuilderFactory
-        ) where TPipelineCondition : IAsyncPipelineCondition<TParam> =>
+        ) where TPipelineCondition : class, IAsyncPipelineCondition<TParam> =>
             this.UseConditionInterface(pipelineConditionFactory, branchPipelineBuilderConfiguration, branchPipelineBuilderFactory, false);
 
         /// <inheritdoc />
@@ -51,12 +51,12 @@ namespace Excellence.Pipelines.PipelineBuilders.Async
             Func<IServiceProvider, TPipelineCondition> pipelineConditionFactory,
             Action<TPipelineBuilder> branchPipelineBuilderConfiguration,
             Func<IServiceProvider, TPipelineBuilder> branchPipelineBuilderFactory
-        ) where TPipelineCondition : IAsyncPipelineCondition<TParam> =>
+        ) where TPipelineCondition : class, IAsyncPipelineCondition<TParam> =>
             this.UseConditionInterface(pipelineConditionFactory, branchPipelineBuilderConfiguration, branchPipelineBuilderFactory, false);
 
         /// <inheritdoc />
         public virtual TPipelineBuilder BranchWhen<TPipelineCondition>(Action<TPipelineBuilder> branchPipelineBuilderConfiguration)
-            where TPipelineCondition : IAsyncPipelineCondition<TParam> =>
+            where TPipelineCondition : class, IAsyncPipelineCondition<TParam> =>
             this.UseConditionInterface<TPipelineCondition>(branchPipelineBuilderConfiguration, false);
 
         #endregion Interface

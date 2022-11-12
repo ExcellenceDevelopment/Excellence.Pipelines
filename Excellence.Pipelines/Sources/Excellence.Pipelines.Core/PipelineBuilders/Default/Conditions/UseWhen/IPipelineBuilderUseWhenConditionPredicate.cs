@@ -12,7 +12,7 @@ namespace Excellence.Pipelines.Core.PipelineBuilders.Default
     /// <typeparam name="TPipelineBuilder">The pipeline builder type.</typeparam>
     public interface IPipelineBuilderUseWhenConditionPredicateFactory<TParam, TResult, TPipelineBuilder> :
         IPipelineBuilderCore<Func<TParam, TResult>, TPipelineBuilder>
-        where TPipelineBuilder : IPipelineBuilderUseWhenConditionPredicateFactory<TParam, TResult, TPipelineBuilder>
+        where TPipelineBuilder : class, IPipelineBuilderUseWhenConditionPredicateFactory<TParam, TResult, TPipelineBuilder>
     {
         /// <summary>
         /// Adds the pipeline branch with own configuration that is executed when the condition is met.
@@ -39,7 +39,7 @@ namespace Excellence.Pipelines.Core.PipelineBuilders.Default
     /// <typeparam name="TPipelineBuilder">The pipeline builder type.</typeparam>
     public interface IPipelineBuilderUseWhenConditionPredicateFactoryWithServiceProvider<TParam, TResult, TPipelineBuilder> :
         IPipelineBuilderCore<Func<TParam, TResult>, TPipelineBuilder>
-        where TPipelineBuilder : IPipelineBuilderUseWhenConditionPredicateFactoryWithServiceProvider<TParam, TResult, TPipelineBuilder>
+        where TPipelineBuilder : class, IPipelineBuilderUseWhenConditionPredicateFactoryWithServiceProvider<TParam, TResult, TPipelineBuilder>
     {
         /// <summary>
         /// Adds the pipeline branch with own configuration that is executed when the condition is met.
@@ -66,7 +66,7 @@ namespace Excellence.Pipelines.Core.PipelineBuilders.Default
     /// <typeparam name="TPipelineBuilder">The pipeline builder type.</typeparam>
     public interface IPipelineBuilderUseWhenConditionPredicateServiceProvider<TParam, TResult, out TPipelineBuilder> :
         IPipelineBuilderCore<Func<TParam, TResult>, TPipelineBuilder>
-        where TPipelineBuilder : IPipelineBuilderUseWhenConditionPredicateServiceProvider<TParam, TResult, TPipelineBuilder>
+        where TPipelineBuilder : class, IPipelineBuilderUseWhenConditionPredicateServiceProvider<TParam, TResult, TPipelineBuilder>
     {
         /// <summary>
         /// Adds the pipeline branch with own configuration that is executed when the condition is met.
@@ -93,5 +93,5 @@ namespace Excellence.Pipelines.Core.PipelineBuilders.Default
         IPipelineBuilderUseWhenConditionPredicateFactory<TParam, TResult, TPipelineBuilder>,
         IPipelineBuilderUseWhenConditionPredicateFactoryWithServiceProvider<TParam, TResult, TPipelineBuilder>,
         IPipelineBuilderUseWhenConditionPredicateServiceProvider<TParam, TResult, TPipelineBuilder>
-        where TPipelineBuilder : IPipelineBuilderUseWhenConditionPredicate<TParam, TResult, TPipelineBuilder> { }
+        where TPipelineBuilder : class, IPipelineBuilderUseWhenConditionPredicate<TParam, TResult, TPipelineBuilder> { }
 }

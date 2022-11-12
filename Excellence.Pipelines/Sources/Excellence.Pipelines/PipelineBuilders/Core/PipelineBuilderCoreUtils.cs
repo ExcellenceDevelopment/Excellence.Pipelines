@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 
-using Excellence.Pipelines.Utils;
-
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Excellence.Pipelines.PipelineBuilders.Core
@@ -14,7 +12,7 @@ namespace Excellence.Pipelines.PipelineBuilders.Core
 
         public PipelineBuilderCoreComplete(IServiceProvider serviceProvider)
         {
-            ExceptionUtils.Process(serviceProvider, ExceptionUtils.IsNull, () => new ArgumentNullException(nameof(serviceProvider)));
+            ArgumentNullException.ThrowIfNull(serviceProvider);
 
             this.ServiceProvider = serviceProvider;
         }
@@ -41,14 +39,14 @@ namespace Excellence.Pipelines.PipelineBuilders.Core
 
         protected virtual TFactoryResult GetFromFactory<TFactoryResult>(Func<TFactoryResult> factory)
         {
-            ExceptionUtils.Process(factory, ExceptionUtils.IsNull, () => new ArgumentNullException(nameof(factory)));
+            ArgumentNullException.ThrowIfNull(factory);
 
             return factory.Invoke();
         }
 
         protected virtual TFactoryResult GetFromFactory<TFactoryResult>(Func<IServiceProvider, TFactoryResult> factory)
         {
-            ExceptionUtils.Process(factory, ExceptionUtils.IsNull, () => new ArgumentNullException(nameof(factory)));
+            ArgumentNullException.ThrowIfNull(factory);
 
             return factory.Invoke(this.ServiceProvider);
         }

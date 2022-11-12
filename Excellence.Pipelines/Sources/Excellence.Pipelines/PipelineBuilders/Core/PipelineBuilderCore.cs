@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 
 using Excellence.Pipelines.Core.PipelineBuilders.Core;
-using Excellence.Pipelines.Utils;
 
 namespace Excellence.Pipelines.PipelineBuilders.Core
 {
@@ -10,7 +9,7 @@ namespace Excellence.Pipelines.PipelineBuilders.Core
     public class PipelineBuilderCore<TPipelineDelegate, TPipelineBuilder> :
         IPipelineBuilderCore<TPipelineDelegate, TPipelineBuilder>
         where TPipelineDelegate : Delegate
-        where TPipelineBuilder : IPipelineBuilderCore<TPipelineDelegate, TPipelineBuilder>
+        where TPipelineBuilder : class, IPipelineBuilderCore<TPipelineDelegate, TPipelineBuilder>
     {
         protected IList<Func<TPipelineDelegate, TPipelineDelegate>> Components { get; set; } =
             new List<Func<TPipelineDelegate, TPipelineDelegate>>();
@@ -20,7 +19,7 @@ namespace Excellence.Pipelines.PipelineBuilders.Core
         /// <inheritdoc />
         public virtual TPipelineBuilder Use(Func<TPipelineDelegate, TPipelineDelegate> component)
         {
-            ExceptionUtils.Process(component, ExceptionUtils.IsNull, () => new ArgumentNullException(nameof(component)));
+            ArgumentNullException.ThrowIfNull(component);
 
             this.Components.Add(component);
 
@@ -30,7 +29,7 @@ namespace Excellence.Pipelines.PipelineBuilders.Core
         /// <inheritdoc />
         public virtual TPipelineBuilder UseTarget(TPipelineDelegate target)
         {
-            ExceptionUtils.Process(target, ExceptionUtils.IsNull, () => new ArgumentNullException(nameof(target)));
+            ArgumentNullException.ThrowIfNull(target);
 
             this.Target = target;
 
@@ -40,12 +39,10 @@ namespace Excellence.Pipelines.PipelineBuilders.Core
         /// <inheritdoc />
         public virtual TPipelineDelegate BuildPipeline()
         {
-            ExceptionUtils.Process
-            (
-                this.Target,
-                ExceptionUtils.IsNull,
-                () => new InvalidOperationException($"The {this.GetType()} does not have a target.")
-            );
+            if (this.Target == null)
+            {
+                throw new InvalidOperationException($"The {this.GetType()} does not have a target.");
+            }
 
             var next = this.Target!;
 

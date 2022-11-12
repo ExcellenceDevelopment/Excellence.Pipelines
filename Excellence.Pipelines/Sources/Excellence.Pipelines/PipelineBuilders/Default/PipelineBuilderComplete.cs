@@ -17,7 +17,7 @@ namespace Excellence.Pipelines.PipelineBuilders.Default
         IPipelineBuilderStepInterface<TParam, TResult, TPipelineBuilder>,
         IPipelineBuilderUseWhen<TParam, TResult, TPipelineBuilder>,
         IPipelineBuilderBranchWhen<TParam, TResult, TPipelineBuilder>
-        where TPipelineBuilder : IPipelineBuilderCore<Func<TParam, TResult>, TPipelineBuilder>,
+        where TPipelineBuilder : class, IPipelineBuilderCore<Func<TParam, TResult>, TPipelineBuilder>,
         IPipelineBuilderCoreUtils<Func<TParam, TResult>, TPipelineBuilder>,
         IPipelineBuilderCoreUseUtils<Func<TParam, TResult>, TPipelineBuilder>,
         IPipelineBuilderStepInterface<TParam, TResult, TPipelineBuilder>,

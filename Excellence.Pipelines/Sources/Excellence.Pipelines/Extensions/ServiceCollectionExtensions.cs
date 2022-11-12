@@ -2,7 +2,6 @@
 
 using Excellence.Pipelines.Core.PipelineBuilderFactories;
 using Excellence.Pipelines.PipelineBuilderFactories;
-using Excellence.Pipelines.Utils;
 
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
@@ -22,7 +21,7 @@ namespace Excellence.Pipelines.Extensions
         /// <exception cref="ArgumentNullException">The exception when the argument is <see langword="null"/>.</exception>
         public static IServiceCollection AddPipelines(this IServiceCollection services)
         {
-            ExceptionUtils.Process(services, ExceptionUtils.IsNull, () => new ArgumentNullException(nameof(services)));
+            ArgumentNullException.ThrowIfNull(services);
 
             services.TryAddSingleton<IPipelineBuilderFactory>(serviceProvider => new PipelineBuilderFactory(serviceProvider));
             services.TryAddSingleton<IAsyncPipelineBuilderFactory>(serviceProvider => new AsyncPipelineBuilderFactory(serviceProvider));

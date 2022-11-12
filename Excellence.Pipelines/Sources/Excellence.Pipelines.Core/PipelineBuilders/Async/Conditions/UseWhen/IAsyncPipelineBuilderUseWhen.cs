@@ -9,5 +9,5 @@
     public interface IAsyncPipelineBuilderUseWhen<TParam, TResult, TPipelineBuilder> :
         IAsyncPipelineBuilderUseWhenConditionPredicate<TParam, TResult, TPipelineBuilder>,
         IAsyncPipelineBuilderUseWhenConditionInterface<TParam, TResult, TPipelineBuilder>
-        where TPipelineBuilder : IAsyncPipelineBuilderUseWhen<TParam, TResult, TPipelineBuilder> { }
+        where TPipelineBuilder : class, IAsyncPipelineBuilderUseWhen<TParam, TResult, TPipelineBuilder> { }
 }

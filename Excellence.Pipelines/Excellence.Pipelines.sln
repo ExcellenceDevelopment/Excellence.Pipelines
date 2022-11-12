@@ -41,7 +41,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tools", "Tools", "{D9247D5D-96A8-43C2-B3F2-63EA5A76DEF9}"
 	ProjectSection(SolutionItems) = preProject
 		Docs\Tools\Docs Generation Tools.md = Docs\Tools\Docs Generation Tools.md
-		Docs\Tools\Test Coverage Reports Generation Tool.md = Docs\Tools\Test Coverage Reports Generation Tool.md
+		Docs\Tools\Test Coverage Reports Generation Tools.md = Docs\Tools\Test Coverage Reports Generation Tools.md
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ContinuousIntegration", "ContinuousIntegration", "{B33E2EA8-5379-4977-88FD-91D6A378712D}"

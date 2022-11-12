@@ -1,7 +1,6 @@
 ﻿using System;
 
 using Excellence.Pipelines.Core.PipelineConditions;
-using Excellence.Pipelines.Utils;
 
 namespace Excellence.Pipelines.PipelineBuilders.Default
 {
@@ -15,11 +14,11 @@ namespace Excellence.Pipelines.PipelineBuilders.Default
             Action<TPipelineBuilder> branchPipelineBuilderConfiguration,
             Func<TPipelineBuilder> branchPipelineBuilderFactory,
             bool withRejoining
-        ) where TPipelineCondition : IPipelineCondition<TParam>
+        ) where TPipelineCondition : class, IPipelineCondition<TParam>
         {
             var pipelineCondition = this.GetFromFactory(pipelineConditionFactory);
 
-            ExceptionUtils.Process((object?)pipelineCondition, ExceptionUtils.IsNull, () => new ArgumentNullException(nameof(pipelineCondition)));
+            ArgumentNullException.ThrowIfNull(pipelineCondition);
 
             return this.UseConditionPredicate(pipelineCondition.Invoke, branchPipelineBuilderConfiguration, branchPipelineBuilderFactory, withRejoining);
         }
@@ -30,11 +29,11 @@ namespace Excellence.Pipelines.PipelineBuilders.Default
             Action<TPipelineBuilder> branchPipelineBuilderConfiguration,
             Func<IServiceProvider, TPipelineBuilder> branchPipelineBuilderFactory,
             bool withRejoining
-        ) where TPipelineCondition : IPipelineCondition<TParam>
+        ) where TPipelineCondition : class, IPipelineCondition<TParam>
         {
             var pipelineCondition = this.GetFromFactory(pipelineConditionFactory);
 
-            ExceptionUtils.Process((object?)pipelineCondition, ExceptionUtils.IsNull, () => new ArgumentNullException(nameof(pipelineCondition)));
+            ArgumentNullException.ThrowIfNull(pipelineCondition);
 
             return this.UseConditionPredicate(pipelineCondition.Invoke, branchPipelineBuilderConfiguration, branchPipelineBuilderFactory, withRejoining);
         }
@@ -43,7 +42,7 @@ namespace Excellence.Pipelines.PipelineBuilders.Default
         (
             Action<TPipelineBuilder> branchPipelineBuilderConfiguration,
             bool withRejoining
-        ) where TPipelineCondition : IPipelineCondition<TParam>
+        ) where TPipelineCondition : class, IPipelineCondition<TParam>
         {
             var pipelineCondition = this.GetFromServiceProvider<TPipelineCondition>();
 
@@ -100,9 +99,9 @@ namespace Excellence.Pipelines.PipelineBuilders.Default
             bool withRejoining
         )
         {
-            ExceptionUtils.Process(predicate, ExceptionUtils.IsNull, () => new ArgumentNullException(nameof(predicate)));
-            ExceptionUtils.Process(branchPipelineBuilderConfiguration, ExceptionUtils.IsNull, () => new ArgumentNullException(nameof(branchPipelineBuilderConfiguration)));
-            ExceptionUtils.Process((object)branchPipelineBuilder, ExceptionUtils.IsNull, () => new ArgumentNullException(nameof(branchPipelineBuilder)));
+            ArgumentNullException.ThrowIfNull(predicate);
+            ArgumentNullException.ThrowIfNull(branchPipelineBuilderConfiguration);
+            ArgumentNullException.ThrowIfNull(branchPipelineBuilder);
 
             branchPipelineBuilderConfiguration.Invoke(branchPipelineBuilder);
 

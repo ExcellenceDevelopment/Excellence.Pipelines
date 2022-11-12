@@ -15,7 +15,7 @@ namespace Excellence.Pipelines.Core.PipelineBuilders.Async
     /// <typeparam name="TPipelineBuilder">The pipeline builder type.</typeparam>
     public interface IAsyncPipelineBuilderUseWhenConditionInterfaceFactory<TParam, TResult, TPipelineBuilder> :
         IPipelineBuilderCore<Func<TParam, CancellationToken, Task<TResult>>, TPipelineBuilder>
-        where TPipelineBuilder : IAsyncPipelineBuilderUseWhenConditionInterfaceFactory<TParam, TResult, TPipelineBuilder>
+        where TPipelineBuilder : class, IAsyncPipelineBuilderUseWhenConditionInterfaceFactory<TParam, TResult, TPipelineBuilder>
     {
         /// <summary>
         /// Adds the pipeline branch with own configuration that is executed when the condition is met.
@@ -31,7 +31,7 @@ namespace Excellence.Pipelines.Core.PipelineBuilders.Async
             Func<TPipelineCondition> pipelineConditionFactory,
             Action<TPipelineBuilder> branchPipelineBuilderConfiguration,
             Func<TPipelineBuilder> branchPipelineBuilderFactory
-        ) where TPipelineCondition : IAsyncPipelineCondition<TParam>;
+        ) where TPipelineCondition : class, IAsyncPipelineCondition<TParam>;
     }
 
     /// <summary>
@@ -42,7 +42,7 @@ namespace Excellence.Pipelines.Core.PipelineBuilders.Async
     /// <typeparam name="TPipelineBuilder">The pipeline builder type.</typeparam>
     public interface IAsyncPipelineBuilderUseWhenConditionInterfaceFactoryWithServiceProvider<TParam, TResult, TPipelineBuilder> :
         IPipelineBuilderCore<Func<TParam, CancellationToken, Task<TResult>>, TPipelineBuilder>
-        where TPipelineBuilder : IAsyncPipelineBuilderUseWhenConditionInterfaceFactoryWithServiceProvider<TParam, TResult, TPipelineBuilder>
+        where TPipelineBuilder : class, IAsyncPipelineBuilderUseWhenConditionInterfaceFactoryWithServiceProvider<TParam, TResult, TPipelineBuilder>
     {
         /// <summary>
         /// Adds the pipeline branch with own configuration that is executed when the condition is met.
@@ -58,7 +58,7 @@ namespace Excellence.Pipelines.Core.PipelineBuilders.Async
             Func<IServiceProvider, TPipelineCondition> pipelineConditionFactory,
             Action<TPipelineBuilder> branchPipelineBuilderConfiguration,
             Func<IServiceProvider, TPipelineBuilder> branchPipelineBuilderFactory
-        ) where TPipelineCondition : IAsyncPipelineCondition<TParam>;
+        ) where TPipelineCondition : class, IAsyncPipelineCondition<TParam>;
     }
 
     /// <summary>
@@ -69,7 +69,7 @@ namespace Excellence.Pipelines.Core.PipelineBuilders.Async
     /// <typeparam name="TPipelineBuilder">The pipeline builder type.</typeparam>
     public interface IAsyncPipelineBuilderUseWhenConditionInterfaceServiceProvider<TParam, TResult, out TPipelineBuilder> :
         IPipelineBuilderCore<Func<TParam, CancellationToken, Task<TResult>>, TPipelineBuilder>
-        where TPipelineBuilder : IAsyncPipelineBuilderUseWhenConditionInterfaceServiceProvider<TParam, TResult, TPipelineBuilder>
+        where TPipelineBuilder : class, IAsyncPipelineBuilderUseWhenConditionInterfaceServiceProvider<TParam, TResult, TPipelineBuilder>
     {
         /// <summary>
         /// Adds the pipeline branch with own configuration that is executed when the condition is met.
@@ -81,7 +81,7 @@ namespace Excellence.Pipelines.Core.PipelineBuilders.Async
         public TPipelineBuilder UseWhen<TPipelineCondition>
         (
             Action<TPipelineBuilder> branchPipelineBuilderConfiguration
-        ) where TPipelineCondition : IAsyncPipelineCondition<TParam>;
+        ) where TPipelineCondition : class, IAsyncPipelineCondition<TParam>;
     }
 
     /// <summary>
@@ -94,5 +94,5 @@ namespace Excellence.Pipelines.Core.PipelineBuilders.Async
         IAsyncPipelineBuilderUseWhenConditionInterfaceFactory<TParam, TResult, TPipelineBuilder>,
         IAsyncPipelineBuilderUseWhenConditionInterfaceFactoryWithServiceProvider<TParam, TResult, TPipelineBuilder>,
         IAsyncPipelineBuilderUseWhenConditionInterfaceServiceProvider<TParam, TResult, TPipelineBuilder>
-        where TPipelineBuilder : IAsyncPipelineBuilderUseWhenConditionInterface<TParam, TResult, TPipelineBuilder> { }
+        where TPipelineBuilder : class, IAsyncPipelineBuilderUseWhenConditionInterface<TParam, TResult, TPipelineBuilder> { }
 }

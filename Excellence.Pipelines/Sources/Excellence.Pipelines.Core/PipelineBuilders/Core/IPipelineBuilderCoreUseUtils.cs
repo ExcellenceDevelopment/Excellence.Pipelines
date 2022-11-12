@@ -11,7 +11,7 @@ namespace Excellence.Pipelines.Core.PipelineBuilders.Core
     public interface IPipelineBuilderCoreUseUtils<TPipelineDelegate, out TPipelineBuilder> :
         IPipelineBuilderCore<TPipelineDelegate, TPipelineBuilder>
         where TPipelineDelegate : Delegate
-        where TPipelineBuilder : IPipelineBuilderCoreUseUtils<TPipelineDelegate, TPipelineBuilder>
+        where TPipelineBuilder : class, IPipelineBuilderCoreUseUtils<TPipelineDelegate, TPipelineBuilder>
     {
         /// <summary>
         /// Adds the components to the pipeline builder.

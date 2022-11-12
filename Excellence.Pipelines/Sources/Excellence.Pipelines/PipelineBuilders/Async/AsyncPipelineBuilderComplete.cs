@@ -19,7 +19,7 @@ namespace Excellence.Pipelines.PipelineBuilders.Async
         IAsyncPipelineBuilderStepInterface<TParam, TResult, TPipelineBuilder>,
         IAsyncPipelineBuilderUseWhen<TParam, TResult, TPipelineBuilder>,
         IAsyncPipelineBuilderBranchWhen<TParam, TResult, TPipelineBuilder>
-        where TPipelineBuilder : IPipelineBuilderCore<Func<TParam, CancellationToken, Task<TResult>>, TPipelineBuilder>,
+        where TPipelineBuilder : class, IPipelineBuilderCore<Func<TParam, CancellationToken, Task<TResult>>, TPipelineBuilder>,
         IPipelineBuilderCoreUtils<Func<TParam, CancellationToken, Task<TResult>>, TPipelineBuilder>,
         IPipelineBuilderCoreUseUtils<Func<TParam, CancellationToken, Task<TResult>>, TPipelineBuilder>,
         IAsyncPipelineBuilderStepInterface<TParam, TResult, TPipelineBuilder>,

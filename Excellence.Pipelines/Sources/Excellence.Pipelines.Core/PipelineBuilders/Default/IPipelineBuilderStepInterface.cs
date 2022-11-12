@@ -13,7 +13,7 @@ namespace Excellence.Pipelines.Core.PipelineBuilders.Default
     /// <typeparam name="TPipelineBuilder">The pipeline builder type.</typeparam>
     public interface IPipelineBuilderStepInterfaceFactory<TParam, TResult, out TPipelineBuilder> :
         IPipelineBuilderCore<Func<TParam, TResult>, TPipelineBuilder>
-        where TPipelineBuilder : IPipelineBuilderStepInterfaceFactory<TParam, TResult, TPipelineBuilder>
+        where TPipelineBuilder : class, IPipelineBuilderStepInterfaceFactory<TParam, TResult, TPipelineBuilder>
     {
         /// <summary>
         /// Add the pipeline step.
@@ -21,7 +21,7 @@ namespace Excellence.Pipelines.Core.PipelineBuilders.Default
         /// <param name="factory">The pipeline step factory.</param>
         /// <typeparam name="TPipelineStep">The pipeline step type.</typeparam>
         /// <returns>The current pipeline builder instance.</returns>
-        public TPipelineBuilder Use<TPipelineStep>(Func<TPipelineStep> factory) where TPipelineStep : IPipelineStep<TParam, TResult>;
+        public TPipelineBuilder Use<TPipelineStep>(Func<TPipelineStep> factory) where TPipelineStep : class, IPipelineStep<TParam, TResult>;
     }
 
     /// <summary>
@@ -32,7 +32,7 @@ namespace Excellence.Pipelines.Core.PipelineBuilders.Default
     /// <typeparam name="TPipelineBuilder">The pipeline builder type.</typeparam>
     public interface IPipelineBuilderStepInterfaceFactoryWithServiceProvider<TParam, TResult, out TPipelineBuilder> :
         IPipelineBuilderCore<Func<TParam, TResult>, TPipelineBuilder>
-        where TPipelineBuilder : IPipelineBuilderStepInterfaceFactoryWithServiceProvider<TParam, TResult, TPipelineBuilder>
+        where TPipelineBuilder : class, IPipelineBuilderStepInterfaceFactoryWithServiceProvider<TParam, TResult, TPipelineBuilder>
     {
         /// <summary>
         /// Add the pipeline step.
@@ -40,7 +40,7 @@ namespace Excellence.Pipelines.Core.PipelineBuilders.Default
         /// <param name="factory">The pipeline step factory.</param>
         /// <typeparam name="TPipelineStep">The pipeline step type.</typeparam>
         /// <returns>The current pipeline builder instance.</returns>
-        public TPipelineBuilder Use<TPipelineStep>(Func<IServiceProvider, TPipelineStep> factory) where TPipelineStep : IPipelineStep<TParam, TResult>;
+        public TPipelineBuilder Use<TPipelineStep>(Func<IServiceProvider, TPipelineStep> factory) where TPipelineStep : class, IPipelineStep<TParam, TResult>;
     }
 
     /// <summary>
@@ -51,14 +51,14 @@ namespace Excellence.Pipelines.Core.PipelineBuilders.Default
     /// <typeparam name="TPipelineBuilder">The pipeline builder type.</typeparam>
     public interface IPipelineBuilderStepInterfaceServiceProvider<TParam, TResult, out TPipelineBuilder> :
         IPipelineBuilderCore<Func<TParam, TResult>, TPipelineBuilder>
-        where TPipelineBuilder : IPipelineBuilderStepInterfaceServiceProvider<TParam, TResult, TPipelineBuilder>
+        where TPipelineBuilder : class, IPipelineBuilderStepInterfaceServiceProvider<TParam, TResult, TPipelineBuilder>
     {
         /// <summary>
         /// Add the pipeline step.
         /// </summary>
         /// <typeparam name="TPipelineStep">The pipeline step type.</typeparam>
         /// <returns>The current pipeline builder instance.</returns>
-        public TPipelineBuilder Use<TPipelineStep>() where TPipelineStep : IPipelineStep<TParam, TResult>;
+        public TPipelineBuilder Use<TPipelineStep>() where TPipelineStep : class, IPipelineStep<TParam, TResult>;
     }
 
     /// <summary>
@@ -71,5 +71,5 @@ namespace Excellence.Pipelines.Core.PipelineBuilders.Default
         IPipelineBuilderStepInterfaceFactory<TParam, TResult, TPipelineBuilder>,
         IPipelineBuilderStepInterfaceFactoryWithServiceProvider<TParam, TResult, TPipelineBuilder>,
         IPipelineBuilderStepInterfaceServiceProvider<TParam, TResult, TPipelineBuilder>
-        where TPipelineBuilder : IPipelineBuilderStepInterface<TParam, TResult, TPipelineBuilder> { }
+        where TPipelineBuilder : class, IPipelineBuilderStepInterface<TParam, TResult, TPipelineBuilder> { }
 }

@@ -13,7 +13,7 @@ namespace Excellence.Pipelines.Core.PipelineBuilders.Default
     /// <typeparam name="TPipelineBuilder">The pipeline builder type.</typeparam>
     public interface IPipelineBuilderUseWhenConditionInterfaceFactory<TParam, TResult, TPipelineBuilder> :
         IPipelineBuilderCore<Func<TParam, TResult>, TPipelineBuilder>
-        where TPipelineBuilder : IPipelineBuilderUseWhenConditionInterfaceFactory<TParam, TResult, TPipelineBuilder>
+        where TPipelineBuilder : class, IPipelineBuilderUseWhenConditionInterfaceFactory<TParam, TResult, TPipelineBuilder>
     {
         /// <summary>
         /// Adds the pipeline branch with own configuration that is executed when the condition is met.
@@ -29,7 +29,7 @@ namespace Excellence.Pipelines.Core.PipelineBuilders.Default
             Func<TPipelineCondition> pipelineConditionFactory,
             Action<TPipelineBuilder> branchPipelineBuilderConfiguration,
             Func<TPipelineBuilder> branchPipelineBuilderFactory
-        ) where TPipelineCondition : IPipelineCondition<TParam>;
+        ) where TPipelineCondition : class, IPipelineCondition<TParam>;
     }
 
     /// <summary>
@@ -40,7 +40,7 @@ namespace Excellence.Pipelines.Core.PipelineBuilders.Default
     /// <typeparam name="TPipelineBuilder">The pipeline builder type.</typeparam>
     public interface IPipelineBuilderUseWhenConditionInterfaceFactoryWithServiceProvider<TParam, TResult, TPipelineBuilder> :
         IPipelineBuilderCore<Func<TParam, TResult>, TPipelineBuilder>
-        where TPipelineBuilder : IPipelineBuilderUseWhenConditionInterfaceFactoryWithServiceProvider<TParam, TResult, TPipelineBuilder>
+        where TPipelineBuilder : class, IPipelineBuilderUseWhenConditionInterfaceFactoryWithServiceProvider<TParam, TResult, TPipelineBuilder>
     {
         /// <summary>
         /// Adds the pipeline branch with own configuration that is executed when the condition is met.
@@ -56,7 +56,7 @@ namespace Excellence.Pipelines.Core.PipelineBuilders.Default
             Func<IServiceProvider, TPipelineCondition> pipelineConditionFactory,
             Action<TPipelineBuilder> branchPipelineBuilderConfiguration,
             Func<IServiceProvider, TPipelineBuilder> branchPipelineBuilderFactory
-        ) where TPipelineCondition : IPipelineCondition<TParam>;
+        ) where TPipelineCondition : class, IPipelineCondition<TParam>;
     }
 
     /// <summary>
@@ -67,7 +67,7 @@ namespace Excellence.Pipelines.Core.PipelineBuilders.Default
     /// <typeparam name="TPipelineBuilder">The pipeline builder type.</typeparam>
     public interface IPipelineBuilderUseWhenConditionInterfaceServiceProvider<TParam, TResult, out TPipelineBuilder> :
         IPipelineBuilderCore<Func<TParam, TResult>, TPipelineBuilder>
-        where TPipelineBuilder : IPipelineBuilderUseWhenConditionInterfaceServiceProvider<TParam, TResult, TPipelineBuilder>
+        where TPipelineBuilder : class, IPipelineBuilderUseWhenConditionInterfaceServiceProvider<TParam, TResult, TPipelineBuilder>
     {
         /// <summary>
         /// Adds the pipeline branch with own configuration that is executed when the condition is met.
@@ -79,7 +79,7 @@ namespace Excellence.Pipelines.Core.PipelineBuilders.Default
         public TPipelineBuilder UseWhen<TPipelineCondition>
         (
             Action<TPipelineBuilder> branchPipelineBuilderConfiguration
-        ) where TPipelineCondition : IPipelineCondition<TParam>;
+        ) where TPipelineCondition : class, IPipelineCondition<TParam>;
     }
 
     /// <summary>
@@ -92,5 +92,5 @@ namespace Excellence.Pipelines.Core.PipelineBuilders.Default
         IPipelineBuilderUseWhenConditionInterfaceFactory<TParam, TResult, TPipelineBuilder>,
         IPipelineBuilderUseWhenConditionInterfaceFactoryWithServiceProvider<TParam, TResult, TPipelineBuilder>,
         IPipelineBuilderUseWhenConditionInterfaceServiceProvider<TParam, TResult, TPipelineBuilder>
-        where TPipelineBuilder : IPipelineBuilderUseWhenConditionInterface<TParam, TResult, TPipelineBuilder> { }
+        where TPipelineBuilder : class, IPipelineBuilderUseWhenConditionInterface<TParam, TResult, TPipelineBuilder> { }
 }

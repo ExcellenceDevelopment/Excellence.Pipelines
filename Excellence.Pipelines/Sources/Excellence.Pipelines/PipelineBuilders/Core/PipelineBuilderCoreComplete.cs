@@ -13,6 +13,7 @@ namespace Excellence.Pipelines.PipelineBuilders.Core
         IPipelineBuilderCoreUseUtils<TPipelineDelegate, TPipelineBuilder>
         where TPipelineDelegate : Delegate
         where TPipelineBuilder :
+        class,
         IPipelineBuilderCoreUtils<TPipelineDelegate, TPipelineBuilder>,
         IPipelineBuilderCoreUseUtils<TPipelineDelegate, TPipelineBuilder> { }
 }

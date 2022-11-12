@@ -9,5 +9,5 @@
     public interface IPipelineBuilderBranchWhen<TParam, TResult, TPipelineBuilder> :
         IPipelineBuilderBranchWhenConditionPredicate<TParam, TResult, TPipelineBuilder>,
         IPipelineBuilderBranchWhenConditionInterface<TParam, TResult, TPipelineBuilder>
-        where TPipelineBuilder : IPipelineBuilderBranchWhen<TParam, TResult, TPipelineBuilder> { }
+        where TPipelineBuilder : class, IPipelineBuilderBranchWhen<TParam, TResult, TPipelineBuilder> { }
 }

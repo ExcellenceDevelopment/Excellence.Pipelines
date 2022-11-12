@@ -10,7 +10,7 @@ namespace Excellence.Pipelines.Core.PipelineBuilders.Core
     public interface IPipelineBuilderCoreUtils<TPipelineDelegate, out TPipelineBuilder> :
         IPipelineBuilderCore<TPipelineDelegate, TPipelineBuilder>
         where TPipelineDelegate : Delegate
-        where TPipelineBuilder : IPipelineBuilderCoreUtils<TPipelineDelegate, TPipelineBuilder>
+        where TPipelineBuilder : class, IPipelineBuilderCoreUtils<TPipelineDelegate, TPipelineBuilder>
     {
         /// <summary>
         /// Copies the pipeline builder.

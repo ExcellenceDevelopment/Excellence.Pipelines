@@ -3,7 +3,6 @@
 using Excellence.Pipelines.Core.PipelineBuilderFactories;
 using Excellence.Pipelines.Core.PipelineBuilders;
 using Excellence.Pipelines.PipelineBuilders;
-using Excellence.Pipelines.Utils;
 
 namespace Excellence.Pipelines.PipelineBuilderFactories
 {
@@ -14,7 +13,7 @@ namespace Excellence.Pipelines.PipelineBuilderFactories
 
         public AsyncPipelineBuilderFactory(IServiceProvider serviceProvider)
         {
-            ExceptionUtils.Process(serviceProvider, ExceptionUtils.IsNull, () => new ArgumentNullException(nameof(serviceProvider)));
+            ArgumentNullException.ThrowIfNull(serviceProvider);
 
             this.ServiceProvider = serviceProvider;
         }

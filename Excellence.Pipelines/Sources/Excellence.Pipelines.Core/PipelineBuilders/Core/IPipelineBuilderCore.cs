@@ -9,7 +9,7 @@ namespace Excellence.Pipelines.Core.PipelineBuilders.Core
     /// <typeparam name="TPipelineBuilder">The pipeline builder type.</typeparam>
     public interface IPipelineBuilderCore<TPipelineDelegate, out TPipelineBuilder>
         where TPipelineDelegate : Delegate
-        where TPipelineBuilder : IPipelineBuilderCore<TPipelineDelegate, TPipelineBuilder>
+        where TPipelineBuilder : class, IPipelineBuilderCore<TPipelineDelegate, TPipelineBuilder>
     {
         /// <summary>
         /// Adds the component to the pipeline builder.

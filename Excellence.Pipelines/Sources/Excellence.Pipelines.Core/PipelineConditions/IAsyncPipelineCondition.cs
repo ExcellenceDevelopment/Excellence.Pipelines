@@ -1,6 +1,4 @@
-﻿using System.Threading.Tasks;
-
-namespace Excellence.Pipelines.Core.PipelineConditions
+﻿namespace Excellence.Pipelines.Core.PipelineConditions
 {
     /// <summary>
     /// The pipeline builder condition.

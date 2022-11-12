@@ -1,6 +1,4 @@
-﻿using System;
-
-using Excellence.Pipelines.Core.PipelineBuilders.Core;
+﻿using Excellence.Pipelines.Core.PipelineBuilders.Core;
 using Excellence.Pipelines.Core.PipelineBuilders.Default;
 
 namespace Excellence.Pipelines.Core.PipelineBuilders

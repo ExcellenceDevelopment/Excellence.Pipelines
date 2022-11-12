@@ -1,6 +1,4 @@
-﻿using System;
-
-using Excellence.Pipelines.Core.PipelineBuilderFactories;
+﻿using Excellence.Pipelines.Core.PipelineBuilderFactories;
 using Excellence.Pipelines.Core.PipelineBuilders;
 using Excellence.Pipelines.PipelineBuilders;
 

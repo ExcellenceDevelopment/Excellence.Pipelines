@@ -2,185 +2,184 @@
 
 using Xunit;
 
-namespace Excellence.Pipelines.Tests.PipelineBuilders.Default
+namespace Excellence.Pipelines.Tests.PipelineBuilders.Default;
+
+public class PipelineBuilderBranchWhenInterfaceTests : PipelineBuilderBranchWhenTestsBase
 {
-    public class PipelineBuilderBranchWhenInterfaceTests : PipelineBuilderBranchWhenTestsBase
+    #region Null checks
+
+    #region Params
+
+    public static TheoryData<Func<IPipelineBuilderCompleteTestSut, IPipelineBuilderCompleteTestSut>> ParamNullChecksTestData =>
+        new TheoryData<Func<IPipelineBuilderCompleteTestSut, IPipelineBuilderCompleteTestSut>>()
+        {
+            (builder) => builder
+                .BranchWhen((Func<PipelineConditionTrue>)null!, ConfigurationWithBranchTarget, PipelineBuilderFactory),
+            (builder) => builder
+                .BranchWhen(() => (PipelineConditionTrue?)null!, ConfigurationWithBranchTarget, PipelineBuilderFactory),
+            (builder) => builder
+                .BranchWhen(PipelineConditionTrueFactory, null!, PipelineBuilderFactory),
+            (builder) => builder
+                .BranchWhen(PipelineConditionTrueFactory, ConfigurationWithBranchTarget, null!),
+            (builder) => builder
+                .BranchWhen(PipelineConditionTrueFactory, ConfigurationWithBranchTarget, () => (IPipelineBuilderCompleteTestSut?)null!),
+
+            (builder) => builder
+                .UseServiceProvider(new ServiceCollection().BuildServiceProvider())
+                .BranchWhen((Func<IServiceProvider, PipelineConditionTrue>)null!, ConfigurationWithBranchTarget, PipelineBuilderFactoryWithServiceProvider),
+            (builder) => builder
+                .UseServiceProvider(new ServiceCollection().BuildServiceProvider())
+                .BranchWhen((_) => (PipelineConditionTrue?)null!, ConfigurationWithBranchTarget, PipelineBuilderFactoryWithServiceProvider),
+            (builder) => builder
+                .UseServiceProvider
+                (
+                    new ServiceCollection()
+                        .AddTransient<PipelineConditionTrue>()
+                        .AddTransient<IPipelineBuilderCompleteTestSut, PipelineBuilderCompleteTestSut>()
+                        .BuildServiceProvider()
+                )
+                .BranchWhen(PipelineConditionTrueFactoryWithServiceProvider, null!, PipelineBuilderFactoryWithServiceProvider),
+            (builder) => builder
+                .UseServiceProvider(new ServiceCollection().AddTransient<PipelineConditionTrue>().BuildServiceProvider())
+                .BranchWhen(PipelineConditionTrueFactoryWithServiceProvider, ConfigurationWithBranchTarget, null!),
+            (builder) => builder
+                .UseServiceProvider(new ServiceCollection().AddTransient<PipelineConditionTrue>().BuildServiceProvider())
+                .BranchWhen(PipelineConditionTrueFactoryWithServiceProvider, ConfigurationWithBranchTarget, (_) => (IPipelineBuilderCompleteTestSut?)null!),
+
+            (builder) => builder
+                .UseServiceProvider(new ServiceCollection().AddTransient<PipelineConditionTrue>().BuildServiceProvider())
+                .BranchWhen<PipelineConditionTrue>(null!)
+        };
+
+    [Theory]
+    [MemberData(nameof(ParamNullChecksTestData))]
+    public void BranchWhen_Param_IsNull_ThrowsException(Func<IPipelineBuilderCompleteTestSut, IPipelineBuilderCompleteTestSut> pipelineBuilderConfiguration)
     {
-        #region Null checks
+        var sut = CreateSut();
 
-        #region Params
+        Assert.Throws<ArgumentNullException>(() => pipelineBuilderConfiguration.Invoke(sut));
+    }
 
-        public static TheoryData<Func<IPipelineBuilderCompleteTestSut, IPipelineBuilderCompleteTestSut>> ParamNullChecksTestData =>
-            new TheoryData<Func<IPipelineBuilderCompleteTestSut, IPipelineBuilderCompleteTestSut>>()
-            {
-                (builder) => builder
-                    .BranchWhen((Func<PipelineConditionTrue>)null!, ConfigurationWithBranchTarget, PipelineBuilderFactory),
-                (builder) => builder
-                    .BranchWhen(() => (PipelineConditionTrue?)null!, ConfigurationWithBranchTarget, PipelineBuilderFactory),
-                (builder) => builder
-                    .BranchWhen(PipelineConditionTrueFactory, null!, PipelineBuilderFactory),
-                (builder) => builder
-                    .BranchWhen(PipelineConditionTrueFactory, ConfigurationWithBranchTarget, null!),
-                (builder) => builder
-                    .BranchWhen(PipelineConditionTrueFactory, ConfigurationWithBranchTarget, () => (IPipelineBuilderCompleteTestSut?)null!),
+    #endregion
 
-                (builder) => builder
-                    .UseServiceProvider(new ServiceCollection().BuildServiceProvider())
-                    .BranchWhen((Func<IServiceProvider, PipelineConditionTrue>)null!, ConfigurationWithBranchTarget, PipelineBuilderFactoryWithServiceProvider),
-                (builder) => builder
-                    .UseServiceProvider(new ServiceCollection().BuildServiceProvider())
-                    .BranchWhen((_) => (PipelineConditionTrue?)null!, ConfigurationWithBranchTarget, PipelineBuilderFactoryWithServiceProvider),
-                (builder) => builder
-                    .UseServiceProvider
-                    (
-                        new ServiceCollection()
-                            .AddTransient<PipelineConditionTrue>()
-                            .AddTransient<IPipelineBuilderCompleteTestSut, PipelineBuilderCompleteTestSut>()
-                            .BuildServiceProvider()
-                    )
-                    .BranchWhen(PipelineConditionTrueFactoryWithServiceProvider, null!, PipelineBuilderFactoryWithServiceProvider),
-                (builder) => builder
-                    .UseServiceProvider(new ServiceCollection().AddTransient<PipelineConditionTrue>().BuildServiceProvider())
-                    .BranchWhen(PipelineConditionTrueFactoryWithServiceProvider, ConfigurationWithBranchTarget, null!),
-                (builder) => builder
-                    .UseServiceProvider(new ServiceCollection().AddTransient<PipelineConditionTrue>().BuildServiceProvider())
-                    .BranchWhen(PipelineConditionTrueFactoryWithServiceProvider, ConfigurationWithBranchTarget, (_) => (IPipelineBuilderCompleteTestSut?)null!),
+    #region Service provider
 
-                (builder) => builder
-                    .UseServiceProvider(new ServiceCollection().AddTransient<PipelineConditionTrue>().BuildServiceProvider())
-                    .BranchWhen<PipelineConditionTrue>(null!)
-            };
-
-        [Theory]
-        [MemberData(nameof(ParamNullChecksTestData))]
-        public void BranchWhen_Param_IsNull_ThrowsException(Func<IPipelineBuilderCompleteTestSut, IPipelineBuilderCompleteTestSut> pipelineBuilderConfiguration)
+    public static TheoryData<Func<IPipelineBuilderCompleteTestSut, IPipelineBuilderCompleteTestSut>> ServiceProviderResultNullChecksTestData =>
+        new TheoryData<Func<IPipelineBuilderCompleteTestSut, IPipelineBuilderCompleteTestSut>>()
         {
-            var sut = CreateSut();
+            (builder) => builder
+                .UseServiceProvider(new ServiceCollection().BuildServiceProvider())
+                .BranchWhen((sp) => sp.GetRequiredService<PipelineConditionTrue>(), ConfigurationWithBranchTarget, PipelineBuilderFactoryWithServiceProvider),
+            (builder) => builder
+                .UseServiceProvider(new ServiceCollection().AddTransient<PipelineConditionTrue>().BuildServiceProvider())
+                .BranchWhen(PipelineConditionTrueFactoryWithServiceProvider, ConfigurationWithBranchTarget, (sp) => sp.GetRequiredService<PipelineBuilderCompleteTestSut>()),
 
-            Assert.Throws<ArgumentNullException>(() => pipelineBuilderConfiguration.Invoke(sut));
-        }
+            (builder) => builder
+                .UseServiceProvider(new ServiceCollection().BuildServiceProvider())
+                .BranchWhen<PipelineConditionTrue>(ConfigurationWithBranchTarget)
+        };
 
-        #endregion Params
+    [Theory]
+    [MemberData(nameof(ServiceProviderResultNullChecksTestData))]
+    public void BranchWhen_ServiceProvider_ServiceProviderResult_IsNull_ThrowsException
+    (
+        Func<IPipelineBuilderCompleteTestSut, IPipelineBuilderCompleteTestSut> pipelineBuilderConfiguration
+    )
+    {
+        var sut = CreateSut();
 
-        #region Service provider
+        Assert.Throws<InvalidOperationException>(() => pipelineBuilderConfiguration.Invoke(sut));
+    }
 
-        public static TheoryData<Func<IPipelineBuilderCompleteTestSut, IPipelineBuilderCompleteTestSut>> ServiceProviderResultNullChecksTestData =>
-            new TheoryData<Func<IPipelineBuilderCompleteTestSut, IPipelineBuilderCompleteTestSut>>()
-            {
-                (builder) => builder
-                    .UseServiceProvider(new ServiceCollection().BuildServiceProvider())
-                    .BranchWhen((sp) => sp.GetRequiredService<PipelineConditionTrue>(), ConfigurationWithBranchTarget, PipelineBuilderFactoryWithServiceProvider),
-                (builder) => builder
-                    .UseServiceProvider(new ServiceCollection().AddTransient<PipelineConditionTrue>().BuildServiceProvider())
-                    .BranchWhen(PipelineConditionTrueFactoryWithServiceProvider, ConfigurationWithBranchTarget, (sp) => sp.GetRequiredService<PipelineBuilderCompleteTestSut>()),
+    #endregion
 
-                (builder) => builder
-                    .UseServiceProvider(new ServiceCollection().BuildServiceProvider())
-                    .BranchWhen<PipelineConditionTrue>(ConfigurationWithBranchTarget)
-            };
+    #endregion
 
-        [Theory]
-        [MemberData(nameof(ServiceProviderResultNullChecksTestData))]
-        public void BranchWhen_ServiceProvider_ServiceProviderResult_IsNull_ThrowsException
-        (
-            Func<IPipelineBuilderCompleteTestSut, IPipelineBuilderCompleteTestSut> pipelineBuilderConfiguration
-        )
+    public static TheoryData<Func<IPipelineBuilderCompleteTestSut, IPipelineBuilderCompleteTestSut>> ConditionTrueChecksTestData =>
+        new TheoryData<Func<IPipelineBuilderCompleteTestSut, IPipelineBuilderCompleteTestSut>>()
         {
-            var sut = CreateSut();
+            (builder) => builder
+                .BranchWhen(PipelineConditionTrueFactory, ConfigurationWithBranchTarget, PipelineBuilderFactory)
+                .UseTarget(TargetMain),
 
-            Assert.Throws<InvalidOperationException>(() => pipelineBuilderConfiguration.Invoke(sut));
-        }
+            (builder) => builder
+                .UseServiceProvider
+                (
+                    new ServiceCollection()
+                        .AddTransient<PipelineConditionTrue>()
+                        .AddTransient<IPipelineBuilderCompleteTestSut, PipelineBuilderCompleteTestSut>()
+                        .BuildServiceProvider()
+                )
+                .BranchWhen(PipelineConditionTrueFactoryWithServiceProvider, ConfigurationWithBranchTarget, PipelineBuilderFactoryWithServiceProvider)
+                .UseTarget(TargetMain),
 
-        #endregion Service provider
+            (builder) => builder
+                .UseServiceProvider(new ServiceCollection().AddTransient<PipelineConditionTrue>().BuildServiceProvider())
+                .BranchWhen<PipelineConditionTrue>(ConfigurationWithBranchTarget)
+                .UseTarget(TargetMain),
+        };
 
-        #endregion Null checks
+    [Theory]
+    [MemberData(nameof(ConditionTrueChecksTestData))]
+    public void BranchWhen_ConditionTrue_AddsComponentToPipeline
+    (
+        Func<IPipelineBuilderCompleteTestSut, IPipelineBuilderCompleteTestSut> pipelineBuilderConfiguration
+    )
+    {
+        var targetBranchResult = TargetBranchResult.Invoke(this.Arg);
 
-        public static TheoryData<Func<IPipelineBuilderCompleteTestSut, IPipelineBuilderCompleteTestSut>> ConditionTrueChecksTestData =>
-            new TheoryData<Func<IPipelineBuilderCompleteTestSut, IPipelineBuilderCompleteTestSut>>()
-            {
-                (builder) => builder
-                    .BranchWhen(PipelineConditionTrueFactory, ConfigurationWithBranchTarget, PipelineBuilderFactory)
-                    .UseTarget(TargetMain),
+        var expectedResult = (targetBranchResult - 1) * (targetBranchResult - 1);
 
-                (builder) => builder
-                    .UseServiceProvider
-                    (
-                        new ServiceCollection()
-                            .AddTransient<PipelineConditionTrue>()
-                            .AddTransient<IPipelineBuilderCompleteTestSut, PipelineBuilderCompleteTestSut>()
-                            .BuildServiceProvider()
-                    )
-                    .BranchWhen(PipelineConditionTrueFactoryWithServiceProvider, ConfigurationWithBranchTarget, PipelineBuilderFactoryWithServiceProvider)
-                    .UseTarget(TargetMain),
+        var sut = CreateSut();
 
-                (builder) => builder
-                    .UseServiceProvider(new ServiceCollection().AddTransient<PipelineConditionTrue>().BuildServiceProvider())
-                    .BranchWhen<PipelineConditionTrue>(ConfigurationWithBranchTarget)
-                    .UseTarget(TargetMain),
-            };
+        var pipeline = pipelineBuilderConfiguration.Invoke(sut).BuildPipeline();
 
-        [Theory]
-        [MemberData(nameof(ConditionTrueChecksTestData))]
-        public void BranchWhen_ConditionTrue_AddsComponentToPipeline
-        (
-            Func<IPipelineBuilderCompleteTestSut, IPipelineBuilderCompleteTestSut> pipelineBuilderConfiguration
-        )
+        var actualResult = pipeline.Invoke(this.Arg);
+
+        Assert.Equal(expectedResult, actualResult);
+    }
+
+    public static TheoryData<Func<IPipelineBuilderCompleteTestSut, IPipelineBuilderCompleteTestSut>> ConditionFalseChecksTestData =>
+        new TheoryData<Func<IPipelineBuilderCompleteTestSut, IPipelineBuilderCompleteTestSut>>()
         {
-            var targetBranchResult = TargetBranchResult.Invoke(this.Arg);
+            (builder) => builder
+                .BranchWhen(PipelineConditionFalseFactory, ConfigurationWithBranchTarget, PipelineBuilderFactory)
+                .UseTarget(TargetMain),
 
-            var expectedResult = (targetBranchResult - 1) * (targetBranchResult - 1);
+            (builder) => builder
+                .UseServiceProvider
+                (
+                    new ServiceCollection()
+                        .AddTransient<PipelineConditionFalse>()
+                        .AddTransient<IPipelineBuilderCompleteTestSut, PipelineBuilderCompleteTestSut>()
+                        .BuildServiceProvider()
+                )
+                .BranchWhen(PipelineConditionFalseFactoryWithServiceProvider, ConfigurationWithBranchTarget, PipelineBuilderFactoryWithServiceProvider)
+                .UseTarget(TargetMain),
 
-            var sut = CreateSut();
+            (builder) => builder
+                .UseServiceProvider(new ServiceCollection().AddTransient<PipelineConditionFalse>().BuildServiceProvider())
+                .BranchWhen<PipelineConditionFalse>(ConfigurationWithBranchTarget)
+                .UseTarget(TargetMain),
+        };
 
-            var pipeline = pipelineBuilderConfiguration.Invoke(sut).BuildPipeline();
+    [Theory]
+    [MemberData(nameof(ConditionFalseChecksTestData))]
+    public void BranchWhen_ConditionFalse_AddsComponentToPipeline
+    (
+        Func<IPipelineBuilderCompleteTestSut, IPipelineBuilderCompleteTestSut> pipelineBuilderConfiguration
+    )
+    {
+        var targetMainResult = TargetMainResult.Invoke(this.Arg);
 
-            var actualResult = pipeline.Invoke(this.Arg);
+        var expectedResult = targetMainResult;
 
-            Assert.Equal(expectedResult, actualResult);
-        }
+        var sut = CreateSut();
 
-        public static TheoryData<Func<IPipelineBuilderCompleteTestSut, IPipelineBuilderCompleteTestSut>> ConditionFalseChecksTestData =>
-            new TheoryData<Func<IPipelineBuilderCompleteTestSut, IPipelineBuilderCompleteTestSut>>()
-            {
-                (builder) => builder
-                    .BranchWhen(PipelineConditionFalseFactory, ConfigurationWithBranchTarget, PipelineBuilderFactory)
-                    .UseTarget(TargetMain),
+        var pipeline = pipelineBuilderConfiguration.Invoke(sut).BuildPipeline();
 
-                (builder) => builder
-                    .UseServiceProvider
-                    (
-                        new ServiceCollection()
-                            .AddTransient<PipelineConditionFalse>()
-                            .AddTransient<IPipelineBuilderCompleteTestSut, PipelineBuilderCompleteTestSut>()
-                            .BuildServiceProvider()
-                    )
-                    .BranchWhen(PipelineConditionFalseFactoryWithServiceProvider, ConfigurationWithBranchTarget, PipelineBuilderFactoryWithServiceProvider)
-                    .UseTarget(TargetMain),
+        var actualResult = pipeline.Invoke(this.Arg);
 
-                (builder) => builder
-                    .UseServiceProvider(new ServiceCollection().AddTransient<PipelineConditionFalse>().BuildServiceProvider())
-                    .BranchWhen<PipelineConditionFalse>(ConfigurationWithBranchTarget)
-                    .UseTarget(TargetMain),
-            };
-
-        [Theory]
-        [MemberData(nameof(ConditionFalseChecksTestData))]
-        public void BranchWhen_ConditionFalse_AddsComponentToPipeline
-        (
-            Func<IPipelineBuilderCompleteTestSut, IPipelineBuilderCompleteTestSut> pipelineBuilderConfiguration
-        )
-        {
-            var targetMainResult = TargetMainResult.Invoke(this.Arg);
-
-            var expectedResult = targetMainResult;
-
-            var sut = CreateSut();
-
-            var pipeline = pipelineBuilderConfiguration.Invoke(sut).BuildPipeline();
-
-            var actualResult = pipeline.Invoke(this.Arg);
-
-            Assert.Equal(expectedResult, actualResult);
-        }
+        Assert.Equal(expectedResult, actualResult);
     }
 }

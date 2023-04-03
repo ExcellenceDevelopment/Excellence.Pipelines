@@ -4,133 +4,132 @@ using Microsoft.Extensions.DependencyInjection;
 
 using Xunit;
 
-namespace Excellence.Pipelines.Tests.PipelineBuilders.Default
+namespace Excellence.Pipelines.Tests.PipelineBuilders.Default;
+
+public class PipelineBuilderStepInterfaceTests : PipelineBuilderCompleteTestsBase
 {
-    public class PipelineBuilderStepInterfaceTests : PipelineBuilderCompleteTestsBase
+    #region Shared
+
+    #region Factories
+
+    private static Func<IPipelineStep<int, int>> PipelineStepFactory => () => new PipelineStep();
+
+    private static Func<IServiceProvider, IPipelineStep<int, int>> PipelineStepFactoryWithServiceProvider => (sp) =>
+        sp.GetRequiredService<IPipelineStep<int, int>>();
+
+    #endregion
+
+    #region Steps
+
+    protected class PipelineStep : IPipelineStep<int, int>
     {
-        #region Shared
-
-        #region Factories
-
-        private static Func<IPipelineStep<int, int>> PipelineStepFactory => () => new PipelineStep();
-
-        private static Func<IServiceProvider, IPipelineStep<int, int>> PipelineStepFactoryWithServiceProvider => (sp) =>
-            sp.GetRequiredService<IPipelineStep<int, int>>();
-
-        #endregion Factories
-
-        #region Steps
-
-        protected class PipelineStep : IPipelineStep<int, int>
+        public virtual int Invoke(int param, Func<int, int> next)
         {
-            public virtual int Invoke(int param, Func<int, int> next)
-            {
-                var nextResult = next.Invoke(param);
+            var nextResult = next.Invoke(param);
 
-                return nextResult * nextResult;
-            }
+            return nextResult * nextResult;
         }
+    }
 
-        #endregion Steps
+    #endregion
 
-        #endregion Shared
+    #endregion
 
-        #region Null checks
+    #region Null checks
 
-        #region Params
+    #region Params
 
-        public static TheoryData<Func<IPipelineBuilderCompleteTestSut, IPipelineBuilderCompleteTestSut>> ParamNullChecksTestData =>
-            new TheoryData<Func<IPipelineBuilderCompleteTestSut, IPipelineBuilderCompleteTestSut>>()
-            {
-                (builder) => builder
-                    .Use((Func<PipelineStep>?)null!),
-                (builder) => builder
-                    .Use(() => (PipelineStep)null!),
-
-                (builder) => builder
-                    .Use((Func<IServiceProvider, PipelineStep>?)null!),
-                (builder) => builder
-                    .UseServiceProvider(new ServiceCollection().BuildServiceProvider())
-                    .Use((_) => (PipelineStep)null!)
-            };
-
-        [Theory]
-        [MemberData(nameof(ParamNullChecksTestData))]
-        public void Use_Step_Param_IsNull_ThrowsException(Func<IPipelineBuilderCompleteTestSut, IPipelineBuilderCompleteTestSut> pipelineBuilderConfiguration)
+    public static TheoryData<Func<IPipelineBuilderCompleteTestSut, IPipelineBuilderCompleteTestSut>> ParamNullChecksTestData =>
+        new TheoryData<Func<IPipelineBuilderCompleteTestSut, IPipelineBuilderCompleteTestSut>>()
         {
-            var sut = CreateSut();
+            (builder) => builder
+                .Use((Func<PipelineStep>?)null!),
+            (builder) => builder
+                .Use(() => (PipelineStep)null!),
 
-            Assert.Throws<ArgumentNullException>(() => pipelineBuilderConfiguration.Invoke(sut));
-        }
+            (builder) => builder
+                .Use((Func<IServiceProvider, PipelineStep>?)null!),
+            (builder) => builder
+                .UseServiceProvider(new ServiceCollection().BuildServiceProvider())
+                .Use((_) => (PipelineStep)null!)
+        };
 
-        #endregion Params
+    [Theory]
+    [MemberData(nameof(ParamNullChecksTestData))]
+    public void Use_Step_Param_IsNull_ThrowsException(Func<IPipelineBuilderCompleteTestSut, IPipelineBuilderCompleteTestSut> pipelineBuilderConfiguration)
+    {
+        var sut = CreateSut();
 
-        #region Service provider
+        Assert.Throws<ArgumentNullException>(() => pipelineBuilderConfiguration.Invoke(sut));
+    }
 
-        public static TheoryData<Func<IPipelineBuilderCompleteTestSut, IPipelineBuilderCompleteTestSut>> ServiceProviderResultNullChecksTestData =>
-            new TheoryData<Func<IPipelineBuilderCompleteTestSut, IPipelineBuilderCompleteTestSut>>()
-            {
-                (builder) => builder
-                    .UseServiceProvider(new ServiceCollection().BuildServiceProvider())
-                    .Use(PipelineStepFactoryWithServiceProvider),
+    #endregion
 
-                (builder) => builder
-                    .UseServiceProvider(new ServiceCollection().BuildServiceProvider())
-                    .Use<PipelineStep>()
-            };
+    #region Service provider
 
-        [Theory]
-        [MemberData(nameof(ServiceProviderResultNullChecksTestData))]
-        public void Use_Step_ServiceProvider_ServiceProviderResult_IsNull_ThrowsException
-        (
-            Func<IPipelineBuilderCompleteTestSut, IPipelineBuilderCompleteTestSut> pipelineBuilderConfiguration
-        )
+    public static TheoryData<Func<IPipelineBuilderCompleteTestSut, IPipelineBuilderCompleteTestSut>> ServiceProviderResultNullChecksTestData =>
+        new TheoryData<Func<IPipelineBuilderCompleteTestSut, IPipelineBuilderCompleteTestSut>>()
         {
-            var sut = CreateSut();
+            (builder) => builder
+                .UseServiceProvider(new ServiceCollection().BuildServiceProvider())
+                .Use(PipelineStepFactoryWithServiceProvider),
 
-            Assert.Throws<InvalidOperationException>(() => pipelineBuilderConfiguration.Invoke(sut));
-        }
+            (builder) => builder
+                .UseServiceProvider(new ServiceCollection().BuildServiceProvider())
+                .Use<PipelineStep>()
+        };
 
-        #endregion Service provider
+    [Theory]
+    [MemberData(nameof(ServiceProviderResultNullChecksTestData))]
+    public void Use_Step_ServiceProvider_ServiceProviderResult_IsNull_ThrowsException
+    (
+        Func<IPipelineBuilderCompleteTestSut, IPipelineBuilderCompleteTestSut> pipelineBuilderConfiguration
+    )
+    {
+        var sut = CreateSut();
 
-        #endregion Null checks
+        Assert.Throws<InvalidOperationException>(() => pipelineBuilderConfiguration.Invoke(sut));
+    }
 
-        public static TheoryData<Func<IPipelineBuilderCompleteTestSut, IPipelineBuilderCompleteTestSut>> PipelineStepTestData =>
-            new TheoryData<Func<IPipelineBuilderCompleteTestSut, IPipelineBuilderCompleteTestSut>>()
-            {
-                (builder) => builder
-                    .Use(PipelineStepFactory)
-                    .UseTarget(TargetMain),
+    #endregion
 
-                (builder) => builder
-                    .UseServiceProvider(new ServiceCollection().AddTransient<IPipelineStep<int, int>, PipelineStep>().BuildServiceProvider())
-                    .Use(PipelineStepFactoryWithServiceProvider)
-                    .UseTarget(TargetMain),
+    #endregion
 
-                (builder) => builder
-                    .UseServiceProvider(new ServiceCollection().AddTransient<PipelineStep>().BuildServiceProvider())
-                    .Use<PipelineStep>()
-                    .UseTarget(TargetMain)
-            };
-
-        [Theory]
-        [MemberData(nameof(PipelineStepTestData))]
-        public void Use_Step_AddsComponentToPipeline
-        (
-            Func<IPipelineBuilderCompleteTestSut, IPipelineBuilderCompleteTestSut> pipelineBuilderConfiguration
-        )
+    public static TheoryData<Func<IPipelineBuilderCompleteTestSut, IPipelineBuilderCompleteTestSut>> PipelineStepTestData =>
+        new TheoryData<Func<IPipelineBuilderCompleteTestSut, IPipelineBuilderCompleteTestSut>>()
         {
-            var targetMainResult = TargetMainResult.Invoke(this.Arg);
+            (builder) => builder
+                .Use(PipelineStepFactory)
+                .UseTarget(TargetMain),
 
-            var expectedResult = targetMainResult * targetMainResult;
+            (builder) => builder
+                .UseServiceProvider(new ServiceCollection().AddTransient<IPipelineStep<int, int>, PipelineStep>().BuildServiceProvider())
+                .Use(PipelineStepFactoryWithServiceProvider)
+                .UseTarget(TargetMain),
 
-            var sut = CreateSut();
+            (builder) => builder
+                .UseServiceProvider(new ServiceCollection().AddTransient<PipelineStep>().BuildServiceProvider())
+                .Use<PipelineStep>()
+                .UseTarget(TargetMain)
+        };
 
-            var pipeline = pipelineBuilderConfiguration.Invoke(sut).BuildPipeline();
+    [Theory]
+    [MemberData(nameof(PipelineStepTestData))]
+    public void Use_Step_AddsComponentToPipeline
+    (
+        Func<IPipelineBuilderCompleteTestSut, IPipelineBuilderCompleteTestSut> pipelineBuilderConfiguration
+    )
+    {
+        var targetMainResult = TargetMainResult.Invoke(this.Arg);
 
-            var actualResult = pipeline.Invoke(this.Arg);
+        var expectedResult = targetMainResult * targetMainResult;
 
-            Assert.Equal(expectedResult, actualResult);
-        }
+        var sut = CreateSut();
+
+        var pipeline = pipelineBuilderConfiguration.Invoke(sut).BuildPipeline();
+
+        var actualResult = pipeline.Invoke(this.Arg);
+
+        Assert.Equal(expectedResult, actualResult);
     }
 }

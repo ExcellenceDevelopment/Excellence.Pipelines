@@ -1,0 +1,89 @@
+﻿using Excellence.Pipelines.Core.PipelineBuilders.Core;
+using Excellence.Pipelines.Core.PipelineConditions;
+
+namespace Excellence.Pipelines.Core.PipelineBuilders.Default;
+
+/// <summary>
+/// The pipeline builder with the possibility to execute the pipeline steps conditionally.
+/// </summary>
+/// <typeparam name="TParam">The parameter type.</typeparam>
+/// <typeparam name="TPipelineBuilder">The pipeline builder type.</typeparam>
+public interface IPipelineBuilderUseWhenConditionInterfaceFactory<TParam, TPipelineBuilder> :
+    IPipelineBuilderCore<Action<TParam>, TPipelineBuilder>
+    where TPipelineBuilder : class, IPipelineBuilderUseWhenConditionInterfaceFactory<TParam, TPipelineBuilder>
+{
+    /// <summary>
+    /// Adds the pipeline branch with own configuration that is executed when the condition is met.
+    /// When the condition is met the branch is executed and then the main pipeline is executed.
+    /// When the condition is NOT met the branch is skipped and the main pipeline is executed.
+    /// </summary>
+    /// <param name="pipelineConditionFactory">The pipeline builder condition factory.</param>
+    /// <param name="branchPipelineBuilderConfiguration">The branch pipeline builder configuration.</param>
+    /// <param name="branchPipelineBuilderFactory">The pipeline builder factory.</param>
+    /// <returns>The current pipeline builder instance.</returns>
+    public TPipelineBuilder UseWhen<TPipelineCondition>
+    (
+        Func<TPipelineCondition> pipelineConditionFactory,
+        Action<TPipelineBuilder> branchPipelineBuilderConfiguration,
+        Func<TPipelineBuilder> branchPipelineBuilderFactory
+    ) where TPipelineCondition : class, IPipelineCondition<TParam>;
+}
+
+/// <summary>
+/// The pipeline builder with the possibility to execute the pipeline steps conditionally.
+/// </summary>
+/// <typeparam name="TParam">The parameter type.</typeparam>
+/// <typeparam name="TPipelineBuilder">The pipeline builder type.</typeparam>
+public interface IPipelineBuilderUseWhenConditionInterfaceFactoryWithServiceProvider<TParam, TPipelineBuilder> :
+    IPipelineBuilderCore<Action<TParam>, TPipelineBuilder>
+    where TPipelineBuilder : class, IPipelineBuilderUseWhenConditionInterfaceFactoryWithServiceProvider<TParam, TPipelineBuilder>
+{
+    /// <summary>
+    /// Adds the pipeline branch with own configuration that is executed when the condition is met.
+    /// When the condition is met the branch is executed and then the main pipeline is executed.
+    /// When the condition is NOT met the branch is skipped and the main pipeline is executed.
+    /// </summary>
+    /// <param name="pipelineConditionFactory">The pipeline builder condition factory.</param>
+    /// <param name="branchPipelineBuilderConfiguration">The branch pipeline builder configuration.</param>
+    /// <param name="branchPipelineBuilderFactory">The pipeline builder factory.</param>
+    /// <returns>The current pipeline builder instance.</returns>
+    public TPipelineBuilder UseWhen<TPipelineCondition>
+    (
+        Func<IServiceProvider, TPipelineCondition> pipelineConditionFactory,
+        Action<TPipelineBuilder> branchPipelineBuilderConfiguration,
+        Func<IServiceProvider, TPipelineBuilder> branchPipelineBuilderFactory
+    ) where TPipelineCondition : class, IPipelineCondition<TParam>;
+}
+
+/// <summary>
+/// The pipeline builder with the possibility to execute the pipeline steps conditionally.
+/// </summary>
+/// <typeparam name="TParam">The parameter type.</typeparam>
+/// <typeparam name="TPipelineBuilder">The pipeline builder type.</typeparam>
+public interface IPipelineBuilderUseWhenConditionInterfaceServiceProvider<TParam, out TPipelineBuilder> :
+    IPipelineBuilderCore<Action<TParam>, TPipelineBuilder>
+    where TPipelineBuilder : class, IPipelineBuilderUseWhenConditionInterfaceServiceProvider<TParam, TPipelineBuilder>
+{
+    /// <summary>
+    /// Adds the pipeline branch with own configuration that is executed when the condition is met.
+    /// When the condition is met the branch is executed and then the main pipeline is executed.
+    /// When the condition is NOT met the branch is skipped and the main pipeline is executed.
+    /// </summary>
+    /// <param name="branchPipelineBuilderConfiguration">The branch pipeline builder configuration.</param>
+    /// <returns>The current pipeline builder instance.</returns>
+    public TPipelineBuilder UseWhen<TPipelineCondition>
+    (
+        Action<TPipelineBuilder> branchPipelineBuilderConfiguration
+    ) where TPipelineCondition : class, IPipelineCondition<TParam>;
+}
+
+/// <summary>
+/// The pipeline builder with the possibility to execute the pipeline steps conditionally.
+/// </summary>
+/// <typeparam name="TParam">The parameter type.</typeparam>
+/// <typeparam name="TPipelineBuilder">The pipeline builder type.</typeparam>
+public interface IPipelineBuilderUseWhenConditionInterface<TParam, TPipelineBuilder> :
+    IPipelineBuilderUseWhenConditionInterfaceFactory<TParam, TPipelineBuilder>,
+    IPipelineBuilderUseWhenConditionInterfaceFactoryWithServiceProvider<TParam, TPipelineBuilder>,
+    IPipelineBuilderUseWhenConditionInterfaceServiceProvider<TParam, TPipelineBuilder>
+    where TPipelineBuilder : class, IPipelineBuilderUseWhenConditionInterface<TParam, TPipelineBuilder> { }

@@ -1,19 +1,33 @@
-﻿namespace Excellence.Pipelines.Core.PipelineSteps
+﻿namespace Excellence.Pipelines.Core.PipelineSteps;
+
+/// <summary>
+/// The async pipeline step.
+/// </summary>
+/// <typeparam name="TParam">The parameter type.</typeparam>
+public interface IAsyncPipelineStep<TParam>
 {
     /// <summary>
-    /// The async pipeline step.
+    /// Executes the pipeline step logic.
     /// </summary>
-    /// <typeparam name="TParam">The parameter type.</typeparam>
-    /// <typeparam name="TResult">The result type.</typeparam>
-    public interface IAsyncPipelineStep<TParam, TResult>
-    {
-        /// <summary>
-        /// Executes the pipeline step logic.
-        /// </summary>
-        /// <param name="param">The parameter.</param>
-        /// <param name="cancellationToken">The cancellation token.</param>
-        /// <param name="next">The pipeline next step delegate.</param>
-        /// <returns>The result.</returns>
-        public Task<TResult> Invoke(TParam param, CancellationToken cancellationToken, Func<TParam, CancellationToken, Task<TResult>> next);
-    }
+    /// <param name="param">The parameter.</param>
+    /// <param name="cancellationToken">The cancellation token.</param>
+    /// <param name="next">The pipeline next step delegate.</param>
+    public Task Invoke(TParam param, CancellationToken cancellationToken, Func<TParam, CancellationToken, Task> next);
+}
+
+/// <summary>
+/// The async pipeline step.
+/// </summary>
+/// <typeparam name="TParam">The parameter type.</typeparam>
+/// <typeparam name="TResult">The result type.</typeparam>
+public interface IAsyncPipelineStep<TParam, TResult>
+{
+    /// <summary>
+    /// Executes the pipeline step logic.
+    /// </summary>
+    /// <param name="param">The parameter.</param>
+    /// <param name="cancellationToken">The cancellation token.</param>
+    /// <param name="next">The pipeline next step delegate.</param>
+    /// <returns>The result.</returns>
+    public Task<TResult> Invoke(TParam param, CancellationToken cancellationToken, Func<TParam, CancellationToken, Task<TResult>> next);
 }

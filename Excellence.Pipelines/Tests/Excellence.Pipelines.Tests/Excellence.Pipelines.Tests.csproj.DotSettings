@@ -8,4 +8,16 @@
 	<s:Boolean x:Key="/Default/CodeInspection/NamespaceProvider/NamespaceFoldersToSkip/=pipelinebuilders_005Cdefault_005Ccomplete_005Cconditions_005Cusewhen/@EntryIndexedValue">True</s:Boolean>
 	<s:Boolean x:Key="/Default/CodeInspection/NamespaceProvider/NamespaceFoldersToSkip/=pipelinebuilders_005Cdefault_005Ccomplete_005Cconditions_005Cbranchwhen/@EntryIndexedValue">True</s:Boolean>
 	<s:Boolean x:Key="/Default/CodeInspection/NamespaceProvider/NamespaceFoldersToSkip/=pipelinebuilders_005Cdefault_005Ccomplete_005Cconditions/@EntryIndexedValue">True</s:Boolean>
-	<s:Boolean x:Key="/Default/CodeInspection/NamespaceProvider/NamespaceFoldersToSkip/=pipelinebuilders_005Cdefault_005Ccomplete/@EntryIndexedValue">True</s:Boolean></wpf:ResourceDictionary>
+	<s:Boolean x:Key="/Default/CodeInspection/NamespaceProvider/NamespaceFoldersToSkip/=pipelinebuilders_005Cdefault_005Ccomplete/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/CodeInspection/NamespaceProvider/NamespaceFoldersToSkip/=pipelinebuilders_005Cwithresult_005Casync_005Ccomplete_005Cconditions_005Cbranchwhen/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/CodeInspection/NamespaceProvider/NamespaceFoldersToSkip/=pipelinebuilders_005Cwithresult_005Casync_005Ccomplete_005Cconditions_005Cusewhen/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/CodeInspection/NamespaceProvider/NamespaceFoldersToSkip/=pipelinebuilders_005Cwithresult_005Casync_005Ccomplete_005Cconditions/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/CodeInspection/NamespaceProvider/NamespaceFoldersToSkip/=pipelinebuilders_005Cwithresult_005Casync_005Ccomplete/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/CodeInspection/NamespaceProvider/NamespaceFoldersToSkip/=pipelinebuilders_005Cwithresult_005Casync_005Ccomplete_005Csteps/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/CodeInspection/NamespaceProvider/NamespaceFoldersToSkip/=pipelinebuilders_005Cwithresult_005Ccore_005Ccomplete/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/CodeInspection/NamespaceProvider/NamespaceFoldersToSkip/=pipelinebuilders_005Cwithresult_005Ccore_005Ccore/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/CodeInspection/NamespaceProvider/NamespaceFoldersToSkip/=pipelinebuilders_005Cwithresult_005Cdefault_005Ccomplete_005Cconditions_005Cbranchwhen/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/CodeInspection/NamespaceProvider/NamespaceFoldersToSkip/=pipelinebuilders_005Cwithresult_005Cdefault_005Ccomplete_005Cconditions_005Cusewhen/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/CodeInspection/NamespaceProvider/NamespaceFoldersToSkip/=pipelinebuilders_005Cwithresult_005Cdefault_005Ccomplete_005Cconditions/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/CodeInspection/NamespaceProvider/NamespaceFoldersToSkip/=pipelinebuilders_005Cwithresult_005Cdefault_005Ccomplete/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/CodeInspection/NamespaceProvider/NamespaceFoldersToSkip/=pipelinebuilders_005Cwithresult_005Cdefault_005Ccomplete_005Csteps/@EntryIndexedValue">True</s:Boolean>

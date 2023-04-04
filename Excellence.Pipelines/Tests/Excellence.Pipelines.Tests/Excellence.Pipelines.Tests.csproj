@@ -23,4 +23,8 @@
       <ProjectReference Include="..\..\Sources\Excellence.Pipelines\Excellence.Pipelines.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="PipelineBuilders\WithResult" />
+    </ItemGroup>
+
 </Project>

@@ -1,16 +1,16 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFrameworks>net6.0;net7.0</TargetFrameworks>
+        <TargetFrameworks>net6.0;net7.0;net8.0</TargetFrameworks>
         <LangVersion>default</LangVersion>
         <Nullable>enable</Nullable>
         <ImplicitUsings>true</ImplicitUsings>
 
-        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>5.0.0.0</AssemblyVersion>
         <IsPackable>true</IsPackable>
         <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
         <PackageId>Excellence.Pipelines.Core</PackageId>
-        <PackageVersion>4.0.1</PackageVersion>
+        <PackageVersion>5.0.0</PackageVersion>
         <Title>Excellence.Pipelines.Core</Title>
         <Authors>Excellence Development;Roman Doskoch</Authors>
         <Description>Interfaces for Pipelines.</Description>

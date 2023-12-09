@@ -1,7 +1,7 @@
 # Pipelines
 
-[![Main](https://flat.badgen.net/github/checks/ExcellenceDevelopment/Excellence.Pipelines/main/Build%20%26%20Test?label=Main&cache=300)](https://github.com/ExcellenceDevelopment/Excellence.Pipelines/tree/main)
-[![Dev](https://flat.badgen.net/github/checks/ExcellenceDevelopment/Excellence.Pipelines/dev/Build%20%26%20Test?label=Dev&cache=300)](https://github.com/ExcellenceDevelopment/Excellence.Pipelines/tree/dev)
+[![Main](https://flat.badgen.net/github/checks/ExcellenceDevelopment/Excellence.Pipelines/main/build-and-test?label=Main&cache=300)](https://github.com/ExcellenceDevelopment/Excellence.Pipelines/tree/main)
+[![Dev](https://flat.badgen.net/github/checks/ExcellenceDevelopment/Excellence.Pipelines/dev/build-and-test?label=Dev&cache=300)](https://github.com/ExcellenceDevelopment/Excellence.Pipelines/tree/dev)
 
 <br/>
 

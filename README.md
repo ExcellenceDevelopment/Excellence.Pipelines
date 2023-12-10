@@ -19,7 +19,6 @@ A pipeline is the set of ordered steps executed one after another.
   - [Scripts](./Excellence.Pipelines/Scripts)
   - [Usage](./Excellence.Pipelines/Nugets/Readme.md)
 
-
 **Note**: Documentation for every version can be found in the `Docs/x.x.x` directory where `x.x.x` is the package version.
 
 ## Statuses

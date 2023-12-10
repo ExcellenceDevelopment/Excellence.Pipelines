@@ -1,39 +1,17 @@
 # Pipelines
 
-[![Main](https://flat.badgen.net/github/checks/ExcellenceDevelopment/Excellence.Pipelines/main/build-and-test?label=Main&cache=300)](https://github.com/ExcellenceDevelopment/Excellence.Pipelines/tree/main)
-[![Dev](https://flat.badgen.net/github/checks/ExcellenceDevelopment/Excellence.Pipelines/dev/build-and-test?label=Dev&cache=300)](https://github.com/ExcellenceDevelopment/Excellence.Pipelines/tree/dev)
-
-<br/>
-
-[![Licence](https://flat.badgen.net/github/license/ExcellenceDevelopment/Excellence.Pipelines?label=Licence&color=4db2ff&cache=300)](https://github.com/ExcellenceDevelopment/Excellence.Pipelines/blob/main/LICENSE)
-
-<br/>
-
-
-[![Excellence.Pipelines.Core](https://flat.badgen.net/nuget/v/Excellence.Pipelines.Core?icon=nuget&label=Excellence.Pipelines.Core&color=4db2ff&cache=300)](https://www.nuget.org/packages/Excellence.Pipelines.Core/) 
-[![Excellence.Pipelines](https://flat.badgen.net/nuget/v/Excellence.Pipelines?icon=nuget&label=Excellence.Pipelines&color=4db2ff&cache=300)](https://www.nuget.org/packages/Excellence.Pipelines/)
-
-<br/>
-
 ## Overview
 
 Packages for building pipelines.
 
 A pipeline is the set of ordered steps executed one after another.
 
-<br/>
-
-### **Pipelines are very similar to middlewares in .NET.**
-
-<br/>
+**Pipelines are very similar to middlewares in .NET.**
 
 ## Nuget packages
 
- - [Excellence.Pipelines.Core](./Excellence.Pipelines/Sources/Excellence.Pipelines.Core) - interfaces for Pipelines 
- - [Excellence.Pipelines](./Excellence.Pipelines/Sources/Excellence.Pipelines) - default implementation of Pipelines 
-
-
-<br />
+ - `Excellence.Pipelines.Core` - interfaces for Pipelines ([Sources](./Excellence.Pipelines/Sources/Excellence.Pipelines.Core), [Nuget](https://www.nuget.org/packages/Excellence.Pipelines.Core/))
+ - `Excellence.Pipelines` - default implementation of Pipelines ([Sources](./Excellence.Pipelines/Sources/Excellence.Pipelines), [Nuget](https://www.nuget.org/packages/Excellence.Pipelines/))
 
 ## References
 
@@ -41,6 +19,12 @@ A pipeline is the set of ordered steps executed one after another.
   - [Scripts](./Excellence.Pipelines/Scripts)
   - [Usage](./Excellence.Pipelines/Nugets/Readme.md)
 
-<br/>
 
 **Note**: Documentation for every version can be found in the `Docs/x.x.x` directory where `x.x.x` is the package version.
+
+## Statuses
+
+| Branch | Status |
+|:------ |:------:|
+| main   | ![main](https://badgen.net/github/checks/ExcellenceDevelopment/Excellence.Pipelines/main/build-and-test?label&cache=300) |
+| dev    | ![Dev](https://badgen.net/github/checks/ExcellenceDevelopment/Excellence.Pipelines/dev/build-and-test?label&cache=300) |

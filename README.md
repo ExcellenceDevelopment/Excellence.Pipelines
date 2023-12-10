@@ -27,4 +27,4 @@ A pipeline is the set of ordered steps executed one after another.
 | Branch | Status |
 |:------ |:------:|
 | main   | ![main](https://badgen.net/github/checks/ExcellenceDevelopment/Excellence.Pipelines/main/build-and-test?label&cache=300) |
-| dev    | ![Dev](https://badgen.net/github/checks/ExcellenceDevelopment/Excellence.Pipelines/dev/build-and-test?label&cache=300) |
+| dev    | ![dev](https://badgen.net/github/checks/ExcellenceDevelopment/Excellence.Pipelines/dev/build-and-test?label&cache=300) |
